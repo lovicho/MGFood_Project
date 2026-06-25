@@ -1,0 +1,492 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+img {
+	border: 0px;
+}
+
+a {
+	text-decoration: none;
+}
+
+#wrap {
+	overflow: hidden;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	clear: ;
+	float: none;
+	min-width: 1000px;
+	min-height: 2508px;
+}
+
+#ndcm_top {
+	overflow: visible;
+	width: 1000px;
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: none;
+}
+
+#ndcm_main {
+	overflow: visible;
+	width: 100%;
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	min-width: 1000px;
+	min-height: 1122px;
+}
+
+#ndcm_con_a {
+	overflow: visible;
+	width: 1000px;
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: none;
+}
+
+#ndcm_con_b {
+	overflow: visible;
+	width: 1000px;
+	height: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: none;
+}
+
+#ndcm_con_c {
+	overflow: visible;
+	width: 1000px;
+	height: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: none;
+}
+
+#ndcm_con_d {
+	overflow: visible;
+	width: 1000px;
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 50px;
+	margin-left: 0px;
+	clear: ;
+	float: none;
+}
+
+#ndcm_con_map {
+	overflow: visible;
+	width: 1000px;
+	height: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: -1024px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+}
+
+#ndcm_foot {
+	overflow: visible;
+	width: 1000px;
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: none;
+}
+
+.banner1 {
+	width: 290px;
+	height: 102px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 290px;
+	min-height: 102px;
+	text-align: left;
+}
+
+.dgc_topMenu_1_01 {
+	width: 710px;
+	height: 20px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 710px;
+	min-height: 20px;
+	text-align: left;
+}
+
+.dgc_textnavi1 {
+	width: 710px;
+	height: 72px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 710px;
+	min-height: 72px;
+	text-align: left;
+}
+
+.base_html_insert2 {
+	width: 100px;
+	height: 42px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 100px;
+	min-height: 42px;
+	text-align: left;
+}
+
+.dgc_viweBn_1_01 {
+	width: 100%;
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 50px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	min-width: 1200px;
+	min-height: 996px;
+	text-align: left;
+}
+
+.dgc_rolloverbanner_1_05 {
+	width: 308px;
+	height: 320px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 26px;
+	margin-left: 30px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 308px;
+	min-height: 320px;
+	text-align: left;
+}
+
+.dgc_rolloverbanner_1_06 {
+	width: 308px;
+	height: 320px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 26px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 308px;
+	min-height: 320px;
+	text-align: left;
+}
+
+.dgc_rolloverbanner_1_07 {
+	width: 308px;
+	height: 320px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 26px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 308px;
+	min-height: 320px;
+	text-align: left;
+}
+
+.banner8 {
+	width: 100%;
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 100px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	min-width: 1000px;
+	min-height: 490px;
+	text-align: center;
+}
+
+.banner9 {
+	width: 100%;
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	min-width: 1000px;
+	min-height: 542px;
+	text-align: left;
+}
+
+.banner3 {
+	width: 1920px;
+	height: 468px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 50px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: none;
+	overflow: hidden;
+	min-width: 1920px;
+	min-height: 468px;
+	text-align: left;
+}
+
+.base_html_insert3 {
+	width: 100%;
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	min-width: 1000px;
+	min-height: 434px;
+	text-align: left;
+}
+
+.banner5 {
+	width: 250px;
+	height: 250px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 26px;
+	margin-right: 36px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 250px;
+	min-height: 250px;
+	text-align: left;
+}
+
+.dgc_board3tap_1_04 {
+	width: 326px;
+	height: 164px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 26px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 326px;
+	min-height: 164px;
+	text-align: left;
+}
+
+.dgc_board3tap_1_02 {
+	width: 290px;
+	height: 164px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 26px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 290px;
+	min-height: 164px;
+	text-align: left;
+}
+
+.web_copyright_01 {
+	width: 980px;
+	height: 100px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 980px;
+	min-height: 100px;
+	text-align: left;
+}
+
+.dgc_img_banner_1_01 {
+	width: 10px;
+	height: 80px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: visible;
+	min-width: 10px;
+	min-height: 80px;
+	text-align: left;
+}
+
+.dgc_visit_count_1_01 {
+	width: 128px;
+	height: 14px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: none;
+	overflow: visible;
+	min-width: 128px;
+	min-height: 14px;
+	text-align: left;
+}
+

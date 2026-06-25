@@ -1,0 +1,270 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+img {
+	border: 0px;
+}
+
+a {
+	text-decoration: none;
+}
+
+#wrap {
+	overflow: hidden;
+	width: 1000px;
+	height: auto;
+	margin: 0 auto;
+	clear: ;
+	float: none;
+}
+
+#ndcss_top {
+	overflow: visible;
+	width: 1000px;
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+}
+
+#ndcss_sub {
+	overflow: visible;
+	width: 1000px;
+	height: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+}
+
+#ndcss_left {
+	overflow: visible;
+	width: 0px;
+	height: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+}
+
+#ndcss_con_a {
+	overflow: visible;
+	width: 1000px;
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+}
+
+#ndcss_container {
+	overflow: visible;
+	width: 1000px;
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+}
+
+#ndcss_foot {
+	overflow: visible;
+	width: 1000px;
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+}
+
+.banner1 {
+	width: 290px;
+	height: 102px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 290px;
+	min-height: 102px;
+	text-align: left;
+}
+
+.dgc_topMenu_1_01 {
+	width: 710px;
+	height: 20px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 710px;
+	min-height: 20px;
+	text-align: left;
+}
+
+.dgc_textnavi1 {
+	width: 710px;
+	height: 72px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 710px;
+	min-height: 72px;
+	text-align: left;
+}
+
+.dgc_navigation_bar_1_01 {
+	width: 970px;
+	height: 30px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 30px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 970px;
+	min-height: 30px;
+	text-align: left;
+}
+
+.dgc_leftmenu_1_01 {
+	width: 200px;
+	height: 500px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: visible;
+	min-width: 200px;
+	min-height: 500px;
+	text-align: left;
+}
+
+.contents {
+	width: 700px;
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 20px;
+	margin-bottom: 0px;
+	margin-left: 50px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 700px;
+	min-height: 500px;
+	text-align: left;
+}
+
+.web_copyright_01 {
+	width: 980px;
+	height: 120px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: hidden;
+	min-width: 980px;
+	min-height: 120px;
+	text-align: left;
+}
+
+.dgc_img_banner_1_01 {
+	width: 10px;
+	height: 80px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: ;
+	float: left;
+	overflow: visible;
+	min-width: 10px;
+	min-height: 80px;
+	text-align: left;
+}
+

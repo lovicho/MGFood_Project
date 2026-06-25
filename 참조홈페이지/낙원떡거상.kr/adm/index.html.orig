@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>오류안내 페이지 | 낙원떡거상</title>
+<link rel="stylesheet" href="https://xn--v69ax2fo8es0nrlh.kr/adm/css/admin.css?ver=2303229">
+<link rel="stylesheet" href="https://xn--v69ax2fo8es0nrlh.kr/js/font-awesome/css/font-awesome.min.css?ver=2303229">
+<!--[if lte IE 8]>
+<script src="https://xn--v69ax2fo8es0nrlh.kr/js/html5.js"></script>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "https://xn--v69ax2fo8es0nrlh.kr";
+var g5_bbs_url   = "https://xn--v69ax2fo8es0nrlh.kr/bbs";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "";
+var g5_sca       = "";
+var g5_editor    = "";
+var g5_cookie_domain = "";
+var g5_shop_url = "https://xn--v69ax2fo8es0nrlh.kr/shop";
+var g5_admin_url = "https://xn--v69ax2fo8es0nrlh.kr/adm";
+</script>
+<script src="https://xn--v69ax2fo8es0nrlh.kr/js/jquery-1.12.4.min.js?ver=2304171"></script>
+<script src="https://xn--v69ax2fo8es0nrlh.kr/js/jquery-migrate-1.4.1.min.js?ver=2304171"></script>
+<script src="https://xn--v69ax2fo8es0nrlh.kr/js/jquery.menu.js?ver=2304171"></script>
+<script src="https://xn--v69ax2fo8es0nrlh.kr/js/common.js?ver=2304171"></script>
+<script src="https://xn--v69ax2fo8es0nrlh.kr/js/wrest.js?ver=2304171"></script>
+<script src="https://xn--v69ax2fo8es0nrlh.kr/js/placeholders.min.js?ver=2304171"></script>
+</head>
+<body>
+
+<script>
+alert("로그인 하십시오.");
+document.location.replace("https://xn--v69ax2fo8es0nrlh.kr/bbs/login.php?url=https%3A%2F%2Fxn--v69ax2fo8es0nrlh.kr%2Fadm%2F");
+</script>
+
+<noscript>
+<div id="validation_check">
+    <h1>다음 항목에 오류가 있습니다.</h1>
+    <p class="cbg">
+        로그인 하십시오.    </p>
+        <div class="btn_confirm">
+        <a href="https://xn--v69ax2fo8es0nrlh.kr/bbs/login.php?url=https%3A%2F%2Fxn--v69ax2fo8es0nrlh.kr%2Fadm%2F">돌아가기</a>
+    </div>
+    
+</div>
+</noscript>
+
+
+
+
+
+</body>
+</html>

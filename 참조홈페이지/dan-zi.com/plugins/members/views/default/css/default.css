@@ -1,0 +1,214 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+    background-color:#FFFFFF;
+}
+
+#admin_post {
+    font-size:12px; 
+    padding : 5px;
+    background-color:#FFFFFF;
+}
+
+#admin_post a,td{
+    font-size:12px;
+}
+
+
+#contents {
+    padding:5px; 
+    font-size:12px;
+    line-height:120%;
+    background-color:#FFFFFF;
+    color:#666;
+}
+
+#contents .sp1 {
+	height: 26px;
+	background-color: #fff6ef;
+	border-bottom: 1px solid #f9a461;
+	border-right: 1px solid #f9a461;
+	text-align: center;
+	color: #f76606;
+}
+
+#contents .sp1.rt {
+	border-right: none;
+}
+
+#contents .sp2 {
+	height: 26px;
+	border-bottom:1px solid #d3d6d8;
+	border-right:1px solid #d3d6d8;
+	text-align: center;
+}
+
+#contents .sp2.numeral {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 10px;
+}
+
+#contents .sp2.rt {
+	border-right: none;
+}
+
+#contents .sp2.btm {
+	border-bottom:1px solid #f9a461;
+}
+
+#btn_div { margin-top:20px; text-align:center; border:0px;}
+
+
+
+.inp_t {width:590px; height:170px; padding:12px; font-size:12px; color:#666666; line-height:18px}
+
+.in_btn {width:700px; text-align:center; margin:0 auto}
+.in_btn_img { margin-right: 60px; }
+.tc.u {padding-bottom:20px}
+.cb {text-align:left; height:30px; padding-top:10px; padding-left:20px}
+.blank {height:25px}
+.ncbg {background-color:#FFF; width: 612px; height:100px; margin:0 auto; padding-top:10px; padding-left:20px}
+.ncbg table {margin:0 auto; text-align:left; margin-bottom:20px}
+
+.drop_mem_box {background:#f4f4f4; width:700px; padding:30px 0; *padding:30px 0 10px 0;}
+.drop_box {width:600px; background-color:#ebebeb; text-align:center; margin:0 auto}
+.drop_tt {height:80px; padding:20px 0 0 0}
+.drop_btn {width:600px; text-align:center; padding:20px 0 0 0; margin:0 auto; margin-bottom:30px; }
+
+
+.inp_member_s1 {width:110px; height:18px; border:1px solid #ccc; margin:0; padding:2px 0 0 0; font-size:12px; }
+.inp_member_s2 {width:310px; height:18px; border:1px solid #ccc; margin:0; padding:2px 0 0 0; font-size:12px; }
+.inp_member_s3 {width:55px; height:18px; border:1px solid #ccc; margin:0; padding:2px 0 0 0; font-size:12px; }
+.inp_member_s4 {width:310px; height:18px; border:1px solid #ccc; margin:2px 0 0 0; padding:2px 0 0 0; font-size:12px; }
+.inp_member_s5 {width:35px; height:18px; border:1px solid #ccc; margin:0; padding:2px 0 0 0; font-size:12px; }
+.inp_member_s6 {width:310px; height:50px; border:1px solid #ccc; margin:0; padding:2px 0 0 0; font-size:12px; }
+
+.inp_b.s2 {width:150px}
+.inp_b.s3 {width:310px}
+.inp_b.s4 {width:55px}
+.inp_b.s5 {width:35px}
+.inp_s6 {width:310px; height:65px; padding:7px; font-size:12px; color:#666666; line-height:18px}
+
+.mem_tlt {margin:20px 0 10px 25px; font-size:15px; font-weight:bold}
+.mem_box {background:#f4f4f4; width:700px; padding:16px 0; *padding:16px 0 10px 0; margin: 0 auto; margin-bottom:30px;}
+.mem_box2 {background:#f4f4f4; width:700px; padding:16px 0; *padding:16px 0 10px 0; margin: 0 auto; margin-bottom:30px;}
+.mem_box3 {width:700px; padding:16; *padding:16px; margin: 0 auto;}
+.in_box {width:666px; background-color:#ebebeb; margin:0 auto;}
+.tt {height:25px; padding:15px 0 0 16px}
+.tc {text-align:center}
+.tc table {margin:0 auto; width:618px}
+.tc td {text-align:left; height:31px}
+.blank {height:20px}
+.mem_btn {text-align:center; margin:12px 0 0 0 auto}
+
+.lbox {float:left; width:378px; height:195px; background-color:#FFF; margin-left:40px; }
+.lbox1 {margin-top:40px}
+.lbox1 img {margin-right:7px}
+.lbox2 {margin-top:20px; text-align:center; font-size:11px}
+.lbox3 {margin-top:40px; text-align:center}
+.clearbox {clear:left}
+.mem_btn {text-align:center; margin:12px 0 20px 0}
+
+.idpw_tlt {margin:auto; width:320px; height:27px; border:6px solid #ebebeb; font-size:12px; font-weight:bold; color:#666; padding:11px 0 0 10px; text-align:center}
+.idpw_con {margin:32px auto; text-align:center; width:342px; height:44px; text-align:center}
+.idpw_joinmembtn {margin:auto; width:342px; height:30px; text-align:center}
+
+.idpw_res {margin:32px auto; text-align:center; width:342px; height:17px; text-align:center}
+.idpw_closebtn {margin:auto; width:342px; height:20px; text-align:center}
+
+.inp_members_m { height:18px; border:1px solid #ccc; padding:0; margin-top:0; font-size:12px; }
+
+.gu_member_table01 {padding:5px; border:1px solid; border-color:#e0e0e0 #e0e0e0 #e0e0e0 #e0e0e0;}
+.gu_member_table02 {height:30px; padding-left:10px; border:1px solid; border-color:#e0e0e0 #e0e0e0 #e0e0e0 #e0e0e0;}
+.gu_member_table03 {text-align:center; height:30px; border:1px solid; border-color:#e0e0e0 #e0e0e0 #e0e0e0 #e0e0e0;}
+.gu_member_table04 {font:11px; padding:8px;}
+/* Add find page */
+.gu_add_wrap {padding:0; margin:0; font-family:Dotum, Arial;}
+.gu_add_title01 {padding:0; margin:0;}
+ul.tab {cursor:pointer; list-style-type:none; padding:0; margin:10px 0; float:left;}
+ul.tab li {float:left; margin-left:4px; color:#656565; width:124px; height:14px; text-align:center; padding:8px 0; background:url('../images/add_bt01.png') no-repeat;}
+ul.tab li.active {color:#ffffff; background:url('../images/add_bt01_ov.png') no-repeat;}
+.gu_search {float:left; margin:10px 6px;}
+.gu_select01 {width:120px; height:24px; margin:3px 0; background:#f1f1f1; border:1px solid #dbdbdb;}
+.gu_input01 {width:110px; height:20px; margin:3px 0; background:#f1f1f1; border:1px solid #dbdbdb;}
+
+.help_0 {padding:10px; border:1px solid #eee; clear:both; display:none; overflow:hidden;}
+.help_1 {padding:10px; border:1px solid #eee; clear:both;display:none; overflow:hidden;}
+ul.gu_info {margin:0; padding:0; list-style-type:none;}
+ul li.gu_list {background:none; width:100%; text-align:left; padding:4px 0;}
+ul li.gu_list span {color:red;}
+
+.zip_list {border:1px solid #eee; padding:10px; margin-top:4px; background:#f7f7f7;}
+ul.search_list {border:0px solid red; list-style-type:none; padding:0; margin:0;}
+ul li.gu_search_list {background:none; width:100%; text-align:left; padding:6px 0; border-bottom:1px dotted #dedede;}
+ul li.gu_search_list a {color:#5767ff; text-decoration:none;}
+
+/* Button Reset */
+.button,
+.button a,
+.button button,
+.button input { position:relative; margin:0; display:-moz-inline-stack; display:inline-block; text-decoration:none !important; border:0; font-size:12px; font-family:Tahoma, Sans-serif; white-space:nowrap; background:url(http://dan-zi.com/plugins/members/views/default/img/buttonWhite.gif) no-repeat; overflow:visible; color:#333;}
+.button { height:23px; padding:0; vertical-align:middle; margin-right:2px; background-position:left top;}
+.button a,
+.button button,
+.button input{ left:2px; vertical-align:top; cursor:pointer;}
+
+/* Button Size */
+.button.large { height:29px; background-position:left -30px; }
+.button.xLarge { height:35px; background-position:left -65px; }
+.button.small { height:18px; background-position:left -107px; }
+.button a,
+.button button,
+.button input { height:23px; padding:0 10px 0 8px; font-size:12px; line-height:23px; background-position:right top;}
+.button.large a,
+.button.large button,
+.button.large input { height:30px; padding:0 10px 0 8px; font-size:16px; line-height:29px; background-position:right -30px;}
+.button.xLarge a,
+.button.xLarge button,
+.button.xLarge input { height:35px; padding:0 10px 0 8px; font-size:20px; line-height:35px; background-position:right -65px;}
+.button.small a,
+.button.small button,
+.button.small input { height:18px; padding:0 6px 0 4px; font-size:11px; line-height:18px; background-position:right -107px;}
+
+/* Button Text Color */
+.button *:hover,
+.button *:active,
+.button *:focus{ color:#690;}
+.button.green,
+.button.green a,
+.button.green button,
+.button.green input { background-image:url(../images/buttonGreen.gif); color:#fff;}
+.button.green *:hover,
+.button.green *:active,
+.button.green *:focus{ color:#ff0;}
+.button.black,
+.button.black a,
+.button.black button,
+.button.black input { background-image:url(../images/buttonBlack.gif); color:#fff;}
+.button.black *:hover,
+.button.black *:active,
+.button.black *:focus{ color:#ff0;}
+.button.red,
+.button.red a,
+.button.red button,
+.button.red input { background-image:url(../images/buttonRed.gif); color:#fff;}
+.button.red *:hover,
+.button.red *:active,
+.button.red *:focus{ color:#ff0;}
+.button.blue,
+.button.blue a,
+.button.blue button,
+.button.blue input { background-image:url(../images/buttonBlue.gif); color:#fff;}
+.button.blue *:hover,
+.button.blue *:active,
+.button.blue *:focus{ color:#ff0;}
+.button.white,
+.button.white a,
+.button.white button,
+.button.white input { background-image:url(../images/buttonWhite.gif); color:#333;}
+.button.white *:hover,
+.button.white *:active,
+.button.white *:focus{ color:#f00;}
+
+/* Button Text Strong */
+.button.strong * { font-weight:bold !important;}

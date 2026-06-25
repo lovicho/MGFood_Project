@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>순대 ODM 온오프라인 통합 쇼핑몰 구축 제안서</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #451a03;       /* Terracotta Deep Brown */
+            --primary-light: #78350f; /* Warm Amber Brown */
+            --secondary: #10b981;     /* HACCP Green */
+            --accent: #d97706;        /* Golden Amber */
+            --bg-base: #fafaf9;       /* Stone 50 Warm Gray */
+            --bg-card: rgba(255, 255, 255, 0.9);
+            --text-main: #1c1917;     /* Stone 900 */
+            --text-sub: #57534e;      /* Stone 600 */
+            --border-color: #e7e5e4;  /* Stone 200 */
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 3rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Premium Header Styling */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1c0e07 100%);
+            color: #ffffff;
+            border-radius: 24px;
+            padding: 4.5rem 3rem;
+            margin-bottom: 3.5rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -10%;
+            width: 80%;
+            height: 180%;
+            background: radial-gradient(circle, rgba(217, 119, 6, 0.18) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tag {
+            background-color: rgba(217, 119, 6, 0.2);
+            border: 1px solid var(--accent);
+            color: #fcd34d;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.35rem 0.95rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 900;
+            letter-spacing: -0.75px;
+            margin-bottom: 1.25rem;
+            line-height: 1.25;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #e7e5e4;
+            max-width: 800px;
+            font-weight: 300;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 2rem;
+        }
+
+        .meta-item span {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.25rem;
+        }
+
+        .meta-item strong {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        /* Typography & Grid Sections */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 5px;
+            background-color: var(--accent);
+            border-radius: 3px;
+        }
+
+        /* Flow diagram placeholder styling */
+        .diagram-container {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .diagram-flow {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .diagram-node {
+            background-color: var(--bg-base);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 1.25rem;
+            min-width: 250px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .diagram-node.secondary-node {
+            border-color: var(--secondary);
+        }
+
+        .diagram-node h4 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .diagram-node.secondary-node h4 {
+            color: var(--secondary);
+        }
+
+        .diagram-arrow {
+            font-size: 2rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Matrix Card Layout */
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .matrix-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .matrix-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .matrix-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+        }
+
+        .matrix-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .matrix-card p {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
+
+        /* Benchmarking Table */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            background-color: #ffffff;
+            margin-bottom: 3rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #f5f5f4;
+            color: var(--text-main);
+            font-weight: 700;
+            padding: 1.5rem 1.25rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 1.5rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-sub);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: #fbfbfb;
+            color: var(--text-main);
+        }
+
+        /* Key Callout Box */
+        .callout-box {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+            border-left: 6px solid var(--accent);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .callout-box h3 {
+            color: var(--primary-light);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .callout-box p {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        /* Accordion / FAQ Style */
+        .accordion {
+            margin-bottom: 3rem;
+        }
+
+        .accordion-item {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .accordion-header {
+            padding: 1.25rem 1.5rem;
+            background-color: #fdfdfd;
+            font-weight: 700;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid transparent;
+            transition: background-color 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: #faf9f6;
+        }
+
+        .accordion-content {
+            padding: 1.5rem;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+            background-color: #ffffff;
+        }
+
+        /* Footer styling */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 5rem;
+            text-align: center;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animated {
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+            header {
+                padding: 3rem 1.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .diagram-flow {
+                flex-direction: column;
+            }
+            .diagram-arrow {
+                transform: rotate(90deg);
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container animated">
+        
+        <!-- Proposal Header -->
+        <header>
+            <div class="header-content">
+                <span class="tag">Next-Gen E-Commerce Solution</span>
+                <h1>순대 ODM 온오프라인 통합<br>크로스플랫폼 쇼핑몰 구축 제안서</h1>
+                <p>제조사와 유통 브랜드의 상생 홍보 협약 시너지 모델 수립 및 차세대 AI 검색 최적화 전략 수립</p>
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <span>프로젝트 성격</span>
+                        <strong>순대 B2B/B2C 크로스플랫폼</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span>제조 방식</span>
+                        <strong>제조-홍보 협약 ODM 파트너십</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span>핵심 엔진</span>
+                        <strong>Next.js PWA & PG/간편결제</strong>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Executive Summary -->
+        <section>
+            <h2>제안 요약 (Executive Summary)</h2>
+            <div class="callout-box">
+                <h3>제조와 유통의 스마트한 디커플링 (ODM 협약 모델)</h3>
+                <p>생산 설비에 대한 과도한 초기 투자 리스크를 제거합니다. HACCP 인증을 획득한 전문 순대 생산 공장의 청결 가마 및 위생 제조 공정을 쇼핑몰 전면과 상세페이지에 투명하게 노출하여 소비자의 강력한 구매 신뢰를 얻는 동시에, 공장 측에는 온라인 브랜드 홍보관 역할을 제공하는 윈윈(Win-Win) 마케팅 모델을 실행합니다.</p>
+            </div>
+        </section>
+
+        <!-- Benchmark Section -->
+        <section>
+            <h2>실제 순대 웹사이트 벤치마킹 분석</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>업체명</th>
+                            <th>참조 도메인</th>
+                            <th>핵심 시스템</th>
+                            <th>벤치마킹 구현 내용</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>신창식품 (신토리)</strong></td>
+                            <td><a href="http://sintory.co.kr" target="_blank" style="color: var(--accent); font-weight: 500;">sintory.co.kr</a></td>
+                            <td>B2B 도매 납품 체계</td>
+                            <td>전국 체인점 가맹주를 겨냥한 도매 대량 견적 신청 시스템 및 벌크 상품 카탈로그 설계.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>병천아우내식품</strong></td>
+                            <td><a href="http://aunaefood.co.kr" target="_blank" style="color: var(--accent); font-weight: 500;">aunaefood.co.kr</a></td>
+                            <td>HACCP 공정 홍보</td>
+                            <td>제조 공장의 특허증, 위생 설비 실시간 검사서, HACCP 라인 사진 노출관을 차용하여 신뢰감 강화.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>보승식품</strong></td>
+                            <td><a href="https://www.boseung.co.kr" target="_blank" style="color: var(--accent); font-weight: 500;">boseung.co.kr</a></td>
+                            <td>OEM/ODM 히스토리</td>
+                            <td>대형 유통사(편의점, 대형마트)와의 제휴 성과 포트폴리오 노출관 및 브랜드 스토리 UI 벤치마크.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Architecture & Payment -->
+        <section>
+            <h2>크로스플랫폼 및 결제 아키텍처</h2>
+            <div class="diagram-container">
+                <div class="diagram-flow">
+                    <div class="diagram-node">
+                        <h4>사용자 브라우저 / 앱</h4>
+                        <p style="font-size:0.85rem; color:var(--text-sub);">PWA(웹앱) 기반 반응형 레이아웃</p>
+                    </div>
+                    <div class="diagram-arrow">➔</div>
+                    <div class="diagram-node secondary-node">
+                        <h4>Next.js SSR & API</h4>
+                        <p style="font-size:0.85rem; color:var(--text-sub);">Strapi Headless CMS 콘텐츠 연동</p>
+                    </div>
+                    <div class="diagram-arrow">➔</div>
+                    <div class="diagram-node">
+                        <h4>온라인 결제 게이트웨이</h4>
+                        <p style="font-size:0.85rem; color:var(--text-sub);">토스페이, 카카오, 네이버, 애플페이</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="matrix-grid">
+                <div class="matrix-card">
+                    <div class="matrix-icon">📱</div>
+                    <h3>PWA 기반 크로스플랫폼</h3>
+                    <p>하나의 소스코드로 모바일 웹브라우저는 물론 안드로이드/iOS 웹뷰 앱으로 완벽 대응합니다. 홈 화면 아이콘 설치 및 푸시 알림 기능으로 오프라인 및 재구매율을 견인합니다.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="matrix-icon">💳</div>
+                    <h3>간편결제 올인원 통합</h3>
+                    <p>네이버페이, 카카오페이, 토스페이와 함께 모바일 바이오인증(애플페이, 삼성페이) 결제 연동으로 구매 결정 후 1초 만에 안전하게 결제를 완료하는 이탈률 방지 시스템을 구축합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO / AEO / GEO -->
+        <section>
+            <h2>차세대 발견 가능성 최적화 (SEO / AEO / GEO)</h2>
+            <div class="matrix-grid">
+                <div class="matrix-card">
+                    <div class="matrix-icon">🔍</div>
+                    <h3>구조적 SEO (검색엔진 최적화)</h3>
+                    <p>JSON-LD 구조화 데이터(Product Schema, LocalBusiness Schema)를 모든 상품 페이지에 적용해 구글 검색 결과 페이지에 별점, 가격, 재고 정보를 리치 스니펫으로 직접 노출합니다.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="matrix-icon">🤖</div>
+                    <h3>대화형 AEO (AI 답변 최적화)</h3>
+                    <p>ChatGPT, Gemini 등의 대화형 AI 모델이 지식을 올바르게 읽어가도록 브랜드 고유 강점을 단순 명료한 팩트 위주 Q&A 및 지식 웹페이지로 설계하여 인출 가능성을 극대화합니다.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="matrix-icon">🌐</div>
+                    <h3>생성형 GEO (추천 최적화)</h3>
+                    <p>AI 기반 검색엔진(Perplexity, SGE)이 신뢰할 수 있는 소스로서 당사 웹을 추천하도록 특허 자료, 식품 영양학 연구, HACCP 공인 인증 정보 및 PR 보도자료 소스 링크를 구조화합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ & AEO Demo -->
+        <section>
+            <h2>통합 AEO 최적화 Q&A 샘플</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        Q1. 순대 제품의 제조업체 ODM 공정은 믿을 수 있나요?
+                        <span style="color:var(--accent);">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        네, 당사의 파트너 생산 시설은 식품의약품안전처 지정 <strong>해썹(HACCP) 인증을 취득한 현대식 위생 자동화 시설</strong>입니다. 모든 공정은 고온 진공 멸균 세척 및 무균 포장 라인을 통해 위생적으로 엄격히 통제되며, 공정 과정을 쇼핑몰 제조시설 홍보관 페이지에서 실시간 이미지로 투명하게 공개하고 있습니다.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        Q2. 쇼핑몰은 모바일 기기 및 오프라인 매장에서도 결제가 가능한가요?
+                        <span style="color:var(--accent);">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        네, 당사 쇼핑몰은 <strong>크로스플랫폼 PWA 아키텍처</strong>로 제작되어 별도의 복잡한 앱 다운로드 없이 웹 브라우저 접속만으로 최적화된 모바일 UI를 제공합니다. 또한 오프라인 매장이나 팝업스토어에서 QR 코드를 활용해 네이버페이, 카카오페이, 토스페이, 애플페이 등의 간편결제를 1초 만에 바로 완료할 수 있습니다.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 순대 ODM 온오프라인 통합 브랜드 쇼핑몰 구축 제안. Created and Analyzed by Antigravity Agent (ZTO Swarm).</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Simple interactive Accordion logic
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const arrow = header.querySelector('span');
+                
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                    arrow.textContent = '▼';
+                } else {
+                    content.style.display = 'block';
+                    arrow.textContent = '▲';
+                }
+            });
+        });
+        
+        // Init accordion state
+        document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+
+.sub_top_div {
+    background-image: url(/theme/basic/img/sub/sub_top_img.png);
+}
+
+a {
+    text-decoration: none!important;
+}
+
+img {
+    vertical-align: top;
+}
+
+h2,
+h3 {
+    color: #232323;
+}
+
+p {
+    color: #565656;
+}
+
+#container #contents {
+    width: 100%;
+    max-width: initial;
+    padding: 0;
+}
+
+.sub_top {
+    width: 100%;
+    position: relative;
+}
+
+.sub_top_div {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center 55%;
+    background-size: cover;
+    position: relative;
+    height: 300px;
+}
+
+.sub_top_div::before {
+    width: 100%;
+    content: "";
+    background-color: #000;
+    opacity: 0.2;
+    height: 100%;
+    display: block;
+}
+
+.sub_top_text {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}
+
+.sub_top_text > h2 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.5;
+    text-shadow: 2px 0 1px rgba(000,000,000,0.1);
+}
+
+.sub_top_text > p {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 2px 0 1px rgba(000,000,000,0.1);
+}
+
+
+
+.sub_main {
+    width: 100%;
+    position: relative;
+    padding-top: 30px;
+}
+
+.sub_contant {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+.sub_contant_h2 {
+    display: flex;
+    position: relative;
+    padding: 10px 0 40px 0;
+    align-items: stretch;
+}
+
+.sub_contant_h2 > img {
+    width: 40px;
+    position: relative;
+}
+
+.sub_contant_h2 > h2 {
+    font-size: 26px;
+    padding-left: 10px;
+    font-weight: 600;
+}
+
+.sub_contant_h2 > p {
+    font-size: 13px;
+    padding-left: 10px;
+}
+
+.div_img {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.div_img img {
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 100%;
+}
+
+.br_m {
+    display: none;
+}
+.br_pc {
+    display: block;
+}
+@media all and (min-width:1201px) {
+    .sub_top_menu a:hover p {
+        color: #319b42;
+    }
+}

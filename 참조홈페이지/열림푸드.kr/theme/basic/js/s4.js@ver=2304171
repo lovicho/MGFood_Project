@@ -1,0 +1,45 @@
+$(document).ready(function () {
+    // 슬라이더 초기화
+    $('.smart-banner-bxslider').slick({
+        // 슬라이드 속도 설정
+        speed: 500,
+        // 자동 슬라이드 설정
+        autoplay: true,
+        autoplaySpeed: 3000,
+        // 반응형 설정
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    // 반응형 뷰포트 설정
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 2,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    });
+
+    // 왼쪽 화살표 클릭 시 이전 슬라이드로 이동
+    $('.slick-prev').click(function () {
+        $('.smart-banner-bxslider').slick('slickPrev');
+    });
+
+    // 오른쪽 화살표 클릭 시 다음 슬라이드로 이동
+    $('.slick-next').click(function () {
+        $('.smart-banner-bxslider').slick('slickNext');
+    });
+});

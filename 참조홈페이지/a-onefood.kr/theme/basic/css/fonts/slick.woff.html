@@ -1,0 +1,990 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" id="meta_viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no">
+  <title>에이원식품</title>
+  <link rel="stylesheet" href="../default.css@ver=2303229.css">
+<link rel="stylesheet" href="../../../../js/font-awesome/css/font-awesome.min.css@ver=2303229.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="../slick.css@ver=2303229.css">
+<link rel="stylesheet" href="../slick-theme.css@ver=2303229.css">
+<link rel="stylesheet" href="../main.css@ver=2303229.css">
+<link rel="stylesheet" href="../sub.css@ver=2303229.css">
+<link rel="stylesheet" href="../sub_top_bg.css@ver=2303229.css">
+  <!--[if lte IE 8]>
+<script src="http://a-onefood.kr/js/html5.js"></script>
+<![endif]-->
+  <script>
+    // 자바스크립트에서 사용하는 전역변수 선언
+    var g5_url = "http://a-onefood.kr";
+    var g5_bbs_url = "http://a-onefood.kr/bbs";
+    var g5_is_member = "";
+    var g5_is_admin = "";
+    var g5_is_mobile = "";
+    var g5_bo_table = "";
+    var g5_sca = "";
+    var g5_editor = "";
+    var g5_cookie_domain = "";
+          var g5_theme_shop_url = "http://a-onefood.kr/theme/basic/shop";
+      var g5_shop_url = "http://a-onefood.kr/shop";
+          </script>
+  <script src="../../../../js/jquery-1.12.4.min.js@ver=2304171"></script>
+<script src="../../../../js/jquery-migrate-1.4.1.min.js@ver=2304171"></script>
+<script src="../../../../js/jquery.menu.js@ver=2304171"></script>
+<script src="../../../../js/common.js@ver=2304171"></script>
+<script src="../../../../js/wrest.js@ver=2304171"></script>
+<script src="../../../../js/placeholders.min.js@ver=2304171"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../../js/slick.js@ver=2304171"></script>
+<script src="../../js/swiper-bundle.js@ver=2304171"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+</head>
+<body class="break-keep leading-[1.5] tracking-tight text-sm text-gray-700 md:text-base">
+  
+<!-- 상단 시작 { -->
+<div id="hd" class="fixed left-0 top-0 w-full bg-white shadow-lg z-30">
+  <h1 id="hd_h1"></h1>
+  <div id="skip_to_container"><a href="../../img/sub/p2_1.jpg.html#container">본문 바로가기</a></div>
+
+  
+<!-- 팝업레이어 시작 { -->
+<div id="hd_pop">
+    <h2>팝업레이어 알림</h2>
+
+<span class="sound_only">팝업레이어 알림이 없습니다.</span></div>
+
+<script>
+$(function() {
+    $(".hd_pops_reject").click(function() {
+        var id = $(this).attr('class').split(' ');
+        var ck_name = id[1];
+        var exp_time = parseInt(id[2]);
+        $("#"+id[1]).css("display", "none");
+        set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+    });
+    $('.hd_pops_close').click(function() {
+        var idb = $(this).attr('class').split(' ');
+        $('#'+idb[1]).css('display','none');
+    });
+    $("#hd").css("z-index", 1000);
+});
+</script>
+<!-- } 팝업레이어 끝 -->
+  <div id="hd_wrapper" class="flex justify-between items-center relative max-w-screen-xl h-16 px-4 mx-auto md:h-20">
+
+    <div id="logo" title="메인으로" style="height: 100%;">
+      <a href="../../img/sub/p2_1.jpg.html" class="block md:max-h-none" style="height: 100%;">
+        <img src="../../img/main/main_logo.png" alt="에이원식품" class="w-full h-full object-cover md:py-[10px]">
+      </a>
+    </div>
+
+    <nav id="gnb" class="relative">
+      <style>
+        #gnb .gnb_1dli:hover > .gnb_1da,
+        #gnb .gnb_1dli:focus-within > .gnb_1da {
+              color: #f8555a;
+              transition: color 0.3s ease-out;
+            }
+        .gnb_1da.on {
+            color: #f8555a !important;
+            }
+      </style>
+      <h2>메인메뉴</h2>
+      <div class="gnb_wrap">
+        <ul id="gnb_1dul" class="flex">
+          <li class="gnb_1dli gnb_mnal relative md:hidden">
+            <button type="button" class="gnb_menu_btn bg-transparent border-none" title="전체메뉴">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <span class="sound_only">전체메뉴열기</span>
+            </button>
+          </li>
+                      <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:999">
+              <a href="../../../../bbs/board.php@bo_table=1_1.html" target="_self" class="gnb_1da block px-6 font-medium text-lg ">에이원 식품</a>
+              <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+            <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=1_1.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                인사말              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=1_2.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                언론보도              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=1_3.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                연혁              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=1_4.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                인증현황              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=1_5.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                사업영역              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=1_6.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                오시는길              </a>
+            </li>
+          </ul></div>
+          </li>
+                    <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:998">
+              <a href="../../../../bbs/board.php@bo_table=2_1.html" target="_self" class="gnb_1da block px-6 font-medium text-lg ">제조공정</a>
+              <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+            <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=2_1.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                기술현황              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=2_2.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                제조공정              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=2_3.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                주요 유통채널              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=2_4.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                갤러리              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=2_5.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                영상보기              </a>
+            </li>
+          </ul></div>
+          </li>
+                    <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:997">
+              <a href="../../../../bbs/board.php@bo_table=3_1.html" target="_self" class="gnb_1da block px-6 font-medium text-lg ">제품소개</a>
+              <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+            <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=3_1.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                유통사 PB 브랜드 제품 현황              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=3_2.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                유통사 OEM 브랜드 제품 현황              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=3_3.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                중국 수출 제품 현황              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=3_4.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                군납 브랜드 제품 현황              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=3_5.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                농협 출시 제품 현황              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=3_6.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                자사 브랜드 제품 현황              </a>
+            </li>
+          </ul></div>
+          </li>
+                    <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:996">
+              <a href="../../../../bbs/board.php@bo_table=4_1.html" target="_self" class="gnb_1da block px-6 font-medium text-lg ">제품구매</a>
+              <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+            <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=4_1.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                제품구매              </a>
+            </li>
+          </ul></div>
+          </li>
+                    <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:995">
+              <a href="../../../../bbs/board.php@bo_table=5_1.html" target="_self" class="gnb_1da block px-6 font-medium text-lg ">문의하기</a>
+              <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+            <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=5_1.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                문의하기              </a>
+            </li>
+          </ul></div>
+          </li>
+                    <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:994">
+              <a href="../../../../bbs/board.php@bo_table=6_1.html" target="_self" class="gnb_1da block px-6 font-medium text-lg ">고객센터</a>
+              <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+            <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=6_1.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                공지사항              </a>
+            </li>
+                      <li class="gnb_2dli">
+              <a href="../../../../bbs/board.php@bo_table=6_2.html" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#f8555a] focus:text-[#f8555a]">
+                이벤트              </a>
+            </li>
+          </ul></div>
+          </li>
+                </ul>
+        <div id="gnb_all" class="fixed top-0 -left-74 w-74 h-full bg-white shadow transition-[left] duration-300">
+          <header class="flex justify-between items-center h-16 px-4 bg-gray-100">
+            <ul class="hd_login flex gap-3" style="display: none;">
+                              <li><a href="../../../../bbs/register.php.html" class="px-3 py-2 bg-white border border-gray-700 rounded">회원가입</a></li>
+                <li><a href="../../../../bbs/login.php.html" class="px-3 py-2 bg-white border border-gray-700 rounded">로그인</a></li>
+                          </ul>
+
+            <button type="button" class="gnb_close_btn bg-transparent border-none">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+              <span class="sound_only">메뉴닫기</span>
+            </button>
+          </header>
+          <ul class="gnb_al_ul">
+                          <li class="gnb_al_li py-2">
+                <a href="../../../../bbs/board.php@bo_table=1_1.html" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                  에이원 식품                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </a>
+                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+              <li>
+                <a href="../../../../bbs/board.php@bo_table=1_1.html" target="_self" class="block py-2 text-base">
+                  인사말                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=1_2.html" target="_self" class="block py-2 text-base">
+                  언론보도                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=1_3.html" target="_self" class="block py-2 text-base">
+                  연혁                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=1_4.html" target="_self" class="block py-2 text-base">
+                  인증현황                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=1_5.html" target="_self" class="block py-2 text-base">
+                  사업영역                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=1_6.html" target="_self" class="block py-2 text-base">
+                  오시는길                </a>
+              </li>
+            </ul>
+            </li>
+                        <li class="gnb_al_li py-2">
+                <a href="../../../../bbs/board.php@bo_table=2_1.html" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                  제조공정                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </a>
+                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+              <li>
+                <a href="../../../../bbs/board.php@bo_table=2_1.html" target="_self" class="block py-2 text-base">
+                  기술현황                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=2_2.html" target="_self" class="block py-2 text-base">
+                  제조공정                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=2_3.html" target="_self" class="block py-2 text-base">
+                  주요 유통채널                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=2_4.html" target="_self" class="block py-2 text-base">
+                  갤러리                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=2_5.html" target="_self" class="block py-2 text-base">
+                  영상보기                </a>
+              </li>
+            </ul>
+            </li>
+                        <li class="gnb_al_li py-2">
+                <a href="../../../../bbs/board.php@bo_table=3_1.html" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                  제품소개                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </a>
+                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+              <li>
+                <a href="../../../../bbs/board.php@bo_table=3_1.html" target="_self" class="block py-2 text-base">
+                  유통사 PB 브랜드 제품 현황                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=3_2.html" target="_self" class="block py-2 text-base">
+                  유통사 OEM 브랜드 제품 현황                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=3_3.html" target="_self" class="block py-2 text-base">
+                  중국 수출 제품 현황                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=3_4.html" target="_self" class="block py-2 text-base">
+                  군납 브랜드 제품 현황                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=3_5.html" target="_self" class="block py-2 text-base">
+                  농협 출시 제품 현황                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=3_6.html" target="_self" class="block py-2 text-base">
+                  자사 브랜드 제품 현황                </a>
+              </li>
+            </ul>
+            </li>
+                        <li class="gnb_al_li py-2">
+                <a href="../../../../bbs/board.php@bo_table=4_1.html" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                  제품구매                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </a>
+                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+              <li>
+                <a href="../../../../bbs/board.php@bo_table=4_1.html" target="_self" class="block py-2 text-base">
+                  제품구매                </a>
+              </li>
+            </ul>
+            </li>
+                        <li class="gnb_al_li py-2">
+                <a href="../../../../bbs/board.php@bo_table=5_1.html" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                  문의하기                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </a>
+                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+              <li>
+                <a href="../../../../bbs/board.php@bo_table=5_1.html" target="_self" class="block py-2 text-base">
+                  문의하기                </a>
+              </li>
+            </ul>
+            </li>
+                        <li class="gnb_al_li py-2">
+                <a href="../../../../bbs/board.php@bo_table=6_1.html" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                  고객센터                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </a>
+                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+              <li>
+                <a href="../../../../bbs/board.php@bo_table=6_1.html" target="_self" class="block py-2 text-base">
+                  공지사항                </a>
+              </li>
+                          <li>
+                <a href="../../../../bbs/board.php@bo_table=6_2.html" target="_self" class="block py-2 text-base">
+                  이벤트                </a>
+              </li>
+            </ul>
+            </li>
+                    </ul>
+        </div>
+        <div id="gnb_all_bg" class="hidden fixed left-0 right-0 top-0 w-full h-full bg-black/50"></div>
+      </div>
+    </nav>
+    <script>
+      $(function() {
+        $(".gnb_menu_btn").click(function() {
+          $("#gnb_all_bg").removeClass("hidden");
+          $("#gnb_all").removeClass("-left-74").addClass("left-0");
+        });
+        $(".gnb_close_btn, #gnb_all_bg").click(function() {
+          $("#gnb_all").removeClass("left-0").addClass("-left-74");
+          $("#gnb_all_bg").addClass("hidden");
+        });
+      });
+
+      document.querySelectorAll('.gnb_al_a').forEach(item => {
+        const siblingUl = item.nextElementSibling;
+        const svgIcon = item.querySelector('svg');
+
+        // 형제 ul이 없을 경우
+        if (!siblingUl || siblingUl.tagName !== 'UL') {
+          if (svgIcon) {
+            svgIcon.classList.add('hidden'); // svg 숨김
+          }
+          return; // 클릭 이벤트 등록하지 않음
+        }
+
+        // 형제 ul이 존재할 경우 링크 제거
+        item.removeAttribute('href');
+        item.style.cursor = 'pointer';
+
+        // 초기 상태 설정
+        siblingUl.classList.add('max-h-0', 'overflow-hidden', 'transition-[max-height]', 'duration-500');
+
+        // 클릭 이벤트 등록
+        item.addEventListener('click', () => {
+          const isOpen = siblingUl.classList.contains('max-h-[500px]');
+
+          // 토글 처리
+          siblingUl.classList.toggle('max-h-0', isOpen);
+          siblingUl.classList.toggle('max-h-[500px]', !isOpen); // 원하는 최대 높이
+
+          // rotate-180 처리
+          if (svgIcon) {
+            svgIcon.classList.toggle('rotate-180', !isOpen);
+          }
+        });
+      });
+    </script>
+
+    <ul class="hd_login hidden gap-3 text-sm md:flex" style="display: none;">
+              <li><a href="../../../../bbs/register.php.html" class="hover:text-[#f8555a] focus:text-[#f8555a]">회원가입</a></li>
+        <li><a href="../../../../bbs/login.php.html" class="hover:text-[#f8555a] focus:text-[#f8555a]">로그인</a></li>
+          </ul>
+  </div>
+</div>
+<!-- } 상단 끝 -->
+
+
+<!-- 콘텐츠 시작 { -->
+<div id="wrapper" class="mb-[50px] mt-16 md:mt-0">
+  <div id="container_wr">
+
+    <div id="container" class="relative">
+      
+<script>
+    AOS.init();
+</script>
+
+<!-- 메인 슬라이드 -->
+<section class="w-full max-w-full overflow-hidden md:pt-[80px]">
+    <h2 class="sr-only">메인 슬라이드</h2>
+
+    <div class="swiper w-full">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide relative w-full h-[300px] md:h-auto">
+                <img src="../../img/main/main_b_01.png" alt="" class="w-full h-full object-cover opacity-100 block">
+                <div class="flex flex-col items-start gap-1 absolute top-1/2 -translate-y-1/2 z-10 md:gap-6
+                            left-6 right-6 box-border
+                            md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-full md:max-w-screen-2xl md:px-8">
+                    <p class="font-bold text-[18px] md:text-5xl leading-tight" style="color: #000;">
+                        믿을 수 있는 품질,<br>안정적인 생산 시스템                    </p>
+                    <span class="w-12 h-[2px] bg-[#3a2e2a] my-1 md:my-2"></span>
+                    <p class="font-medium text-[12px] md:text-lg leading-relaxed" style="color: #333;">
+                        프리미엄 도넛 · 초콜릿가공품 · 과자류 전문 제조<br>엄격한 품질 관리와 체계적인 생산 공정으로<br>고객사의 브랜드 가치를 함께 만듭니다.                    </p>
+                    <a href="../../../../bbs/board.php@bo_table=5_1.html" class="mt-2 md:mt-4 px-6 py-2 md:px-8 md:py-3 bg-[#3a2e2a] text-white font-medium text-xs md:text-base rounded shadow-md hover:bg-[#2c2422] transition-colors">
+                        문의하기
+                    </a>
+                </div>
+            </div>
+
+            <div class="swiper-slide relative w-full h-[300px] md:h-auto">
+                <img src="../../img/main/main_b_02.png" alt="" class="w-full h-full object-cover opacity-100 block">
+                <div class="flex flex-col items-start gap-1 absolute top-1/2 -translate-y-1/2 z-10 md:gap-6
+                            left-6 right-6 box-border
+                            md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-full md:max-w-screen-2xl md:px-8">
+                    <p class="font-bold text-[18px] md:text-5xl leading-tight" style="color: #000;">
+                        믿을 수 있는 품질,<br>안정적인 생산 시스템                    </p>
+                    <span class="w-12 h-[2px] bg-[#3a2e2a] my-1 md:my-2"></span>
+                    <p class="font-medium text-[12px] md:text-lg leading-relaxed" style="color: #333;">
+                        프리미엄 도넛 · 초콜릿가공품 · 과자류 전문 제조<br>엄격한 품질 관리와 체계적인 생산 공정으로<br>고객사의 브랜드 가치를 함께 만듭니다.                    </p>
+                    <a href="../../../../bbs/board.php@bo_table=5_1.html" class="mt-2 md:mt-4 px-6 py-2 md:px-8 md:py-3 bg-[#3a2e2a] text-white font-medium text-xs md:text-base rounded shadow-md hover:bg-[#2c2422] transition-colors">
+                        문의하기
+                    </a>
+                </div>
+            </div>
+
+            <div class="swiper-slide relative w-full h-[300px] md:h-auto">
+                <img src="../../img/main/main_b_03.png" alt="에이원식품" class="w-full h-full object-cover opacity-100 block">
+                <div class="flex flex-col items-start gap-1 absolute top-1/2 -translate-y-1/2 z-10 md:gap-6
+                            left-6 right-6 box-border
+                            md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-full md:max-w-screen-2xl md:px-8">
+                    <p class="font-bold text-[18px] md:text-5xl leading-tight" style="color: #000;">
+                        믿을 수 있는 품질,<br>안정적인 생산 시스템                    </p>
+                    <span class="w-12 h-[2px] bg-[#3a2e2a] my-1 md:my-2"></span>
+                    <p class="font-medium text-[12px] md:text-lg leading-relaxed" style="color: #333;">
+                        프리미엄 도넛 · 초콜릿가공품 · 과자류 전문 제조<br>엄격한 품질 관리와 체계적인 생산 공정으로<br>고객사의 브랜드 가치를 함께 만듭니다.                    </p>
+                    <a href="../../../../bbs/board.php@bo_table=5_1.html" class="mt-2 md:mt-4 px-6 py-2 md:px-8 md:py-3 bg-[#3a2e2a] text-white font-medium text-xs md:text-base rounded shadow-md hover:bg-[#2c2422] transition-colors">
+                        문의하기
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-pagination md:!bottom-8"></div>
+        <div class="swiper-button-prev !text-white !hidden after:!hidden md:!flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+        </div>
+        <div class="swiper-button-next !text-white !hidden after:!hidden md:!flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            effect: 'fade',
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 4000,
+            },
+        });
+    </script>
+</section>
+
+<section class="s2">
+    <div class="s2_top">
+        <h2>DOUGHNET | CHOCO | SNACK</h2>
+        <p>도넛, 스낵과자류 전문 에이원 식품은 지속적인 변화와 메뉴개발을 통해<br>고객님께 보다 나은 즐거움과 감동의 가치를 전달하기 위해 노력하고 있습니다.</p>
+    </div>
+    <ul class="s2_bottom">
+        <li data-aos="zoom-in" data-aos-delay="0" data-aos-duration="2000" data-aos-offset="0" data-aos-once="true">
+            <img src="../../img/main/main_icon_01.png" alt="">
+            <h2><span>고객가치만족</span><br class="text_br_m"> 서비스</h2>
+            <p>에이원 식품은 고객님의 보다 나은<br class="text_br_pc">
+                고객만족을 위해 노력하고 있습니다.</p>
+        </li>
+        <li data-aos="zoom-in" data-aos-delay="0" data-aos-duration="2000" data-aos-offset="0" data-aos-once="true">
+            <img src="../../img/main/main_icon_02.png" alt="">
+            <h2><span>깨끗하고 안전한</span><br class="text_br_m"> 원재료 사용</h2>
+            <p>에이원식품은 HACCP 운영을 통해<br class="text_br_pc">
+                깨끗하고 안전한 원재료만을 고객님께 제공합니다.</p>
+        </li>
+        <li data-aos="zoom-in" data-aos-delay="0" data-aos-duration="2000" data-aos-offset="0" data-aos-once="true">
+            <img src="../../img/main/main_icon_03.png" alt="">
+            <h2><span>메뉴 R&D</span><br class="text_br_m"> 연구개발</h2>
+            <p>에이원 식품은 다양한 제품구성을 위해<br class="text_br_pc">
+                연구개발에 매진하고 있습니다.</p>
+        </li>
+    </ul>
+</section>
+
+<section class="s3">
+    <div class="s3_top">
+        <h2 class="s3_top_h2">국내 제과 제빵 시장의 선도기업이 되겠습니다.</h2>
+        <p>고객만족을 위한 최고의 서비스와 노력!</p>
+    </div>
+    <div class="s3_bottom">
+        <ul>
+            <li data-aos="fade-up" data-aos-delay="0" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false"><img src="../../img/main/2/main_processedbox_01.png" alt=""></li>
+            <li data-aos="fade-up" data-aos-delay="0" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false"><img src="../../img/main/2/main_processedbox_02.png" alt=""></li>
+            <li data-aos="fade-up" data-aos-delay="0" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false"><img src="../../img/main/main_processedbox_03-2.png" alt=""></li>
+        </ul>
+    </div>
+</section>
+<section class="s4">
+    <div class="s4_top">
+        <h2>SNACK Introduction</h2>
+        <p>에이원 식품의 다양한 맛있는 제품을 소개합니다.</p>
+    </div>
+    <ul class="s4_bottom">
+        <li data-aos="fade-up" data-aos-delay="0" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false" class="text_br_pc"><a href="../../../../bbs/board.php@bo_table=3_1.html">
+                <img src="../../img/main/main_productbox_01.png" alt="">
+                <div>
+                    <p>유통사 PB 브랜드 제품 </p>
+                </div>
+            </a></li>
+        <li data-aos="fade-right" data-aos-delay="0" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false" class="text_br_m"><a href="../../../../bbs/board.php@bo_table=3_1.html">
+                <img src="../../img/main/main_productbox_01.png" alt="">
+                <div>
+                    <p>유통사 PB 브랜드 제품 </p>
+                </div>
+            </a></li>
+        <li data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false" class="text_br_pc"><a href="../../../../bbs/board.php@bo_table=3_2.html">
+                <img src="../../img/main/main_productbox_02.png" alt="">
+                <div>
+                    <p>중국 수출 제품</p>
+                </div>
+            </a></li>
+        <li data-aos="fade-left" data-aos-delay="0" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false" class="text_br_m"><a href="../../../../bbs/board.php@bo_table=3_2.html">
+                <img src="../../img/main/main_productbox_02.png" alt="">
+                <div>
+                    <p>중국 수출 제품</p>
+                </div>
+            </a></li>
+        <li data-aos="fade-up" data-aos-delay="600" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false" class="text_br_pc"><a href="../../../../bbs/board.php@bo_table=3_3.html">
+                <img src="../../img/main/main_productbox_03-2.png" alt="">
+                <div>
+                    <p>유통사 OEM 브랜드 제품</p>
+                </div>
+            </a></li>
+        <li data-aos="fade-right" data-aos-delay="200" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false" class="text_br_m"><a href="../../../../bbs/board.php@bo_table=3_3.html">
+                <img src="../../img/main/main_productbox_03-2.png" alt="">
+                <div>
+                    <p>유통사 OEM 브랜드 제품</p>
+                </div>
+            </a></li>
+        <li data-aos="fade-up" data-aos-delay="0" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false" class="text_br_pc"><a href="../../../../bbs/board.php@bo_table=3_4.html">
+                <img src="../../img/main/main_productbox_04.png" alt="">
+                <div>
+                    <p>군납 브랜드 제품</p>
+                </div>
+            </a></li>
+        <li data-aos="fade-left" data-aos-delay="200" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false" class="text_br_m"><a href="../../../../bbs/board.php@bo_table=3_4.html">
+                <img src="../../img/main/main_productbox_04.png" alt="">
+                <div>
+                    <p>군납 브랜드 제품</p>
+                </div>
+            </a></li>
+        <li data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false" class="text_br_pc"><a href="../../../../bbs/board.php@bo_table=3_5.html">
+                <img src="../../img/main/main_productbox_05.png" alt="">
+                <div>
+                    <p>농협 출시 제품</p>
+                </div>
+            </a></li>
+        <li data-aos="fade-right" data-aos-delay="400" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false" class="text_br_m"><a href="../../../../bbs/board.php@bo_table=3_5.html">
+                <img src="../../img/main/main_productbox_05.png" alt="">
+                <div>
+                    <p>농협 출시 제품</p>
+                </div>
+            </a></li>
+        <li data-aos="fade-up" data-aos-delay="600" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false" class="text_br_pc"><a href="../../../../bbs/board.php@bo_table=3_6.html">
+                <img src="../../img/main/2/main_productbox_06.png" alt="">
+                <div>
+                    <p>자사 브랜드 제품</p>
+                </div>
+            </a></li>
+        <li data-aos="fade-left" data-aos-delay="400" data-aos-duration="2000" data-aos-offset="0" data-aos-once="false" class="text_br_m"><a href="../../../../bbs/board.php@bo_table=3_6.html">
+                <img src="../../img/main/2/main_productbox_06.png" alt="">
+                <div>
+                    <p>자사 브랜드 제품</p>
+                </div>
+            </a></li>
+    </ul>
+</section>
+
+<section class="s5">
+    <div class="s5_box">
+        <div class="s5_top">
+            
+<div class="board">
+    <a href="../../../../bbs/board.php@bo_table=6_1.html" class="btnLink">+</a>
+
+    <h3>공지사항</h3>
+
+    <div class="ec-base-table typeList gLine">
+        <table border="1">
+            <tbody class="top">
+                                    <tr>
+                        <td class="title">
+                            <a href="../../../../bbs/board.php@bo_table=6_1&amp;wr_id=7.html">
+                                유해식품등 긴급회수문                            </a>
+                                                    </td>
+                        <td class="right">2026-03-09</td>
+                    </tr>
+                                    <tr>
+                        <td class="title">
+                            <a href="../../../../bbs/board.php@bo_table=6_1&amp;wr_id=6.html">
+                                에이원식품 방문을 감사합니다.                            </a>
+                                                    </td>
+                        <td class="right">2025-11-21</td>
+                    </tr>
+                                            </tbody>
+        </table>
+    </div>
+</div>        </div>
+        <div class="s5_bottom">
+            <h3></h3>
+            <ul class="s5_bottom_ul">
+                <li><a href="../../../../bbs/board.php@bo_table=1_1.html"><img src="../../img/main/menu_01.png" alt=""></a></li>
+                <li><a href="../../../../bbs/board.php@bo_table=1_3.html"><img src="../../img/main/menu_02.png" alt=""></a></li>
+                <li><a href="../../../../bbs/board.php@bo_table=1_4.html"><img src="../../img/main/menu_03.png" alt=""></a></li>
+                <li><a href="../../../../bbs/board.php@bo_table=2_1.html"><img src="../../img/main/menu_04.png" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section id="s7" calss="s7">
+    <div class="s7_top">
+        <h2>Customer Review</h2>
+        <p>가성비 좋고 양도 넉넉한 맛있는 제품 브랜드 리뷰</p>
+    </div>
+    <div style=" width: 100%; box-sizing: border-box;" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="0" data-aos-once="true">
+        <div id="slider-div">
+            <div><img src="../../img/main/main_reviewbox_01.png" alt=""></div>
+            <div><img src="../../img/main/main_reviewbox_02.png" alt=""></div>
+            <div><img src="../../img/main/main_reviewbox_03.png" alt=""></div>
+            <div><img src="../../img/main/main_reviewbox_04.png" alt=""></div>
+        </div>
+    </div>
+
+
+    <script>
+        $(function() {
+            $('#slider-div').slick({
+                slide: 'div', //슬라이드 되어야 할 태그 ex) div, li 
+                infinite: true, //무한 반복 옵션	 
+                slidesToShow: 3, // 한 화면에 보여질 컨텐츠 개수
+                slidesToScroll: 1, //스크롤 한번에 움직일 컨텐츠 개수
+                speed: 1000, // 다음 버튼 누르고 다음 화면 뜨는데까지 걸리는 시간(ms)
+                arrows: true, // 옆으로 이동하는 화살표 표시 여부
+                dots: false, // 스크롤바 아래 점으로 페이지네이션 여부
+                autoplay: true, // 자동 스크롤 사용 여부
+                autoplaySpeed: 2000, // 자동 스크롤 시 다음으로 넘어가는데 걸리는 시간 (ms)
+                pauseOnHover: true, // 슬라이드 이동	시 마우스 호버하면 슬라이더 멈추게 설정
+                vertical: false, // 세로 방향 슬라이드 옵션
+                prevArrow: "<button type='button' class='slick-prev'>Previous</button>", // 이전 화살표 모양 설정
+                nextArrow: "<button type='button' class='slick-next'>Next</button>", // 다음 화살표 모양 설정
+                dotsClass: "slick-dots", //아래 나오는 페이지네이션(점) css class 지정
+                draggable: true, //드래그 가능 여부 
+
+                responsive: [ // 반응형 웹 구현 옵션
+                    {
+                        breakpoint: 960, //화면 사이즈 960px
+                        settings: {
+                            //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 768, //화면 사이즈 768px
+                        settings: {
+                            //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                            slidesToShow: 2
+                        }
+                    }
+                ]
+
+            });
+        })
+    </script>
+</section>
+
+<section class="s6">
+    <div>
+        <h2>Partner company</h2>
+        <p>믿을 수 있는 '에이원 식품' 협력 업체</p>
+        <ul class="bxslider">
+            <!--@css(/css/logoslider.css)-->
+            <li><img src="../../img/partner/sponser_icon01.png" /></li>
+            <li><img src="../../img/partner/sponser_icon02.png" /></li>
+            <li><img src="../../img/partner/sponser_icon03.png" /></li>
+            <li><img src="../../img/partner/sponser_icon04.png" /></li>
+            <li><img src="../../img/partner/sponser_icon05.png" /></li>
+            <li><img src="../../img/partner/sponser_icon06.png" /></li>
+            <li><img src="../../img/partner/sponser_icon07.png" /></li>
+        </ul>
+        <script>
+            $('.bxslider').bxSlider({
+                minSlides: 3,
+                maxSlides: 5,
+                slideWidth: 200,
+                slideMargin: 15,
+                ticker: true,
+                speed: 18000
+            });
+        </script>
+    </div>
+</section>
+
+
+</section>
+</div>
+</div>
+
+</div>
+<!-- } 콘텐츠 끝 -->
+
+
+
+
+
+<!-- 하단 시작 { -->
+<div id="ft" class="bg-gray-100">
+
+<iframe name="hidden_frame" id="hidden_frame" style="display:none;"></iframe>
+
+<div id="quickConsultWrap" class="quick w-full bg-[#ff554f] text-white py-4 px-4">
+    <div class="max-w-screen-xl mx-auto">
+        <form name="fquickconsult" action="http://a-onefood.kr/bbs/write_update.php" target="hidden_frame" onsubmit="return fquickconsult_submit(this);" method="post" autocomplete="off" class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6">
+
+            <input type="hidden" name="w" value="">
+            <input type="hidden" name="bo_table" value="6_3">
+            <input type="hidden" name="wr_subject" value="제품문의 상담 신청입니다.">
+            <input type="hidden" name="token" value="a13e5e9f87d8ede697b46e8a6359017b">
+            <input type="hidden" name="wr_password" value="b41b5a5784e791c5cc9e4a07dd8d9cec">
+            <input type="hidden" name="html" value="html1">
+
+            <div class="flex items-baseline whitespace-nowrap">
+                <span class="text-2xl md:text-3xl font-medium mr-2">제품문의</span>
+                <span class="text-2xl md:text-3xl font-bold">055 - 331 - 9197</span>
+            </div>
+
+            <div class="flex gap-2 w-full md:w-auto">
+                <input type="text" name="wr_name" required class="bg-transparent border border-white text-white placeholder-white px-3 py-2 outline-none w-full md:w-32 h-10 text-sm focus:bg-white/10 transition" placeholder="이름">
+
+                <input type="text" name="wr_content" required class="bg-transparent border border-white text-white placeholder-white px-3 py-2 outline-none w-full md:w-40 h-10 text-sm focus:bg-white/10 transition" placeholder="연락처">
+            </div>
+
+            <div class="flex items-center gap-4 whitespace-nowrap">
+                <div class="flex items-center text-sm">
+                    <input type="checkbox" id="agree_privacy" name="agree_privacy" value="1" class="w-4 h-4 mr-2 accent-white cursor-pointer">
+                    <label for="agree_privacy" class="cursor-pointer select-none">
+                        개인정보처리방침 동의
+                    </label>
+                    <a href="../../../../bbs/content.php@co_id=privacy.html" target="_blank" class="ml-1 underline text-xs opacity-80 hover:opacity-100">[보기]</a>
+                </div>
+
+                <button type="submit" class="border border-white text-white px-6 py-2 h-10 text-sm hover:bg-white hover:text-[#ff554f] transition font-bold">
+                    상담신청하기
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .quick {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9;
+    }
+
+    .quick-relative {
+        position: relative;
+    }
+</style>
+
+<script>
+    document.addEventListener("scroll", function() {
+        var footer = document.querySelector("#ft");
+        // footer가 없는 페이지에서의 오류 방지
+        if(!footer) return; 
+
+        var footerRect = footer.getBoundingClientRect();
+        var footerTop = footerRect.top;
+        var windowHeight = window.innerHeight;
+
+        var footerQuickTest = document.querySelector("#quickConsultWrap");
+
+        if (footerTop < windowHeight) {
+            footerQuickTest.classList.add("quick-relative");
+        } else {
+            footerQuickTest.classList.remove("quick-relative");
+        }
+    });
+
+    function fquickconsult_submit(f) {
+        // 1. 유효성 검사 (이름)
+        if (!f.wr_name.value) {
+            alert("이름을 입력해 주세요.");
+            f.wr_name.focus();
+            return false;
+        }
+        // 2. 유효성 검사 (연락처)
+        if (!f.wr_content.value) {
+            alert("연락처를 입력해 주세요.");
+            f.wr_content.focus();
+            return false;
+        }
+        // 3. 개인정보 동의 검사
+        if (!f.agree_privacy.checked) {
+            alert("개인정보처리방침에 동의해 주세요.");
+            f.agree_privacy.focus();
+            return false;
+        }
+
+        // 입력한 이름 가져오기
+        var inputName = f.wr_name.value;
+
+        // 4. AJAX(비동기) 전송 처리
+        var formData = new FormData(f);
+
+        fetch(f.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(function(response) {
+            // 전송 성공 시 실행
+            // 요청하신 문구 출력
+            alert(inputName + "님 상담신청이 완료되었습니다.");
+            
+            // 폼 초기화 (선택사항: 완료 후 내용 지우기)
+            f.reset(); 
+        })
+        .catch(function(error) {
+            // 에러 발생 시
+            console.error('Error:', error);
+            alert("접수 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.");
+        });
+
+        // 5. 기본 폼 제출 동작(페이지 이동/새로고침) 막기
+        return false;
+    }
+</script><style>
+  #quickConsultWrap {
+    display: block;
+  }
+</style>
+  <div class="flex flex-col items-start max-w-screen-xl px-4 py-8 mx-auto md:flex-row md:justify-between md:py-15">
+    <div id="ft_wr" class="flex flex-col gap-5 relative mb-5 text-sm md:order-2 md:gap-1">
+      <!-- <div id="ft_link">
+      <a href="http://a-onefood.kr/bbs/content.php?co_id=company">회사소개</a>
+      <a href="http://a-onefood.kr/bbs/content.php?co_id=privacy" class="block leading-loose">개인정보처리방침</a>
+      <a href="http://a-onefood.kr/bbs/content.php?co_id=provision" class="block leading-loose">서비스이용약관</a>
+      <a href="http://a-onefood.kr/?device=mobile">모바일버전</a>
+    </div> -->
+      <div id="ft_company">
+        <p class="ft_info">
+          에이원식품 / 대표 : 전표원<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+          사업자등록번호 : 622-01-08089<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+          주소 : 경남 김해시 상동면 상동로685번안길 29-1<br>
+          전화번호 : 055-331-9197 / 팩스 : 055-331-9198<br>
+          개인정보관리책임자 : 류상욱<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+          Contact awfood@nate.com for more information. <a href="../../../../adm/index.html">ADMIN</a>
+        </p>
+      </div>
+
+      <div id="ft_copy" class="text-gray-400">&copy; by 에이원식품 All rights reserved.</div>
+    </div>
+    <hr class="w-full h-px bg-gray-200 border-none md:hidden">
+    <div id="ft_catch" class="aspect-[4/3] h-10 mt-4 bg-no-repeat bg-gray-100 bg-[url(http://a-onefood.kr/theme/basic/img/main/main_logo.png)] bg-cover bg-blend-multiply
+                            md:order-1 md:h-[54px] md:mt-0">
+    </div>
+  </div>
+</div>
+
+<button type="button" id="top_btn">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span>
+</button>
+<style>
+  #top_btn:hover {
+    border-color: #fff;
+    background: #f8555a;
+    color: #fff;
+  }
+</style>
+<script>
+  $(function() {
+    $("#top_btn").on("click", function() {
+      $("html, body").animate({
+        scrollTop: 0
+      }, '500');
+      return false;
+    });
+  });
+</script>
+
+
+<!-- } 하단 끝 -->
+
+<script>
+  $(function() {
+    // 폰트 리사이즈 쿠키있으면 실행
+    font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+  });
+</script>
+
+
+
+
+</body>
+</html>

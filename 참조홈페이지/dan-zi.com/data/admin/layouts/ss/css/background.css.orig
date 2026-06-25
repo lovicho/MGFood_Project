@@ -1,0 +1,94 @@
+body.user {
+	font-size: 9pt;
+	font-family: gulim;
+	color: #000000;
+	-webkit-text-size-adjust: none;
+	word-wrap: break-word;
+	word-break: break-all;
+	background-color: ;
+	background-image: url(/data/admin/layouts/ss/images/e046fcb365b0f5221d54dc35ab97f371.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+#ndcss_con_a a:link {
+	color: #666666;
+}
+
+#ndcss_con_a a:visited {
+	color: #666666;
+}
+
+#ndcss_con_a a:hover {
+	color: #666666;
+}
+
+#ndcss_con_a a:active {
+	color: #666666;
+}
+
+#wrap {
+	background-color: ;
+	background-image: url(/data/admin/layouts/ss/images/cc133bfdd1aafe439f505f1f6e053945.jpg);
+	background-repeat: no-repeat;
+	background-position: top left;
+	font-family: dotum;
+	font-size: 9pt;
+	color: #333;
+}
+
+#ndcss_foot {
+	background-color: ;
+	background-image: url(/data/admin/layouts/ss/images/fb420473ff0656686272beb01dd68db3.gif);
+	background-repeat: repeat-x;
+	background-position: top left;
+}
+
+body.usera:link {
+	color: #333;
+}
+
+body.usera:visited {
+	color: #333;
+}
+
+body.usera:hover {
+	color: #333;
+}
+
+body.usera:active {
+	color: #333;
+}
+
+
+
+#ndcss_left {
+	background-color: ;
+	background-image: url(/data/admin/layouts/ss/images/0ad7d95f58465ece51f1a9a2ce406b9a.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+#ndcss_con_a {
+	background-color: ;
+	background-image: url();
+	background-repeat: ;
+	background-position: ;
+}
+
+body.user a:link {
+	color: #000000;
+}
+
+body.user a:visited {
+	color: #000000;
+}
+
+body.user a:hover {
+	color: #000000;
+}
+
+body.user a:active {
+	color: #000000;
+}
+

@@ -1,0 +1,1004 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" id="meta_viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no">
+  <title>신진식품</title>
+  <link rel="stylesheet" href="https://xn--wv4bf604c92l.kr/theme/basic/css/default.css?ver=2303229">
+<link rel="stylesheet" href="https://xn--wv4bf604c92l.kr/js/font-awesome/css/font-awesome.min.css?ver=2303229">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://xn--wv4bf604c92l.kr/theme/basic/css/jquery.fullPage.css?ver=2303229">
+<link rel="stylesheet" href="https://xn--wv4bf604c92l.kr/theme/basic/skin/latest/pic_block_swiper/style.css?ver=2303229">
+<link rel="stylesheet" href="https://xn--wv4bf604c92l.kr/theme/basic/css/slick.css?ver=2303229">
+<link rel="stylesheet" href="https://xn--wv4bf604c92l.kr/theme/basic/css/slick-theme.css?ver=2303229">
+<link rel="stylesheet" href="https://xn--wv4bf604c92l.kr/theme/basic/css/main.css?ver=2303229">
+<link rel="stylesheet" href="https://xn--wv4bf604c92l.kr/theme/basic/css/sub.css?ver=2303229">
+<link rel="stylesheet" href="https://xn--wv4bf604c92l.kr/theme/basic/css/about.css?ver=2303229">
+  <!--[if lte IE 8]>
+<script src="https://xn--wv4bf604c92l.kr/js/html5.js"></script>
+<![endif]-->
+  <script>
+    // 자바스크립트에서 사용하는 전역변수 선언
+    var g5_url = "https://xn--wv4bf604c92l.kr";
+    var g5_bbs_url = "https://xn--wv4bf604c92l.kr/bbs";
+    var g5_is_member = "";
+    var g5_is_admin = "";
+    var g5_is_mobile = "";
+    var g5_bo_table = "";
+    var g5_sca = "";
+    var g5_editor = "";
+    var g5_cookie_domain = "";
+          var g5_theme_shop_url = "https://xn--wv4bf604c92l.kr/theme/basic/shop";
+      var g5_shop_url = "https://xn--wv4bf604c92l.kr/shop";
+          </script>
+  <script src="https://xn--wv4bf604c92l.kr/js/jquery-1.12.4.min.js?ver=2304171"></script>
+<script src="https://xn--wv4bf604c92l.kr/js/jquery-migrate-1.4.1.min.js?ver=2304171"></script>
+<script src="https://xn--wv4bf604c92l.kr/js/jquery.menu.js?ver=2304171"></script>
+<script src="https://xn--wv4bf604c92l.kr/js/common.js?ver=2304171"></script>
+<script src="https://xn--wv4bf604c92l.kr/js/wrest.js?ver=2304171"></script>
+<script src="https://xn--wv4bf604c92l.kr/js/placeholders.min.js?ver=2304171"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://xn--wv4bf604c92l.kr/theme/basic/js/slick.js?ver=2304171"></script>
+<script src="https://xn--wv4bf604c92l.kr/theme/basic/js/swiper-bundle.js?ver=2304171"></script>
+<script src="https://xn--wv4bf604c92l.kr/theme/basic/js/jquery.fullPage.js?ver=2304171"></script>
+</head>
+<body class="break-keep leading-[1.5] tracking-tight text-sm text-gray-700 md:text-base">
+  
+<div id="hd" class="fixed left-0 top-0 w-full bg-white shadow-lg z-30">
+    <h1 id="hd_h1"></h1>
+    <div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
+
+    
+<!-- 팝업레이어 시작 { -->
+<div id="hd_pop">
+    <h2>팝업레이어 알림</h2>
+
+<span class="sound_only">팝업레이어 알림이 없습니다.</span></div>
+
+<script>
+$(function() {
+    $(".hd_pops_reject").click(function() {
+        var id = $(this).attr('class').split(' ');
+        var ck_name = id[1];
+        var exp_time = parseInt(id[2]);
+        $("#"+id[1]).css("display", "none");
+        set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+    });
+    $('.hd_pops_close').click(function() {
+        var idb = $(this).attr('class').split(' ');
+        $('#'+idb[1]).css('display','none');
+    });
+    $("#hd").css("z-index", 1000);
+});
+</script>
+<!-- } 팝업레이어 끝 -->
+    <div id="hd_wrapper" class="flex justify-between items-center relative max-w-screen-xl h-16 px-4 mx-auto md:h-20">
+
+        <div id="logo" title="메인으로" style="height: 100%;">
+            <a href="https://xn--wv4bf604c92l.kr" class="block md:max-h-none" style="height: 100%;">
+                <img src="https://xn--wv4bf604c92l.kr/theme/basic/img/main/main_logo.png" alt="신진식품" class="w-full h-full object-cover md:py-[10px]">
+            </a>
+        </div>
+
+        <nav id="gnb" class="relative">
+            <style>
+                #gnb .gnb_1dli:hover > .gnb_1da,
+                #gnb .gnb_1dli:focus-within > .gnb_1da {
+                    color: #387dbf;
+                    transition: color 0.3s ease-out;
+                }
+                .gnb_1da.on {
+                    color: #387dbf !important;
+                }
+            </style>
+            <h2>메인메뉴</h2>
+            <div class="gnb_wrap">
+                <ul id="gnb_1dul" class="flex">
+                    <li class="gnb_1dli gnb_mnal relative md:hidden">
+                        <button type="button" class="gnb_menu_btn bg-transparent border-none" title="전체메뉴">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                            <span class="sound_only">전체메뉴열기</span>
+                        </button>
+                    </li>
+                                            <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:999">
+                            <a href="/bbs/board.php?bo_table=1_1" target="_self" class="gnb_1da block px-6 font-medium text-lg ">회사소개</a>
+                            <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+                                <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=1_1" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        인사말                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=1_2" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        조직도/연혁                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=1_3" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        인증서                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=1_4" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        오시는길                                    </a>
+                                </li>
+                            </ul></div>
+                        </li>
+                                            <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:998">
+                            <a href="/bbs/board.php?bo_table=2_1" target="_self" class="gnb_1da block px-6 font-medium text-lg ">제조과정</a>
+                            <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+                                <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=2_1" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        재료이야기                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=2_2" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        제조과정                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=2_3" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        갤러리                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=2_4" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        동영상보기                                    </a>
+                                </li>
+                            </ul></div>
+                        </li>
+                                            <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:997">
+                            <a href="/bbs/board.php?bo_table=3_1" target="_self" class="gnb_1da block px-6 font-medium text-lg ">제품소개</a>
+                            <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+                                <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=3_1" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        제품소개                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=3_2" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        제품레시피                                    </a>
+                                </li>
+                            </ul></div>
+                        </li>
+                                            <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:996">
+                            <a href="/bbs/board.php?bo_table=4_1" target="_self" class="gnb_1da block px-6 font-medium text-lg ">제품구매</a>
+                            <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+                                <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=4_1" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        제품구매                                    </a>
+                                </li>
+                            </ul></div>
+                        </li>
+                                            <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:995">
+                            <a href="/bbs/board.php?bo_table=5_1" target="_self" class="gnb_1da block px-6 font-medium text-lg ">문의하기</a>
+                            <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+                                <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=5_1" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        문의하기                                    </a>
+                                </li>
+                            </ul></div>
+                        </li>
+                                            <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:994">
+                            <a href="/bbs/board.php?bo_table=6_1" target="_self" class="gnb_1da block px-6 font-medium text-lg ">커뮤니티</a>
+                            <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+                                <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=6_1" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        공지사항                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=6_2" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        자료실                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=6_3" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        이용후기                                    </a>
+                                </li>
+                            </ul></div>
+                        </li>
+                                            <li class="gnb_1dli hidden md:block " style="z-index:993">
+                            <a href="https://shinjhinfood.kr" target="_self" class="gnb_1da block px-6 font-medium text-lg ">ENG</a>
+                                                    </li>
+                                    </ul>
+
+                <div id="gnb_all" class="fixed top-0 -left-74 w-74 h-full bg-white shadow transition-[left] duration-300">
+                    <header class="flex justify-between items-center h-16 px-4 bg-gray-100">
+                        <button type="button" class="gnb_close_btn bg-transparent border-none ml-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                            <span class="sound_only">메뉴닫기</span>
+                        </button>
+                    </header>
+                    <ul class="gnb_al_ul">
+                                                    <li class="gnb_al_li py-2">
+                                <a href="/bbs/board.php?bo_table=1_1" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                                    회사소개                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </a>
+                                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#vis" target="_self" class="block py-2 text-base">
+                                            글로벌비전                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#his" target="_self" class="block py-2 text-base">
+                                            연혁                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#cen" target="_self" class="block py-2 text-base">
+                                            연구개발센터                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#haccp" target="_self" class="block py-2 text-base">
+                                            HACCP시설                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#cer" target="_self" class="block py-2 text-base">
+                                            인증 및 수상현황                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#fda" target="_self" class="block py-2 text-base">
+                                            FDA 시설등록                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#map" target="_self" class="block py-2 text-base">
+                                            오시는길                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#ceo" target="_self" class="block py-2 text-base">
+                                            CEO인사말                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                                                    <li class="gnb_al_li py-2">
+                                <a href="/bbs/board.php?bo_table=2_1" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                                    제조과정                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </a>
+                                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+                                    <li>
+                                        <a href="/bbs/board.php?bo_table=2_1" target="_self" class="block py-2 text-base">
+                                            재료이야기                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=2_2" target="_self" class="block py-2 text-base">
+                                            제조과정                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=2_3" target="_self" class="block py-2 text-base">
+                                            갤러리                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=2_4" target="_self" class="block py-2 text-base">
+                                            동영상보기                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                                                    <li class="gnb_al_li py-2">
+                                <a href="/bbs/board.php?bo_table=4_1" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                                    제품구매                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </a>
+                                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+                                    <li>
+                                        <a href="/bbs/board.php?bo_table=product" target="_self" class="block py-2 text-base">
+                                            제품소개 및 구매                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                                                    <li class="gnb_al_li py-2">
+                                <a href="/bbs/board.php?bo_table=6_1" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                                    기업소식                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </a>
+                                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+                                    <li>
+                                        <a href="/bbs/board.php?bo_table=6_1" target="_self" class="block py-2 text-base">
+                                            보도자료                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=6_2" target="_self" class="block py-2 text-base">
+                                            자료실                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=6_3" target="_self" class="block py-2 text-base">
+                                            요리레시피                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                                                    <li class="gnb_al_li py-2">
+                                <a href="/bbs/write.php?bo_table=contact" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                                    문의 및 파트너쉽                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </a>
+                                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+                                    <li>
+                                        <a href="/bbs/write.php?bo_table=contact" target="_self" class="block py-2 text-base">
+                                            수출문의 및 파트너쉽                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                                                    <li class="gnb_al_li py-2">
+                                <a href="https://shinjhinfood.kr" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                                    ENG                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </a>
+                                                            </li>
+                                            </ul>
+                </div>
+                <div id="gnb_all_bg" class="hidden fixed left-0 right-0 top-0 w-full h-full bg-black/50"></div>
+            </div>
+        </nav>
+        
+        <script>
+            $(function() {
+                $(".gnb_menu_btn").click(function() {
+                    $("#gnb_all_bg").removeClass("hidden");
+                    $("#gnb_all").removeClass("-left-74").addClass("left-0");
+                });
+                $(".gnb_close_btn, #gnb_all_bg").click(function() {
+                    $("#gnb_all").removeClass("left-0").addClass("-left-74");
+                    $("#gnb_all_bg").addClass("hidden");
+                });
+            });
+
+            document.querySelectorAll('.gnb_al_a').forEach(item => {
+                const siblingUl = item.nextElementSibling;
+                const svgIcon = item.querySelector('svg');
+                if (!siblingUl || siblingUl.tagName !== 'UL') {
+                    if (svgIcon) svgIcon.classList.add('hidden');
+                    return;
+                }
+                item.removeAttribute('href');
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', () => {
+                    const isOpen = siblingUl.classList.contains('max-h-[500px]');
+                    siblingUl.classList.toggle('max-h-0', isOpen);
+                    siblingUl.classList.toggle('max-h-[500px]', !isOpen);
+                    if (svgIcon) svgIcon.classList.toggle('rotate-180', !isOpen);
+                });
+            });
+        </script>
+
+        <ul class="hd_login hidden gap-3 text-sm md:flex">
+                            <li><a href="https://xn--wv4bf604c92l.kr/bbs/register.php">회원가입</a></li>
+                <li><a href="https://xn--wv4bf604c92l.kr/bbs/login.php">로그인</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div id="wrapper" class="mb-[50px] mt-16 md:mt-0">
+    <div id="container_wr">
+        <div id="container" class="relative">
+            
+<script>
+    AOS.init();
+</script>
+
+<div id="fullpage_pc" class="pc_sec">
+    <div class="section sec1">
+        <div class="swiper swiper-pc">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide main-slide bg-black">
+                    <img src="https://xn--wv4bf604c92l.kr/theme/basic/img/main/main_bn1.png" alt="" class="slide-bg">
+                    <div class="slide-content">
+                        <p class="sub-text">수산물 가공 명가</p>
+                        <p class="main-title">신진식품</p>
+                        <p class="since-text">Since 2020</p>
+                    </div>
+                </div>
+                <div class="swiper-slide main-slide bg-black">
+                    <img src="https://xn--wv4bf604c92l.kr/theme/basic/img/main/main_bn2.png" alt="" class="slide-bg">
+                    <div class="slide-content">
+                        <p class="sub-text">수산물 가공 명가</p>
+                        <p class="main-title">신진식품</p>
+                        <p class="since-text">Since 2020</p>
+                    </div>
+                </div>
+                <div class="swiper-slide main-slide bg-black">
+                    <img src="https://xn--wv4bf604c92l.kr/theme/basic/img/main/main_bn3.png" alt="" class="slide-bg">
+                    <div class="slide-content">
+                        <p class="sub-text">수산물 가공 명가</p>
+                        <p class="main-title">신진식품</p>
+                        <p class="since-text">Since 2020</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination md:!bottom-8"></div>
+            <div class="swiper-button-prev !text-white !hidden after:!hidden md:!flex">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                </svg>
+            </div>
+            <div class="swiper-button-next !text-white !hidden after:!hidden md:!flex">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="section sec2">
+        <div class="tit_box" data-aos="fade-down" data-aos-duration="1500">
+            <h2>수산물 가공 명가 "신진식품"</h2>
+            <p>안전하고 믿을 수 있는 간편 조리 수산물 가공 제품</p>
+        </div>
+        <div class="info_box" data-aos="fade-up" data-aos-duration="2000">
+            <h2>오랜 노하우와 명태, 오징어채 본연의 맛을 <br class="pc_br" />최대한 살린 건어물 조미 식품 브랜드 입니다.</h2>
+            <p>재료부터 하나하나 까다롭게 엄선하고, <br class="pc_br" /> 오랜 경험과 경륜에서 얻어진 가공 노하우를 재료에 담아 <br class="pc_br" /> 본연의 맛과 향을 살린 신진식품의 많은 식제품을 <br class="pc_br" /> 맛있고 간편하게 즐길 수 있도록 하겠습니다.</p>
+        </div>
+    </div>
+
+    <div class="section sec3">
+        <div class="symbol_box_left" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="3000">
+            <br>
+            <h3>수산물 가공 명가</h3><br><br>
+            <h2>신진식품</h2><br><br>
+            <p>Since 2020</p><br>
+        </div>
+        <div class="symbol_box" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="3000">
+            <h2>BRAND SYMBOL</h2>
+            <div class="line1"></div>
+            <h3>수산물 (水産物)을 신진식품만의 방식으로<br class="pc_br" />다양한 맛과 풍미로 담았습니다.</h3>
+            <p>신진식품은 건강한 식탁을 책임질 오랜 전통의 <br class="pc_br" />노하우로 믿을 수 있는 재료를 엄선하고 <br class="pc_br" />전문성을 확대해 나가는 기업의 <br class="pc_br" />가치를 담고 있습니다.</p>
+        </div>
+    </div>
+
+    <div class="section sec4">
+        <div class="s4_txt_box" data-aos="fade-down" data-aos-duration="1500">
+            <p>언제 어디서든 즐길 수 있는 메뉴 <br class="pc_br" />신진식품이 만들어 갑니다!</p>
+            <br><br>
+            <p class="s4_txt_box_text_s">신진식품은 HACCP 인증을 통해 안전하고 <br class="pc_br" />믿음직한 먹거리 제품을 만들고 있습니다.</p>
+        </div>
+        <div class="s4_img_box">
+            <div class="s4_f_box" data-aos="fade-down" data-aos-delay="100" data-aos-duration="2000"></div>
+            <div class="s4_f_box" data-aos="fade-down" data-aos-delay="500" data-aos-duration="2000"></div>
+            <div class="s4_f_box" data-aos="fade-down" data-aos-delay="1000" data-aos-duration="2000"></div>
+            <div class="s4_f_box" data-aos="fade-down" data-aos-delay="1500" data-aos-duration="2000"></div>
+            <div class="s4_f_box" data-aos="fade-down" data-aos-delay="2000" data-aos-duration="2000"></div>
+        </div>
+    </div>
+
+    <div class="section sec5">
+        <div class="s5_div">
+            <h2 class="font-bold text-2xl md:text-4xl" style="text-align: center; padding-bottom: 50px;">제품구매</h2>
+            <!-- Swiper CSS (CDN) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<div class="pic_lt relative px-4 md:max-w-screen-xl md:mx-auto">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+                <div class="swiper-slide">
+            <!-- 썸네일 출력 -->
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=28" class="lt_img block aspect-[1280/947] mb-3 overflow-hidden">
+              <img src="https://xn--wv4bf604c92l.kr/data/file/4_1/aa6a9c04cafb5be71d05af46115d824d_V0L3QeuU_9c1817abbfdb246d1974c9cb4b6322ac8169389f.png" alt="C.png" class="!w-full !h-full !object-cover" >            </a>
+
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=28" class="font-bold">명엽채 고추장 볶음</a>
+            <!-- <div class="lt_info">
+              <span class="lt_nick"><span class="sv_member">최고관리자</span></span>
+              <span class="lt_date">12-03</span>
+            </div> -->
+          </div>
+                  <div class="swiper-slide">
+            <!-- 썸네일 출력 -->
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=30" class="lt_img block aspect-[1280/947] mb-3 overflow-hidden">
+              <img src="https://xn--wv4bf604c92l.kr/data/file/4_1/28_copy_30_aa6a9c04cafb5be71d05af46115d824d_V0L3QeuU_9c1817abbfdb246d1974c9cb4b6322ac8169389f.png" alt="C.png" class="!w-full !h-full !object-cover" >            </a>
+
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=30" class="font-bold">명엽채 간장 볶음</a>
+            <!-- <div class="lt_info">
+              <span class="lt_nick"><span class="sv_member">최고관리자</span></span>
+              <span class="lt_date">12-03</span>
+            </div> -->
+          </div>
+                  <div class="swiper-slide">
+            <!-- 썸네일 출력 -->
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=31" class="lt_img block aspect-[1280/947] mb-3 overflow-hidden">
+              <img src="https://xn--wv4bf604c92l.kr/data/file/4_1/28_copy1_31_aa6a9c04cafb5be71d05af46115d824d_V0L3QeuU_9c1817abbfdb246d1974c9cb4b6322ac8169389f.png" alt="C.png" class="!w-full !h-full !object-cover" >            </a>
+
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=31" class="font-bold">진미채 고추장 볶음</a>
+            <!-- <div class="lt_info">
+              <span class="lt_nick"><span class="sv_member">최고관리자</span></span>
+              <span class="lt_date">12-03</span>
+            </div> -->
+          </div>
+                  <div class="swiper-slide">
+            <!-- 썸네일 출력 -->
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=32" class="lt_img block aspect-[1280/947] mb-3 overflow-hidden">
+              <img src="https://xn--wv4bf604c92l.kr/data/file/4_1/28_copy_32_aa6a9c04cafb5be71d05af46115d824d_V0L3QeuU_9c1817abbfdb246d1974c9cb4b6322ac8169389f.png" alt="C.png" class="!w-full !h-full !object-cover" >            </a>
+
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=32" class="font-bold">진미채 간장 볶음</a>
+            <!-- <div class="lt_info">
+              <span class="lt_nick"><span class="sv_member">최고관리자</span></span>
+              <span class="lt_date">12-03</span>
+            </div> -->
+          </div>
+                  <div class="swiper-slide">
+            <!-- 썸네일 출력 -->
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=33" class="lt_img block aspect-[1280/947] mb-3 overflow-hidden">
+              <img src="https://xn--wv4bf604c92l.kr/data/file/4_1/28_copy1_33_aa6a9c04cafb5be71d05af46115d824d_V0L3QeuU_9c1817abbfdb246d1974c9cb4b6322ac8169389f.png" alt="C.png" class="!w-full !h-full !object-cover" >            </a>
+
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=33" class="font-bold">오징어실채 간장 볶음</a>
+            <!-- <div class="lt_info">
+              <span class="lt_nick"><span class="sv_member">최고관리자</span></span>
+              <span class="lt_date">12-03</span>
+            </div> -->
+          </div>
+                  <div class="swiper-slide">
+            <!-- 썸네일 출력 -->
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=34" class="lt_img block aspect-[1280/947] mb-3 overflow-hidden">
+              <img src="https://xn--wv4bf604c92l.kr/data/file/4_1/28_copy2_34_aa6a9c04cafb5be71d05af46115d824d_V0L3QeuU_9c1817abbfdb246d1974c9cb4b6322ac8169389f.png" alt="C.png" class="!w-full !h-full !object-cover" >            </a>
+
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=34" class="font-bold">오징어실채 고추장 볶음</a>
+            <!-- <div class="lt_info">
+              <span class="lt_nick"><span class="sv_member">최고관리자</span></span>
+              <span class="lt_date">12-03</span>
+            </div> -->
+          </div>
+                  <div class="swiper-slide">
+            <!-- 썸네일 출력 -->
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=35" class="lt_img block aspect-[1280/947] mb-3 overflow-hidden">
+              <img src="https://xn--wv4bf604c92l.kr/data/file/4_1/28_copy3_35_aa6a9c04cafb5be71d05af46115d824d_V0L3QeuU_9c1817abbfdb246d1974c9cb4b6322ac8169389f.png" alt="C.png" class="!w-full !h-full !object-cover" >            </a>
+
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=35" class="font-bold">구운 어포 칩</a>
+            <!-- <div class="lt_info">
+              <span class="lt_nick"><span class="sv_member">최고관리자</span></span>
+              <span class="lt_date">12-03</span>
+            </div> -->
+          </div>
+                  <div class="swiper-slide">
+            <!-- 썸네일 출력 -->
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=36" class="lt_img block aspect-[1280/947] mb-3 overflow-hidden">
+              <img src="https://xn--wv4bf604c92l.kr/data/file/4_1/27_copy_36_aa6a9c04cafb5be71d05af46115d824d_RlvbjMrq_28800a6ee741930bd909aa663860f5c672cb9544.png" alt="theme.png" class="!w-full !h-full !object-cover" >            </a>
+
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=36" class="font-bold">건오징어실채</a>
+            <!-- <div class="lt_info">
+              <span class="lt_nick"><span class="sv_member">최고관리자</span></span>
+              <span class="lt_date">12-03</span>
+            </div> -->
+          </div>
+                  <div class="swiper-slide">
+            <!-- 썸네일 출력 -->
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=37" class="lt_img block aspect-[1280/947] mb-3 overflow-hidden">
+              <img src="https://xn--wv4bf604c92l.kr/data/file/4_1/aa6a9c04cafb5be71d05af46115d824d_tdo3LazM_bc065c50821ad679ebcabc4d5feaabb2d36f985b.png" alt="명엽채A_.png" class="!w-full !h-full !object-cover" >            </a>
+
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=37" class="font-bold">명엽채A</a>
+            <!-- <div class="lt_info">
+              <span class="lt_nick"><span class="sv_member">최고관리자</span></span>
+              <span class="lt_date">12-03</span>
+            </div> -->
+          </div>
+                  <div class="swiper-slide">
+            <!-- 썸네일 출력 -->
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=38" class="lt_img block aspect-[1280/947] mb-3 overflow-hidden">
+              <img src="https://xn--wv4bf604c92l.kr/data/file/4_1/aa6a9c04cafb5be71d05af46115d824d_RXHu9vPz_9f7f97b98c9a20ba9f607409d331a8823f34c3be.png" alt="2명엽채 베트남_.png" class="!w-full !h-full !object-cover" >            </a>
+
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=38" class="font-bold">명엽채 (베트남)</a>
+            <!-- <div class="lt_info">
+              <span class="lt_nick"><span class="sv_member">최고관리자</span></span>
+              <span class="lt_date">12-03</span>
+            </div> -->
+          </div>
+                  <div class="swiper-slide">
+            <!-- 썸네일 출력 -->
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=39" class="lt_img block aspect-[1280/947] mb-3 overflow-hidden">
+              <img src="https://xn--wv4bf604c92l.kr/data/file/4_1/aa6a9c04cafb5be71d05af46115d824d_fPyADZOz_f8f7e0b71beae5dcc22e2a12facf22c552613e65.png" alt="SS.png" class="!w-full !h-full !object-cover" >            </a>
+
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=39" class="font-bold">명엽채</a>
+            <!-- <div class="lt_info">
+              <span class="lt_nick"><span class="sv_member">최고관리자</span></span>
+              <span class="lt_date">12-03</span>
+            </div> -->
+          </div>
+                  <div class="swiper-slide">
+            <!-- 썸네일 출력 -->
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=40" class="lt_img block aspect-[1280/947] mb-3 overflow-hidden">
+              <img src="https://xn--wv4bf604c92l.kr/data/file/4_1/aa6a9c04cafb5be71d05af46115d824d_OzutiBN3_9731905fe92dd7befefb341629a6ed8ca135f0df.png" alt="명태채A_.png" class="!w-full !h-full !object-cover" >            </a>
+
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=40" class="font-bold">명태채A</a>
+            <!-- <div class="lt_info">
+              <span class="lt_nick"><span class="sv_member">최고관리자</span></span>
+              <span class="lt_date">12-03</span>
+            </div> -->
+          </div>
+                  <div class="swiper-slide">
+            <!-- 썸네일 출력 -->
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=41" class="lt_img block aspect-[1280/947] mb-3 overflow-hidden">
+              <img src="https://xn--wv4bf604c92l.kr/data/file/4_1/aa6a9c04cafb5be71d05af46115d824d_AYPvuiQs_c06d606cbffc4c9cf59012f887d9ca862576ab57.png" alt="명태채베트남_.png" class="!w-full !h-full !object-cover" >            </a>
+
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=41" class="font-bold">명태채( 베트남)</a>
+            <!-- <div class="lt_info">
+              <span class="lt_nick"><span class="sv_member">최고관리자</span></span>
+              <span class="lt_date">12-03</span>
+            </div> -->
+          </div>
+                  <div class="swiper-slide">
+            <!-- 썸네일 출력 -->
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=42" class="lt_img block aspect-[1280/947] mb-3 overflow-hidden">
+              <img src="https://xn--wv4bf604c92l.kr/data/file/4_1/aa6a9c04cafb5be71d05af46115d824d_4hMoyJfR_ba01392e337f6a0448f1ea8e05c825394ee63811.png" alt="순살명태스틱_.png" class="!w-full !h-full !object-cover" >            </a>
+
+            <a href="https://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=42" class="font-bold">순살명태스틱</a>
+            <!-- <div class="lt_info">
+              <span class="lt_nick"><span class="sv_member">최고관리자</span></span>
+              <span class="lt_date">12-03</span>
+            </div> -->
+          </div>
+            </div>
+
+    <!-- navigation / pagination -->
+    <div class="swiper-button-prev !left-0 !bg-black/30 !text-white !hidden after:!hidden md:!flex">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+      </svg>
+    </div>
+    <div class="swiper-button-next !right-0 !bg-black/30 !text-white !hidden after:!hidden md:!flex">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- Swiper JS (CDN) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const totalSlides = 14;
+    const slidesPerView = 5;
+    const loopEnabled = totalSlides > slidesPerView;
+
+    const swiper = new Swiper('.mySwiper', {
+      autoplay: true,
+      slidesPerView: slidesPerView,
+      spaceBetween: 12,
+      slidesPerGroup: 1,
+      loop: loopEnabled,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 2
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        }
+      }
+    });
+  });
+</script>        </div>
+    </div>
+
+    <div class="section sec6">
+        <div class="s6_txt_box" data-aos="fade-up" data-aos-duration="3000">
+            <h2 class="s6_tit">
+                수산물가공 유통전문기업<br>
+                <span>신진식품</span>
+                <br>
+                캠핑용 | 안주용 | 간식용 | 반찬용 간편식제품
+            </h2>
+            <p class="s6_info">
+                제품 구입 및 문의 : 033 - 522 - 5586 <br>
+                전국 택배 / 고객사 문의 상담 환영
+            </p>
+        </div>
+    </div>
+
+    <div class="section foo fp-auto-height fp-auto-width" module="Layout_footer">
+        <div id="ft_company" style="text-align: center;padding: 20px 0;box-sizing: border-box;">
+            <p class="ft_info">
+                신진식품 / 대표 : 신용철<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+                사업자등록번호 : 607-86-20868<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+                주소 : 강원도 동해시 공단7로 72<br>
+                전화번호 : 033-522-5586 / 팩스 : 033-522-5509<br>
+                개인정보관리책임자 : 양진현<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+                Contact shinjin2021@naver.com for more information. <a href="https://xn--wv4bf604c92l.kr/adm/">ADMIN</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="fullpage_m" class="m_sec">
+    <div class="section m_sec1">
+        <div class="swiper swiper-m">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide main-slide bg-black">
+                    <img src="https://xn--wv4bf604c92l.kr/theme/basic/img/main/m_main1.png" alt="" class="slide-bg">
+                    <div class="slide-content">
+                        <p class="sub-text">SINCE 1971</p>
+                        <p class="main-title"><span>K 푸드 K 수산</span> 의<br>맛과 건강을 세계로<br><span>동해의 신진식품이 함께합니다</span></p>
+                        <p class="since-text"><span>K 푸드</span>의 맛과 건강을<br>전세계 식탁으로 가져갑니다<br>K푸드의 글로벌 여정에<br>신진식품이 함께합니다.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide main-slide bg-black">
+                    <img src="https://xn--wv4bf604c92l.kr/theme/basic/img/main/m_main2.png" alt="" class="slide-bg">
+                    <div class="slide-content slide-content_b">
+                        <p class="sub-text">Healthy & Premium</p>
+                        <p class="main-title">동해의 감칠맛을 담은<br>가장 건강한 한 끼,<br>K-건어물 밥상의 완성입니다.</p>
+                        <p class="since-text"><span>가장 신선한 원재료와 비법 양념으로 완성된<br>우리 건어물 밥상은<br>한국을 넘어 세계가 인정하는<br>K-푸드의 기준이 됩니다.</span></p>
+                    </div>
+                </div>
+                <div class="swiper-slide main-slide bg-black">
+                    <img src="https://xn--wv4bf604c92l.kr/theme/basic/img/main/m_main3_b.png" alt="" class="slide-bg">
+                    <div class="slide-content">
+                        <p class="sub-text">HACCP</p>
+                        <p class="main-title"><span>철저한 품질과 위생</span><br>신뢰의 기업<br>동해의 <span>신진식품이 함께합니다</span></p>
+                        <p class="since-text"><span>글로벌 식품 체크 항목인<br>HACCP 인증과 위생 관리 능력은<br>50년 전통의 역사 (Heritage)와 함께<br>신진식품의 신뢰도(Cerification)를<br>공인받았습니다</span></p>
+                    </div>
+                </div>
+                <div class="swiper-slide main-slide bg-black">
+                    <img src="https://xn--wv4bf604c92l.kr/theme/basic/img/main/m_main4_b.png" alt="" class="slide-bg">
+                    <div class="slide-content">
+                        <p class="sub-text">Ready-to-eat</p>
+                        <p class="main-title"><span>전통의맛을 가장 간편하게</span><br>맛과 건강을 세계로<br>동해의 <span>신진식품이 함께합니다</span></p>
+                        <p class="since-text"><span>K-푸드의 혁신과 간편함<br>(Ready-to-eat)으로<br>전통의 맛을 가장 간편하게</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev !text-white !hidden md:!flex"></div>
+            <div class="swiper-button-next !text-white !hidden md:!flex"></div>
+        </div>
+    </div>
+    <div>
+        <div class="sec2 m_secdiv m_secdiv2">
+            <p>회사소개</p>
+            <h2>50년의 전통으로 빚어낸<br>K푸드의 글로벌여정에<br>신진식품이 함께합니다.</h2>
+            <a href="/bbs/board.php?bo_table=m1_1">상세보기</a>
+        </div>
+        <div class="sec2 m_secdiv m_secdiv3">
+            <p>제조과정</p>
+            <h2>50년 장인정신으로 빚어낸<br>프리미엄 K-수산의 표준</h2>
+            <a href="/bbs/board.php?bo_table=2_2">상세보기</a>
+        </div>
+        <div class="sec2 m_secdiv m_secdiv4">
+            <p>시설 및 인증현황</p>
+            <h2>글로벌 브랜드 기준에 적합한<br>FDA등록시설과 HACCP, ISO 22000<br>9대국제품질인증 획득</h2>
+            <a href="/bbs/board.php?bo_table=m1_1#haccp">상세보기</a>
+        </div>
+        <div class="sec2 m_secdiv m_secdiv5">
+            <p>제품구매</p>
+            <h2>전통의 맛을 가장 간편하게<br>K-푸드의 혁신과<br>간편함 (Ready To Eat)을 세계로</h2>
+            <a href="/bbs/board.php?bo_table=product">상세보기</a>
+        </div>
+        <div class="sec2 m_secdiv m_secdiv6">
+            <p>기업소식</p>
+            <h2>보도자료<br>언론 및 기업뉴스</h2>
+            <a href="/bbs/board.php?bo_table=6_1">상세보기</a>
+        </div>
+        <div class="sec2 m_secdiv m_secdiv7">
+            <p>제휴문의</p>
+            <h2>수출 문의 및 OEM 파트너쉽</h2>
+            <a href="/bbs/board.php?bo_table=5_1">상세보기</a>
+        </div>
+        <div class="sec2 m_secdiv m_secdiv8">
+            <p>오시는 길</p>
+            <h2>K-Seafood의 글로벌 관문<br>동해항 자유무역지역<br>북평국가산업단지 에 위치</h2>
+            <a href="/bbs/board.php?bo_table=m1_1#map">상세보기</a>
+        </div>
+    </div>
+
+    <div style="display: none;">
+        <div class="sec2 m_sec2">
+            <p>신진식품 히스토리</p>
+            <h2>안전하고 믿을 수 있는<br>간편 조리 수산물 가공 제품</h2>
+            <a href="/bbs/board.php?bo_table=m1_1#his">상세보기</a>
+        </div>
+        <div class="sec3 m_sec3">
+            <p>신진식품 인증서</p>
+            <h2>HACCP 인증을 통해 안전하고 믿음직한 먹거리 제품을 만들고 있습니다.</h2>
+            <a href="/bbs/board.php?bo_table=m1_1#cre">상세보기</a>
+        </div>
+        <div class="sec4 m_sec4">
+            <p>푸른 바다를 마음에</p>
+            <h2><span>수산물 가공 명가</span> (주)신진식품</h2>
+            <a href="/bbs/board.php?bo_table=m1_1#map">오시는길</a>
+        </div>
+        <div class="sec5 m_sec5">
+            <a href="/bbs/board.php?bo_table=m1_1">
+                <span>+</span>
+                <h2>회사소개</h2>
+                <img src="https://xn--wv4bf604c92l.kr/theme/basic/img/main/m_sec5.png" alt="">
+                <p>올바른 먹거리에 대한 진심을 담아 회사를 설립했습니다.</p>
+            </a>
+        </div>
+        <div class="sec5 m_sec5 m_sec6">
+            <a href="/bbs/board.php?bo_table=2_2">
+                <span>+</span>
+                <h2>제조과정</h2>
+                <img src="https://xn--wv4bf604c92l.kr/theme/basic/img/main/m_sec7.png" alt="">
+                <p>HACCP 인증 가공시설에서 직접 가공하며 믿고 드셔도 됩니다.</p>
+            </a>
+        </div>
+        <div class="sec5 m_sec5 m_sec7">
+            <a href="/bbs/board.php?bo_table=3_1">
+                <span>+</span>
+                <h2>제품소개</h2>
+                <img src="https://xn--wv4bf604c92l.kr/theme/basic/img/main/m_sec6.png" alt="">
+                <p>본연의 맛을 최대한 살린 건어물 조미 식품 브랜드 입니다.</p>
+            </a>
+        </div>
+
+        <div class="section foo fp-auto-height fp-auto-width" module="Layout_footer">
+            <div id="ft_company" style="text-align: center;padding: 20px 0;box-sizing: border-box;">
+                <p class="ft_info">
+                    신진식품 / 대표 : 신용철<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+                    사업자등록번호 : 607-86-20868<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+                    주소 : 강원도 동해시 공단7로 72<br>
+                    전화번호 : 033-522-5586 / 팩스 : 033-522-5509<br>
+                    개인정보관리책임자 : 양진현<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+                    Contact shinjin2021@naver.com for more information. <a href="https://xn--wv4bf604c92l.kr/adm/">ADMIN</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        // 1. AOS 초기화
+        AOS.init();
+
+        // 2. Swiper 초기화
+        const swiperPc = new Swiper('.swiper-pc', {
+            loop: true,
+            effect: 'fade',
+            pagination: {
+                el: '.swiper-pc .swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.swiper-pc .swiper-button-next',
+                prevEl: '.swiper-pc .swiper-button-prev'
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false
+            },
+            observer: true,
+            observeParents: true
+        });
+
+        const swiperM = new Swiper('.swiper-m', {
+            loop: true,
+            effect: 'fade',
+            pagination: {
+                el: '.swiper-m .swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.swiper-m .swiper-button-next',
+                prevEl: '.swiper-m .swiper-button-prev'
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false
+            },
+            observer: true,
+            observeParents: true
+        });
+
+        // 3. FullPage 설정
+        var isMobile = window.innerWidth < 900;
+
+        // 현재 화면 너비에 따라 어떤 컨테이너를 FullPage로 쓸지 결정
+        var targetId = isMobile ? '#fullpage_m' : '#fullpage_pc';
+        var subId = isMobile ? '#fullpage_pc' : '#fullpage_m';
+
+        // 사용하지 않는 영역은 스크립트 충돌 방지를 위해 제거하거나 숨김
+        $(subId).remove();
+
+        $(targetId).fullpage({
+            // 현재 활성화된 영역(PC 또는 모바일)의 .section만 인식함
+            sectionSelector: '.section',
+            scrollBar: true,
+            navigation: true,
+            navigationPosition: 'right',
+            autoScrolling: true, // 휠 스크롤 활성화
+            fitToSection: true,
+            responsiveWidth: 900, // 900px 이하에서 일반 스크롤로 전환하고 싶다면 설정
+
+            afterLoad: function(anchorLink, index) {
+                $(this).find('[data-aos]').addClass('aos-animate');
+            },
+            onLeave: function(index, nextIndex, direction) {
+                $(this).find('[data-aos]').removeClass('aos-animate');
+            }
+        });
+
+        // 에러 방지용 더미 함수
+        if (typeof imgStart !== 'function') {
+            window.imgStart = function() {};
+        }
+        if (typeof imgStart2 !== 'function') {
+            window.imgStart2 = function() {};
+        }
+    });
+</script>
+
+
+</section>
+</div>
+</div>
+
+</div>
+<!-- } 콘텐츠 끝 -->
+
+
+
+
+<!-- 하단 시작 { -->
+<div id="ft" class="bg-gray-100">
+
+  <div class="flex flex-col items-start max-w-screen-xl px-4 py-8 mx-auto md:flex-row md:justify-between md:py-15;">
+    <div id="ft_wr" class="flex flex-col gap-5 relative mb-5 text-sm md:order-2 md:gap-1">
+      <!-- <div id="ft_link">
+      <a href="https://xn--wv4bf604c92l.kr/bbs/content.php?co_id=company">회사소개</a>
+      <a href="https://xn--wv4bf604c92l.kr/bbs/content.php?co_id=privacy" class="block leading-loose">개인정보처리방침</a>
+      <a href="https://xn--wv4bf604c92l.kr/bbs/content.php?co_id=provision" class="block leading-loose">서비스이용약관</a>
+      <a href="https://xn--wv4bf604c92l.kr/?device=mobile">모바일버전</a>
+    </div> -->
+      <div id="ft_company">
+        <p class="ft_info">
+          신진식품 / 대표 : 신용철<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+          사업자등록번호 : 607-86-20868<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+          주소 : 강원도 동해시 공단7로 72<br>
+          전화번호 : 033-522-5586 / 팩스 : 033-522-5509<br>
+          개인정보관리책임자 : 양진현<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+          Contact shinjin2021@naver.com for more information. <a href="https://xn--wv4bf604c92l.kr/adm/">ADMIN</a>
+        </p>
+      </div>
+
+      <div id="ft_copy" class="text-gray-400">&copy; by 신진식품 All rights reserved.</div>
+    </div>
+    <hr class="w-full h-px bg-gray-200 border-none md:hidden">
+    <div id="ft_catch" class="aspect-[3/1] h-10 mt-4 bg-no-repeat bg-gray-100 bg-[url(https://xn--wv4bf604c92l.kr/theme/basic/img/main/main_logo.png)] bg-cover bg-blend-multiply
+                            md:order-1 md:h-[54px] md:mt-0">
+    </div>
+  </div>
+</div>
+
+<button type="button" id="top_btn">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span>
+</button>
+<style>
+  #top_btn:hover {
+    border-color: #fff;
+    background: #387dbf;
+    color: #fff;
+  }
+</style>
+<script>
+  $(function() {
+    $("#top_btn").on("click", function() {
+      $("html, body").animate({
+        scrollTop: 0
+      }, '500');
+      return false;
+    });
+  });
+</script>
+
+
+<!-- } 하단 끝 -->
+
+<script>
+  $(function() {
+    // 폰트 리사이즈 쿠키있으면 실행
+    font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+  });
+</script>
+
+
+
+
+</body>
+</html>

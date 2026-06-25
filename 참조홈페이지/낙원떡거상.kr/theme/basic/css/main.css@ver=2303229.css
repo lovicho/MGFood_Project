@@ -1,0 +1,378 @@
+
+.s2 {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #F3F4F8;
+}
+
+.s2_text > h2 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    padding-top: 80px;
+}
+
+.s2_text > h3 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 30px 0;
+}
+
+.s2_text > p {
+    font-size: 24px;
+    font-weight: 500;
+    opacity: 0.8;
+    color: rgb(46, 48, 53);
+    text-align: center;
+    padding-bottom: 80px;
+    max-width: 850px;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.s2 > .review_div {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.s2_ul {
+    display: flex;
+    grid-gap: 10px;
+    margin: 0 auto;
+    max-width: 1080px;
+    justify-content: space-between;
+    padding: 160px 0px;
+}
+
+.s2_ul  p {
+    font-size: 24px;
+    font-weight: 500;
+    opacity: 0.8;
+    color: rgb(46, 48, 53);
+}
+
+.s2_ul h3 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.s2_ul h3 > span {
+    font-size: 64px;
+}
+
+.s2 .reviewbn {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reviewbn img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.s3 {
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 160px;
+}
+.s3 > ul {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 16px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 160px 0;
+}
+
+.s3 > ul h2 {
+    font-size: 18px;
+    margin-top: 18px;
+    color: rgb(0, 0, 0);
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.s3 > ul p {
+    margin: 4px 0px;
+    line-height: 150%;
+    font-size: 15px;
+    color: rgb(98, 101, 106);
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.s3 li {
+    border: 2px solid transparent;
+}
+
+.s3 li:hover {
+    border: 2px solid #9f8473;
+}
+
+.s3 img {
+    width: 100%;
+}
+
+.s4 {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #F3F4F8;
+    padding-bottom: 160px;
+}
+
+.s4 > div {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.s4 h2 {
+    color: rgb(0, 0, 0);
+    font-size: 48px;
+    font-weight: 700;
+    padding: 100px 0;
+}
+
+.s4 img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.s5 {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.s5 > ul {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 16px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 160px 0;
+}
+
+.s5 > ul a {
+    position: relative;
+    display: block;
+}
+
+.s5 > ul h2 {
+    position: absolute;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    background-color: rgb(159, 132, 115,0.7);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.s5 > ul img {
+    width: 100%;
+}
+
+.s5 li {
+    border: 2px solid transparent;
+}
+
+.s5 li:hover {
+    border: 2px solid #9f8473;
+}
+
+.s6 {
+    width: 100%;
+    margin: 0 auto;
+    /*background-color: #F3F4F8;*/
+    padding-bottom: 160px;
+}
+
+.s6 > div {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.s6 ul {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+}
+
+.s6 > div > h2 {
+    color: rgb(0, 0, 0);
+    font-size: 48px;
+    font-weight: 700;
+    padding: 160px 0;
+}
+
+.s6_ul > li > div:last-child {
+    padding: 30px;
+    background-color: #9f8473;
+}
+
+.s6_ul h2 {
+    min-height: 70px;
+    line-height: 150%;
+    font-weight: 700;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
+
+.s6_ul p {
+    margin: 4px 0px;
+    line-height: 150%;
+    font-size: 15px;
+    color: #fff;
+}
+
+.s6 img {
+    width: 100%;
+}
+
+.s7 {
+    background-color: #9f8473;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.s7 h2 {
+    font-size: 30px;
+    color: #fff;
+}
+
+.s7 p {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.s7 a {
+    color: #9f8473;
+    background-color: #fff;
+    font-weight: 700;
+    font-size: 22px;
+    border-radius: 4px;
+    padding: 14px 80px;
+    display: block;
+}
+
+
+@media all and (max-width:1100px) {
+    #contents .swiper-control {
+        bottom: 20px;
+    }
+    .s2 > div {
+        padding: 0 10px;
+    }
+    .s2_ul {
+        padding: 160px 10px;
+    }
+    .s4 > div {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .s5 > ul {
+        padding: 160px 10px;
+    }
+    .s6 > div {
+        padding: 0 10px;
+    }
+}
+
+@media all and (max-width:900px) {
+    #container {
+        padding-top: 110px;
+    }
+    #container .mainVisual {
+        min-height: initial;
+        width: 100%;
+        margin: 0;
+    }
+    #container .mainVisual .here {
+        transform: translate(-50%,-50%);
+        top: 30%;
+    }
+    .s2 > h2 {
+        padding: 70px 0;
+        font-size: 26px;
+    }
+    .s2_ul {
+        padding: 70px 10px;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+    .s2 h3 > span {
+        font-size: 40px;
+    }
+    .s2_text > h2 {
+        font-size: 40px;
+    }
+    .s2 h3 {
+        font-size: 26px;
+    }
+    .s2 p {
+        font-size: 16px;
+    }
+    .s3 {
+        padding-bottom: 70px;
+    }
+    .s3 h2 {
+        font-size: 26px;
+        padding: 70px 0;
+    }
+    .s3 > ul {
+        grid-template-columns: repeat(2,1fr);
+        padding: 0 10px;
+        box-sizing: border-box;
+        padding-bottom: 50px;
+    }
+    .s4 {
+        padding-bottom: 70px;
+    }
+    .s4 h2 {
+        font-size: 30px;
+        padding: 70px 0;
+    }
+    .s5 > ul {
+        padding: 70px 10px;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .s5 > ul h2 {
+        font-size: 12px;
+    }
+    .s6 {
+        padding-bottom: 70px;
+    }
+    .s6 > div > h2 {
+        font-size: 30px;
+        padding: 70px 10px;
+        box-sizing: border-box;
+    }
+    .s6 ul {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .s7 {
+        flex-direction: column;
+    }
+    .s7 h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+    .s7 p {
+        text-align: center;
+    }
+    .s7_div2 {
+        padding-top: 20px;
+    }
+    .s7 a {
+        font-size: 18px;
+    }
+}
+

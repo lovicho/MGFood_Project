@@ -1,0 +1,358 @@
+
+/*p1_1*/
+@font-face {
+    font-family: 'Vivaldi';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Vivaldi'), url('https://fonts.cdnfonts.com/s/14715/VIVALDII.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'KCCPakKyongni';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCPakKyongni.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*font-family: 'Vivaldi', sans-serif;*/
+/*
+.sub_name_h3 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 500;
+    padding: 20px 0 10px 0;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.sub_name_h3 > span {
+    display: inline-block;
+    position: relative;
+    font-weight: 600;
+}
+
+.sub_name_h3 > span::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background: #f65248;
+    display: block;
+    position: relative;
+    z-index: -1;
+    bottom: 14px;
+}
+*/
+.sub_name_h3 {
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 500;
+    padding: 20px 0 10px 0;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    background-color: #f65248;
+    padding: 0 5px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.sub_name_p {
+    text-align: center;
+    font-size: 16px;
+    padding-bottom: 80px;
+}
+
+.div_img {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.div_img img {
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 100%;
+}
+
+/*p1_2*/
+
+.p1_2_top h2:first-child {
+    margin-top: 30px;
+}
+
+.p1_2_top h2 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 500;
+    padding: 20px 0 10px 0;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    
+    background-color:#f65248;
+    padding:0 5px;
+    color:#fff;
+    margin-bottom:5px
+}
+
+.p1_2_main {
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 50px;
+    margin: 50px 0;
+    box-sizing: border-box;
+}
+
+.p1_2_main::after {
+    display: block;
+    width: 1px;
+    height: 100%;
+    content: '';
+    background-color: #f65248;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.p1_2_main > div {
+    position: relative;
+}
+
+.p1_2_main > div:nth-child(odd)::before {
+    content: "";
+    display: block;
+    width: 40px;
+    background-color: #f65248;
+    height: 1px;
+    position: absolute;
+    top: calc(35px / 2);
+    right: -25px;
+}
+
+.p1_2_main > div:nth-child(even)::before {
+    content: "";
+    display: block;
+    width: 40px;
+    background-color: #f65248;
+    height: 1px;
+    position: absolute;
+    top: calc(35px / 2);
+    left: -25px;
+}
+
+.p1_2_main > div:nth-child(odd) {
+    text-align: right;
+    padding-right: 50px;
+}
+
+.p1_2_main > div:nth-child(odd) > div {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.p1_2_main > div:nth-child(even) > div {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.p1_2_main > div h2 {
+    font-size: 30px;
+    color: #f65248;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.p1_2_main > div p {
+    font-size: 16px;
+    color: #3d3d3d;
+    font-weight: 500;
+    line-height: 1.9;
+}
+
+.p1_2_main > div:nth-child(even) {
+    text-align: left;
+    margin-top: 50px;
+    padding-left: 50px;
+}
+
+.map_div > h2 {
+    font-size: 30px;
+    text-align: center;
+    padding: 20px 0 10px 0;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.map_div .wrap_map {
+    min-height: 600px;
+}
+
+.p1_4_ul {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 5%;
+}
+
+.map_footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+.map_footer h2 {
+    font-size: 24px;
+}
+
+.map_footer > ul {
+    padding: 20px 0;
+    box-sizing: border-box;
+    display: flex;
+    grid-gap: 20px;
+}
+
+.map_footer > ul > li {
+    font-size: 18px;
+    color: #292929;
+}
+
+.map_footer > ul > li span {
+    color: #666;
+}
+
+.map_footer > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.map_footer > div > p {
+    font-size: 18px;
+    color: #292929;
+}
+
+.map_footer > div > a {
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #292929;
+    color: #292929;
+}
+
+
+@media all and (max-width:1200px) {
+    .sub_main {
+        padding: 30px 10px 0 10px;
+        box-sizing: border-box;
+    }
+    .p1_2_main > div > p {
+        font-size: 14px;
+    }
+}
+
+
+@media all and (max-width:990px) {
+    .sub_top_text {
+        width: 100%;
+    }
+
+}
+
+@media all and (max-width:930px) {
+    .br_m {
+        display: block;
+    }
+    .br_pc {
+        display: none;
+    }
+    .sub_contant_h2 > h2 {
+        font-size: 20px;
+
+    }
+    .sub_contant_h2 > p {
+        font-size: 10px;
+    }
+    .sub_name_h3 {
+        font-size: 30px;
+    }
+    .sub_name_p {
+        font-size: 12px;
+    }
+    .p1_2_top h2 {
+        font-size: 20px;
+    }
+    .p1_2_main {
+        grid-gap: 20px;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .p1_2_main > div > p {
+        font-size: 12px;
+    }
+    .p1_2_main::after {
+        left: 0;
+        transform: initial;
+    }
+    .p1_2_main > div:nth-child(odd) {
+        text-align: left;
+        padding-left: 50px;
+    }
+    .p1_2_main > div:nth-child(odd)::before {
+        left: 0;
+        right: initial;
+    }
+    .p1_2_main > div:nth-child(even) {
+        text-align: left;
+        padding-left: 50px;
+        margin-top: 20px;
+    }
+    .p1_2_main > div:nth-child(even)::before {
+        left: 0;
+        right: initial;
+    }
+    .p1_2_main > div:nth-child(odd) > div {
+        flex-direction: row;
+    }
+    .map_div .wrap_map {
+        height: 300px!important;
+        min-height: 300px;
+        
+    }
+    .map_div > h2 {
+        font-size: 20px;
+    }
+}
+
+@media all and (max-width:500px) {
+    .map_footer > ul > li {
+        font-size: 14px;
+    }
+    .map_footer > div {
+        display: block;
+        position: relative;
+    }
+    .map_footer > div > a {
+        position: relative;
+        margin-top: 20px;
+        display: inline-block;
+        transform: translateX(-100%);
+        left: 100%;
+    }
+}

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" id="meta_viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no">
+  <title>이미지 크게보기 | 어업회사법인 (주)열림푸드</title>
+  <link rel="stylesheet" href="../theme/basic/css/default.css@ver=2303229.css">
+<link rel="stylesheet" href="../js/font-awesome/css/font-awesome.min.css@ver=2303229.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="../theme/basic/css/slick.css@ver=2303229.css">
+<link rel="stylesheet" href="../theme/basic/css/slick-theme.css@ver=2303229.css">
+<link rel="stylesheet" href="../theme/basic/css/main.css@ver=2303229.css">
+<link rel="stylesheet" href="../theme/basic/css/sub.css@ver=2303229.css">
+  <!--[if lte IE 8]>
+<script src="http://xn--hy1bl6gd2mzso.kr/js/html5.js"></script>
+<![endif]-->
+  <script>
+    // 자바스크립트에서 사용하는 전역변수 선언
+    var g5_url = "http://xn--hy1bl6gd2mzso.kr";
+    var g5_bbs_url = "http://xn--hy1bl6gd2mzso.kr/bbs";
+    var g5_is_member = "";
+    var g5_is_admin = "";
+    var g5_is_mobile = "";
+    var g5_bo_table = "4_3";
+    var g5_sca = "";
+    var g5_editor = "smarteditor2";
+    var g5_cookie_domain = "";
+          var g5_theme_shop_url = "http://xn--hy1bl6gd2mzso.kr/theme/basic/shop";
+      var g5_shop_url = "http://xn--hy1bl6gd2mzso.kr/shop";
+          </script>
+  <script src="../js/jquery-1.12.4.min.js@ver=2304171"></script>
+<script src="../js/jquery-migrate-1.4.1.min.js@ver=2304171"></script>
+<script src="../js/jquery.menu.js@ver=2304171"></script>
+<script src="../js/common.js@ver=2304171"></script>
+<script src="../js/wrest.js@ver=2304171"></script>
+<script src="../js/placeholders.min.js@ver=2304171"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../theme/basic/js/slick.js@ver=2304171"></script>
+<script src="../theme/basic/js/swiper-bundle.js@ver=2304171"></script>
+</head>
+<body class="break-keep leading-[1.5] tracking-tight text-sm text-gray-700 md:text-base">
+  
+<div class="bbs-view-image"><img src="../data/file/4_3/aa6a9c04cafb5be71d05af46115d824d_YgwfiX8B_898e2680336b6b3a31d58e1df0cd47316beedb2c.jpg" alt="" width="1280" height="960" class="draggable" style="position:relative;top:0;left:0;cursor:move;"></div>
+
+<script>
+
+jQuery(function($){
+
+$.fn.imgLoad = function(callback) {
+    return this.each(function() {
+        if (callback) {
+            if (this.complete || /*for IE 10-*/ $(this).height() > 0) {
+                callback.apply(this);
+            }
+            else {
+                $(this).on('load', function(){
+                    callback.apply(this);
+                });
+            }
+        }
+    });
+};
+
+    $(".bbs-view-image img").imgLoad(function(){
+
+        var win_w = 1280;
+        var win_h = 960 + 70;
+
+        if( !win_w || !win_h ){
+            win_w = $(this).width();
+            win_h = $(this).height();
+        }
+
+        var win_l = (screen.width - win_w) / 2;
+        var win_t = (screen.height - win_h) / 2;
+
+        if(win_w > screen.width) {
+            win_l = 0;
+            win_w = screen.width - 20;
+
+            if(win_h > screen.height) {
+                win_t = 0;
+                win_h = screen.height - 40;
+            }
+        }
+
+        if(win_h > screen.height) {
+            win_t = 0;
+            win_h = screen.height - 40;
+
+            if(win_w > screen.width) {
+                win_w = screen.width - 20;
+                win_l = 0;
+            }
+        }
+
+        if(win_w < screen.width) {
+            if(window.outerWidth){
+                win_w = win_w + (window.outerWidth - (document.documentElement.clientWidth || window.innerWidth));
+            }
+        }
+
+        window.moveTo(win_l, win_t);
+        window.resizeTo(win_w, win_h);
+    });
+
+    var is_draggable = false;
+    var x = y = 0;
+    var pos_x = pos_y = 0;
+
+    $(".draggable").mousemove(function(e) {
+        if(is_draggable) {
+            x = parseInt($(this).css("left")) - (pos_x - e.pageX);
+            y = parseInt($(this).css("top")) - (pos_y - e.pageY);
+
+            pos_x = e.pageX;
+            pos_y = e.pageY;
+
+            $(this).css({ "left" : x, "top" : y });
+        }
+
+        return false;
+    });
+
+    $(".draggable").mousedown(function(e) {
+        pos_x = e.pageX;
+        pos_y = e.pageY;
+        is_draggable = true;
+        return false;
+    });
+
+    $(".draggable").mouseup(function() {
+        is_draggable = false;
+        return false;
+    });
+
+    $(".draggable").dblclick(function() {
+        window.close();
+    });
+});
+</script>
+
+
+
+
+</body>
+</html>

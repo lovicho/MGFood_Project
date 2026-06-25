@@ -1,0 +1,221 @@
+{
+  "a-onefood.kr": {
+    "domain": "a-onefood.kr",
+    "title": "에이원식품",
+    "cms": "Gnuboard 5",
+    "libraries": [
+      "jQuery",
+      "Swiper",
+      "Slick Slider",
+      "AOS (Animate on Scroll)",
+      "bxSlider",
+      "FontAwesome",
+      "Tailwind CSS"
+    ],
+    "responsive": true,
+    "seo": {
+      "description": "N/A",
+      "og_title": "N/A",
+      "og_description": "N/A",
+      "viewport": "width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10"
+    },
+    "semantic_tags": {
+      "header": 1,
+      "nav": 1,
+      "section": 7
+    },
+    "forms": [
+      {
+        "inputs_count": 9,
+        "has_consent_checkbox": true
+      }
+    ],
+    "server": "Unknown",
+    "https": true,
+    "wget_log_analyzed": true
+  },
+  "dan-zi.com": {
+    "domain": "dan-zi.com",
+    "title": "주식회사 단지",
+    "cms": "Static / Custom HTML",
+    "libraries": [
+      "jQuery"
+    ],
+    "responsive": false,
+    "seo": {
+      "description": "서울시 성북구 위치, 온라인광고대행사, 바이럴마케팅, 검색광고, 언론홍보, 모바일마케팅, 홈페이지제작",
+      "og_title": "주식회사 단지",
+      "og_description": "N/A",
+      "viewport": "N/A"
+    },
+    "semantic_tags": {},
+    "forms": [],
+    "server": "Unknown",
+    "https": false,
+    "wget_log_analyzed": true
+  },
+  "김선희피부.kr": {
+    "domain": "김선희피부.kr",
+    "title": "::김선희 피부::",
+    "cms": "Static / Custom HTML",
+    "libraries": [
+      "jQuery"
+    ],
+    "responsive": false,
+    "seo": {
+      "description": "N/A",
+      "og_title": "N/A",
+      "og_description": "N/A",
+      "viewport": "N/A"
+    },
+    "semantic_tags": {},
+    "forms": [],
+    "server": "Unknown",
+    "https": false,
+    "wget_log_analyzed": true
+  },
+  "낙원떡거상.kr": {
+    "domain": "낙원떡거상.kr",
+    "title": "낙원떡거상",
+    "cms": "Gnuboard 5",
+    "libraries": [
+      "jQuery",
+      "Swiper",
+      "Slick Slider",
+      "AOS (Animate on Scroll)",
+      "FontAwesome",
+      "Tailwind CSS"
+    ],
+    "responsive": true,
+    "seo": {
+      "description": "N/A",
+      "og_title": "N/A",
+      "og_description": "N/A",
+      "viewport": "width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10"
+    },
+    "semantic_tags": {
+      "header": 1,
+      "nav": 1,
+      "section": 7
+    },
+    "forms": [],
+    "server": "Unknown",
+    "https": false,
+    "wget_log_analyzed": true
+  },
+  "신진식품.kr": {
+    "domain": "신진식품.kr",
+    "title": "신진식품",
+    "cms": "Gnuboard 5",
+    "libraries": [
+      "jQuery",
+      "Swiper",
+      "Slick Slider",
+      "AOS (Animate on Scroll)",
+      "FontAwesome",
+      "Tailwind CSS"
+    ],
+    "responsive": true,
+    "seo": {
+      "description": "N/A",
+      "og_title": "N/A",
+      "og_description": "N/A",
+      "viewport": "width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10"
+    },
+    "semantic_tags": {
+      "header": 1,
+      "nav": 1
+    },
+    "forms": [],
+    "server": "Unknown",
+    "https": true,
+    "wget_log_analyzed": true
+  },
+  "열림푸드.kr": {
+    "domain": "열림푸드.kr",
+    "title": "어업회사법인 (주)열림푸드",
+    "cms": "Gnuboard 5",
+    "libraries": [
+      "jQuery",
+      "Swiper",
+      "Slick Slider",
+      "AOS (Animate on Scroll)",
+      "bxSlider",
+      "FontAwesome",
+      "Tailwind CSS"
+    ],
+    "responsive": true,
+    "seo": {
+      "description": "N/A",
+      "og_title": "N/A",
+      "og_description": "N/A",
+      "viewport": "width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10"
+    },
+    "semantic_tags": {
+      "header": 1,
+      "nav": 1,
+      "section": 5
+    },
+    "forms": [],
+    "server": "Unknown",
+    "https": false,
+    "wget_log_analyzed": true
+  },
+  "제이크앤푸드.kr": {
+    "domain": "제이크앤푸드.kr",
+    "title": "제이크앤푸드",
+    "cms": "Cafe24",
+    "libraries": [
+      "jQuery",
+      "Swiper"
+    ],
+    "responsive": true,
+    "seo": {
+      "description": "제이크앤푸드",
+      "og_title": "제이크앤푸드",
+      "og_description": "제이크앤푸드",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    "semantic_tags": {
+      "header": 1,
+      "footer": 1,
+      "nav": 1,
+      "section": 9,
+      "aside": 1,
+      "main": 1
+    },
+    "forms": [],
+    "server": "Unknown",
+    "https": false,
+    "wget_log_analyzed": true
+  },
+  "화담원.kr": {
+    "domain": "화담원.kr",
+    "title": "화담원",
+    "cms": "Cafe24",
+    "libraries": [
+      "jQuery",
+      "Swiper",
+      "AOS (Animate on Scroll)"
+    ],
+    "responsive": true,
+    "seo": {
+      "description": "창업문의, 푸짐한 한상차림 샐러드바, 월남쌈 샤브, 초밥, 스시, 스끼야키",
+      "og_title": "화담원",
+      "og_description": "창업문의, 푸짐한 한상차림 샐러드바, 월남쌈 샤브, 초밥, 스시, 스끼야키",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    "semantic_tags": {
+      "header": 1,
+      "footer": 1,
+      "nav": 1,
+      "section": 7,
+      "aside": 1,
+      "main": 1
+    },
+    "forms": [],
+    "server": "Unknown",
+    "https": false,
+    "wget_log_analyzed": true
+  }
+}

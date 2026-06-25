@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" id="meta_viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no">
+  <title>제품구매  페이지 | 신진식품</title>
+  <link rel="stylesheet" href="http://xn--wv4bf604c92l.kr/theme/basic/css/default.css?ver=2303229">
+<link rel="stylesheet" href="http://xn--wv4bf604c92l.kr/js/font-awesome/css/font-awesome.min.css?ver=2303229">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="http://xn--wv4bf604c92l.kr/theme/basic/css/jquery.fullPage.css?ver=2303229">
+<link rel="stylesheet" href="http://xn--wv4bf604c92l.kr/theme/basic/css/slick.css?ver=2303229">
+<link rel="stylesheet" href="http://xn--wv4bf604c92l.kr/theme/basic/css/slick-theme.css?ver=2303229">
+<link rel="stylesheet" href="http://xn--wv4bf604c92l.kr/theme/basic/css/main.css?ver=2303229">
+<link rel="stylesheet" href="http://xn--wv4bf604c92l.kr/theme/basic/css/sub.css?ver=2303229">
+<link rel="stylesheet" href="http://xn--wv4bf604c92l.kr/theme/basic/css/about.css?ver=2303229">
+  <!--[if lte IE 8]>
+<script src="http://xn--wv4bf604c92l.kr/js/html5.js"></script>
+<![endif]-->
+  <script>
+    // 자바스크립트에서 사용하는 전역변수 선언
+    var g5_url = "http://xn--wv4bf604c92l.kr";
+    var g5_bbs_url = "http://xn--wv4bf604c92l.kr/bbs";
+    var g5_is_member = "";
+    var g5_is_admin = "";
+    var g5_is_mobile = "";
+    var g5_bo_table = "4_1";
+    var g5_sca = "";
+    var g5_editor = "smarteditor2";
+    var g5_cookie_domain = "";
+          var g5_theme_shop_url = "http://xn--wv4bf604c92l.kr/theme/basic/shop";
+      var g5_shop_url = "http://xn--wv4bf604c92l.kr/shop";
+          </script>
+  <script src="http://xn--wv4bf604c92l.kr/js/jquery-1.12.4.min.js?ver=2304171"></script>
+<script src="http://xn--wv4bf604c92l.kr/js/jquery-migrate-1.4.1.min.js?ver=2304171"></script>
+<script src="http://xn--wv4bf604c92l.kr/js/jquery.menu.js?ver=2304171"></script>
+<script src="http://xn--wv4bf604c92l.kr/js/common.js?ver=2304171"></script>
+<script src="http://xn--wv4bf604c92l.kr/js/wrest.js?ver=2304171"></script>
+<script src="http://xn--wv4bf604c92l.kr/js/placeholders.min.js?ver=2304171"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="http://xn--wv4bf604c92l.kr/theme/basic/js/slick.js?ver=2304171"></script>
+<script src="http://xn--wv4bf604c92l.kr/theme/basic/js/swiper-bundle.js?ver=2304171"></script>
+<script src="http://xn--wv4bf604c92l.kr/theme/basic/js/jquery.fullPage.js?ver=2304171"></script>
+</head>
+<body class="break-keep leading-[1.5] tracking-tight text-sm text-gray-700 md:text-base">
+  
+<div id="hd" class="fixed left-0 top-0 w-full bg-white shadow-lg z-30">
+    <h1 id="hd_h1">제품구매  페이지</h1>
+    <div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
+
+    
+    <div id="hd_wrapper" class="flex justify-between items-center relative max-w-screen-xl h-16 px-4 mx-auto md:h-20">
+
+        <div id="logo" title="메인으로" style="height: 100%;">
+            <a href="http://xn--wv4bf604c92l.kr" class="block md:max-h-none" style="height: 100%;">
+                <img src="http://xn--wv4bf604c92l.kr/theme/basic/img/main/main_logo.png" alt="신진식품" class="w-full h-full object-cover md:py-[10px]">
+            </a>
+        </div>
+
+        <nav id="gnb" class="relative">
+            <style>
+                #gnb .gnb_1dli:hover > .gnb_1da,
+                #gnb .gnb_1dli:focus-within > .gnb_1da {
+                    color: #387dbf;
+                    transition: color 0.3s ease-out;
+                }
+                .gnb_1da.on {
+                    color: #387dbf !important;
+                }
+            </style>
+            <h2>메인메뉴</h2>
+            <div class="gnb_wrap">
+                <ul id="gnb_1dul" class="flex">
+                    <li class="gnb_1dli gnb_mnal relative md:hidden">
+                        <button type="button" class="gnb_menu_btn bg-transparent border-none" title="전체메뉴">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                            <span class="sound_only">전체메뉴열기</span>
+                        </button>
+                    </li>
+                                            <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:999">
+                            <a href="/bbs/board.php?bo_table=1_1" target="_self" class="gnb_1da block px-6 font-medium text-lg ">회사소개</a>
+                            <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+                                <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=1_1" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        인사말                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=1_2" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        조직도/연혁                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=1_3" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        인증서                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=1_4" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        오시는길                                    </a>
+                                </li>
+                            </ul></div>
+                        </li>
+                                            <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:998">
+                            <a href="/bbs/board.php?bo_table=2_1" target="_self" class="gnb_1da block px-6 font-medium text-lg ">제조과정</a>
+                            <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+                                <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=2_1" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        재료이야기                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=2_2" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        제조과정                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=2_3" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        갤러리                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=2_4" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        동영상보기                                    </a>
+                                </li>
+                            </ul></div>
+                        </li>
+                                            <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:997">
+                            <a href="/bbs/board.php?bo_table=3_1" target="_self" class="gnb_1da block px-6 font-medium text-lg ">제품소개</a>
+                            <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+                                <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=3_1" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        제품소개                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=3_2" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        제품레시피                                    </a>
+                                </li>
+                            </ul></div>
+                        </li>
+                                            <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:996">
+                            <a href="/bbs/board.php?bo_table=4_1" target="_self" class="gnb_1da block px-6 font-medium text-lg on">제품구매</a>
+                            <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+                                <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=4_1" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        제품구매                                    </a>
+                                </li>
+                            </ul></div>
+                        </li>
+                                            <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:995">
+                            <a href="/bbs/board.php?bo_table=5_1" target="_self" class="gnb_1da block px-6 font-medium text-lg ">문의하기</a>
+                            <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+                                <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=5_1" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        문의하기                                    </a>
+                                </li>
+                            </ul></div>
+                        </li>
+                                            <li class="gnb_1dli hidden md:block gnb_al_li_plus" style="z-index:994">
+                            <a href="/bbs/board.php?bo_table=6_1" target="_self" class="gnb_1da block px-6 font-medium text-lg ">커뮤니티</a>
+                            <span class="bg hidden">하위분류</span><div class="gnb_2dul hidden absolute top-7 min-w-40 pt-2"><ul class="gnb_2dul_box bg-white/90 shadow">
+                                <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=6_1" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        공지사항                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=6_2" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        자료실                                    </a>
+                                </li>
+                                                            <li class="gnb_2dli">
+                                    <a href="/bbs/board.php?bo_table=6_3" target="_self" class="gnb_2da block px-5 py-3 text-sm text-gray-500 transition-all duration-300 hover:bg-white hover:text-[#387dbf] focus:text-[#387dbf]">
+                                        이용후기                                    </a>
+                                </li>
+                            </ul></div>
+                        </li>
+                                            <li class="gnb_1dli hidden md:block " style="z-index:993">
+                            <a href="https://shinjhinfood.kr" target="_self" class="gnb_1da block px-6 font-medium text-lg ">ENG</a>
+                                                    </li>
+                                    </ul>
+
+                <div id="gnb_all" class="fixed top-0 -left-74 w-74 h-full bg-white shadow transition-[left] duration-300">
+                    <header class="flex justify-between items-center h-16 px-4 bg-gray-100">
+                        <button type="button" class="gnb_close_btn bg-transparent border-none ml-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                            <span class="sound_only">메뉴닫기</span>
+                        </button>
+                    </header>
+                    <ul class="gnb_al_ul">
+                                                    <li class="gnb_al_li py-2">
+                                <a href="/bbs/board.php?bo_table=1_1" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                                    회사소개                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </a>
+                                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#vis" target="_self" class="block py-2 text-base">
+                                            글로벌비전                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#his" target="_self" class="block py-2 text-base">
+                                            연혁                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#cen" target="_self" class="block py-2 text-base">
+                                            연구개발센터                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#haccp" target="_self" class="block py-2 text-base">
+                                            HACCP시설                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#cer" target="_self" class="block py-2 text-base">
+                                            인증 및 수상현황                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#fda" target="_self" class="block py-2 text-base">
+                                            FDA 시설등록                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#map" target="_self" class="block py-2 text-base">
+                                            오시는길                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=m1_1#ceo" target="_self" class="block py-2 text-base">
+                                            CEO인사말                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                                                    <li class="gnb_al_li py-2">
+                                <a href="/bbs/board.php?bo_table=2_1" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                                    제조과정                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </a>
+                                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+                                    <li>
+                                        <a href="/bbs/board.php?bo_table=2_1" target="_self" class="block py-2 text-base">
+                                            재료이야기                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=2_2" target="_self" class="block py-2 text-base">
+                                            제조과정                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=2_3" target="_self" class="block py-2 text-base">
+                                            갤러리                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=2_4" target="_self" class="block py-2 text-base">
+                                            동영상보기                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                                                    <li class="gnb_al_li py-2">
+                                <a href="/bbs/board.php?bo_table=4_1" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                                    제품구매                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </a>
+                                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+                                    <li>
+                                        <a href="/bbs/board.php?bo_table=product" target="_self" class="block py-2 text-base">
+                                            제품소개 및 구매                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                                                    <li class="gnb_al_li py-2">
+                                <a href="/bbs/board.php?bo_table=6_1" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                                    기업소식                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </a>
+                                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+                                    <li>
+                                        <a href="/bbs/board.php?bo_table=6_1" target="_self" class="block py-2 text-base">
+                                            보도자료                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=6_2" target="_self" class="block py-2 text-base">
+                                            자료실                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/bbs/board.php?bo_table=6_3" target="_self" class="block py-2 text-base">
+                                            요리레시피                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                                                    <li class="gnb_al_li py-2">
+                                <a href="/bbs/write.php?bo_table=contact" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                                    문의 및 파트너쉽                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </a>
+                                <ul class="max-h-0 ml-8 overflow-hidden transition-[max-height] duration-500">
+                                    <li>
+                                        <a href="/bbs/write.php?bo_table=contact" target="_self" class="block py-2 text-base">
+                                            수출문의 및 파트너쉽                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                                                    <li class="gnb_al_li py-2">
+                                <a href="https://shinjhinfood.kr" target="_self" class="gnb_al_a flex justify-between items-center relative px-4 py-2 font-bold text-lg">
+                                    ENG                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-400">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </a>
+                                                            </li>
+                                            </ul>
+                </div>
+                <div id="gnb_all_bg" class="hidden fixed left-0 right-0 top-0 w-full h-full bg-black/50"></div>
+            </div>
+        </nav>
+        
+        <script>
+            $(function() {
+                $(".gnb_menu_btn").click(function() {
+                    $("#gnb_all_bg").removeClass("hidden");
+                    $("#gnb_all").removeClass("-left-74").addClass("left-0");
+                });
+                $(".gnb_close_btn, #gnb_all_bg").click(function() {
+                    $("#gnb_all").removeClass("left-0").addClass("-left-74");
+                    $("#gnb_all_bg").addClass("hidden");
+                });
+            });
+
+            document.querySelectorAll('.gnb_al_a').forEach(item => {
+                const siblingUl = item.nextElementSibling;
+                const svgIcon = item.querySelector('svg');
+                if (!siblingUl || siblingUl.tagName !== 'UL') {
+                    if (svgIcon) svgIcon.classList.add('hidden');
+                    return;
+                }
+                item.removeAttribute('href');
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', () => {
+                    const isOpen = siblingUl.classList.contains('max-h-[500px]');
+                    siblingUl.classList.toggle('max-h-0', isOpen);
+                    siblingUl.classList.toggle('max-h-[500px]', !isOpen);
+                    if (svgIcon) svgIcon.classList.toggle('rotate-180', !isOpen);
+                });
+            });
+        </script>
+
+        <ul class="hd_login hidden gap-3 text-sm md:flex">
+                            <li><a href="http://xn--wv4bf604c92l.kr/bbs/register.php">회원가입</a></li>
+                <li><a href="http://xn--wv4bf604c92l.kr/bbs/login.php">로그인</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div id="wrapper" class="mb-[50px] mt-16 md:mt-20">
+    <div id="container_wr">
+        <div id="container" class="relative">
+                            <section class="">
+            <link rel="stylesheet" href="http://xn--wv4bf604c92l.kr/theme/basic/skin/board/goods/style.css">
+<!--<script src="http://xn--wv4bf604c92l.kr/theme/basic/skin/board/goods/lodash.js"></script>-->
+<!-- 게시판 목록 시작 { -->
+<div id="bo_gall" class="gallery-block cards-gallery">
+
+    
+
+    <!-- 게시판 페이지 정보 및 버튼 시작 { -->
+    <div id="bo_btn_top" class="mt-3 mb-2">
+        <div class="text-left">
+            <span>Total 14건</span>
+            1 페이지
+        </div>
+
+                    <div class="text-right">
+                                                            </div>
+            </div>
+    <!-- } 게시판 페이지 정보 및 버튼 끝 -->
+
+    <form name="fboardlist" id="fboardlist" action="./board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post" class="form">
+        <input type="hidden" name="bo_table" value="4_1">
+        <input type="hidden" name="sfl" value="">
+        <input type="hidden" name="stx" value="">
+        <input type="hidden" name="spt" value="">
+        <input type="hidden" name="sst" value="wr_num, wr_reply">
+        <input type="hidden" name="sod" value="">
+        <input type="hidden" name="page" value="1">
+        <input type="hidden" name="sw" value="">
+
+        
+        <div class="card-columns">
+                            <div class="card">
+                    <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=42">
+                                                <img class="card-img-top" src="http://xn--wv4bf604c92l.kr/data/file/4_1/thumb-aa6a9c04cafb5be71d05af46115d824d_4hMoyJfR_ba01392e337f6a0448f1ea8e05c825394ee63811_500x500.png" alt="" >                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">                            <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=42">
+                                순살명태스틱                            </a>
+                        </h5>
+                        <table class="table">
+                            <tr>
+                                <td class="bg-light text-primary">가격</td>
+                                <td>
+                                    준비중                                </td>
+                            </tr>
+
+                            
+                                                    </table>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=42" class="btn btn-primary">자세히보기</a>
+                    </div>
+                </div>
+                            <div class="card">
+                    <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=41">
+                                                <img class="card-img-top" src="http://xn--wv4bf604c92l.kr/data/file/4_1/thumb-aa6a9c04cafb5be71d05af46115d824d_AYPvuiQs_c06d606cbffc4c9cf59012f887d9ca862576ab57_500x500.png" alt="" >                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">                            <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=41">
+                                명태채( 베트남)                            </a>
+                        </h5>
+                        <table class="table">
+                            <tr>
+                                <td class="bg-light text-primary">가격</td>
+                                <td>
+                                    준비중                                </td>
+                            </tr>
+
+                            
+                                                    </table>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=41" class="btn btn-primary">자세히보기</a>
+                    </div>
+                </div>
+                            <div class="card">
+                    <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=40">
+                                                <img class="card-img-top" src="http://xn--wv4bf604c92l.kr/data/file/4_1/thumb-aa6a9c04cafb5be71d05af46115d824d_OzutiBN3_9731905fe92dd7befefb341629a6ed8ca135f0df_500x500.png" alt="" >                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">                            <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=40">
+                                명태채A                            </a>
+                        </h5>
+                        <table class="table">
+                            <tr>
+                                <td class="bg-light text-primary">가격</td>
+                                <td>
+                                    준비중                                </td>
+                            </tr>
+
+                            
+                                                    </table>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=40" class="btn btn-primary">자세히보기</a>
+                    </div>
+                </div>
+                            <div class="card">
+                    <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=39">
+                                                <img class="card-img-top" src="http://xn--wv4bf604c92l.kr/data/file/4_1/thumb-aa6a9c04cafb5be71d05af46115d824d_fPyADZOz_f8f7e0b71beae5dcc22e2a12facf22c552613e65_500x500.png" alt="" >                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">                            <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=39">
+                                명엽채                            </a>
+                        </h5>
+                        <table class="table">
+                            <tr>
+                                <td class="bg-light text-primary">가격</td>
+                                <td>
+                                    준비중                                </td>
+                            </tr>
+
+                            
+                                                    </table>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=39" class="btn btn-primary">자세히보기</a>
+                    </div>
+                </div>
+                            <div class="card">
+                    <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=38">
+                                                <img class="card-img-top" src="http://xn--wv4bf604c92l.kr/data/file/4_1/thumb-aa6a9c04cafb5be71d05af46115d824d_RXHu9vPz_9f7f97b98c9a20ba9f607409d331a8823f34c3be_500x500.png" alt="" >                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">                            <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=38">
+                                명엽채 (베트남)                            </a>
+                        </h5>
+                        <table class="table">
+                            <tr>
+                                <td class="bg-light text-primary">가격</td>
+                                <td>
+                                    준비중                                </td>
+                            </tr>
+
+                            
+                                                    </table>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=38" class="btn btn-primary">자세히보기</a>
+                    </div>
+                </div>
+                            <div class="card">
+                    <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=37">
+                                                <img class="card-img-top" src="http://xn--wv4bf604c92l.kr/data/file/4_1/thumb-aa6a9c04cafb5be71d05af46115d824d_tdo3LazM_bc065c50821ad679ebcabc4d5feaabb2d36f985b_500x500.png" alt="" >                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">                            <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=37">
+                                명엽채A                            </a>
+                        </h5>
+                        <table class="table">
+                            <tr>
+                                <td class="bg-light text-primary">가격</td>
+                                <td>
+                                    준비중                                </td>
+                            </tr>
+
+                            
+                                                    </table>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=37" class="btn btn-primary">자세히보기</a>
+                    </div>
+                </div>
+                            <div class="card">
+                    <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=36">
+                                                <img class="card-img-top" src="http://xn--wv4bf604c92l.kr/data/file/4_1/thumb-27_copy_36_aa6a9c04cafb5be71d05af46115d824d_RlvbjMrq_28800a6ee741930bd909aa663860f5c672cb9544_500x500.png" alt="" >                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">                            <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=36">
+                                건오징어실채                            </a>
+                        </h5>
+                        <table class="table">
+                            <tr>
+                                <td class="bg-light text-primary">가격</td>
+                                <td>
+                                    준비중                                </td>
+                            </tr>
+
+                            
+                                                    </table>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=36" class="btn btn-primary">자세히보기</a>
+                    </div>
+                </div>
+                            <div class="card">
+                    <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=35">
+                                                <img class="card-img-top" src="http://xn--wv4bf604c92l.kr/data/file/4_1/thumb-28_copy3_35_aa6a9c04cafb5be71d05af46115d824d_V0L3QeuU_9c1817abbfdb246d1974c9cb4b6322ac8169389f_500x500.png" alt="" >                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">                            <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=35">
+                                구운 어포 칩                            </a>
+                        </h5>
+                        <table class="table">
+                            <tr>
+                                <td class="bg-light text-primary">가격</td>
+                                <td>
+                                    0원                                </td>
+                            </tr>
+
+                            
+                                                    </table>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=35" class="btn btn-primary">자세히보기</a>
+                    </div>
+                </div>
+                            <div class="card">
+                    <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=34">
+                                                <img class="card-img-top" src="http://xn--wv4bf604c92l.kr/data/file/4_1/thumb-28_copy2_34_aa6a9c04cafb5be71d05af46115d824d_V0L3QeuU_9c1817abbfdb246d1974c9cb4b6322ac8169389f_500x500.png" alt="" >                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">                            <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=34">
+                                오징어실채 고추장 볶음                            </a>
+                        </h5>
+                        <table class="table">
+                            <tr>
+                                <td class="bg-light text-primary">가격</td>
+                                <td>
+                                    0원                                </td>
+                            </tr>
+
+                            
+                                                    </table>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=34" class="btn btn-primary">자세히보기</a>
+                    </div>
+                </div>
+                            <div class="card">
+                    <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=33">
+                                                <img class="card-img-top" src="http://xn--wv4bf604c92l.kr/data/file/4_1/thumb-28_copy1_33_aa6a9c04cafb5be71d05af46115d824d_V0L3QeuU_9c1817abbfdb246d1974c9cb4b6322ac8169389f_500x500.png" alt="" >                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">                            <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=33">
+                                오징어실채 간장 볶음                            </a>
+                        </h5>
+                        <table class="table">
+                            <tr>
+                                <td class="bg-light text-primary">가격</td>
+                                <td>
+                                    0원                                </td>
+                            </tr>
+
+                            
+                                                    </table>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=33" class="btn btn-primary">자세히보기</a>
+                    </div>
+                </div>
+                            <div class="card">
+                    <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=32">
+                                                <img class="card-img-top" src="http://xn--wv4bf604c92l.kr/data/file/4_1/thumb-28_copy_32_aa6a9c04cafb5be71d05af46115d824d_V0L3QeuU_9c1817abbfdb246d1974c9cb4b6322ac8169389f_500x500.png" alt="" >                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">                            <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=32">
+                                진미채 간장 볶음                            </a>
+                        </h5>
+                        <table class="table">
+                            <tr>
+                                <td class="bg-light text-primary">가격</td>
+                                <td>
+                                    0원                                </td>
+                            </tr>
+
+                            
+                                                    </table>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=32" class="btn btn-primary">자세히보기</a>
+                    </div>
+                </div>
+                            <div class="card">
+                    <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=31">
+                                                <img class="card-img-top" src="http://xn--wv4bf604c92l.kr/data/file/4_1/thumb-28_copy1_31_aa6a9c04cafb5be71d05af46115d824d_V0L3QeuU_9c1817abbfdb246d1974c9cb4b6322ac8169389f_500x500.png" alt="" >                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">                            <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=31">
+                                진미채 고추장 볶음                            </a>
+                        </h5>
+                        <table class="table">
+                            <tr>
+                                <td class="bg-light text-primary">가격</td>
+                                <td>
+                                    0원                                </td>
+                            </tr>
+
+                            
+                                                    </table>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=31" class="btn btn-primary">자세히보기</a>
+                    </div>
+                </div>
+                            <div class="card">
+                    <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=30">
+                                                <img class="card-img-top" src="http://xn--wv4bf604c92l.kr/data/file/4_1/thumb-28_copy_30_aa6a9c04cafb5be71d05af46115d824d_V0L3QeuU_9c1817abbfdb246d1974c9cb4b6322ac8169389f_500x500.png" alt="" >                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">                            <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=30">
+                                명엽채 간장 볶음                            </a>
+                        </h5>
+                        <table class="table">
+                            <tr>
+                                <td class="bg-light text-primary">가격</td>
+                                <td>
+                                    0원                                </td>
+                            </tr>
+
+                            
+                                                    </table>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=30" class="btn btn-primary">자세히보기</a>
+                    </div>
+                </div>
+                            <div class="card">
+                    <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=28">
+                                                <img class="card-img-top" src="http://xn--wv4bf604c92l.kr/data/file/4_1/thumb-aa6a9c04cafb5be71d05af46115d824d_V0L3QeuU_9c1817abbfdb246d1974c9cb4b6322ac8169389f_500x500.png" alt="" >                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">                            <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=28">
+                                명엽채 고추장 볶음                            </a>
+                        </h5>
+                        <table class="table">
+                            <tr>
+                                <td class="bg-light text-primary">가격</td>
+                                <td>
+                                    0원                                </td>
+                            </tr>
+
+                            
+                                                    </table>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;wr_id=28" class="btn btn-primary">자세히보기</a>
+                    </div>
+                </div>
+                                </div>
+
+                    <div class="mt-3 mb-3 float-right">
+                                                                                                        </div>
+            </form>
+
+    <!-- 게시판 검색 시작 { -->
+    <div id="bo_sch" class="mt-3 mb-3">
+        <legend>게시물 검색</legend>
+
+        <form name="fsearch" method="get" class="form-inline">
+            <input type="hidden" name="bo_table" value="4_1">
+            <input type="hidden" name="sca" value="">
+            <input type="hidden" name="sop" value="and">
+            <label for="sfl" class="sr-only">검색대상</label>
+            <select name="sfl" id="sfl" class="form-control">
+                <option value="wr_subject" >제목</option>
+                <option value="wr_content" >내용</option>
+                <option value="wr_subject||wr_content" >제목+내용</option>
+                <option value="mb_id,1" >회원아이디</option>
+                <option value="mb_id,0" >회원아이디(코)</option>
+                <option value="wr_name,1" >글쓴이</option>
+                <option value="wr_name,0" >글쓴이(코)</option>
+            </select>
+            <label for="stx" class="sr-only">검색어<strong class="sr-only"> 필수</strong></label>
+            <input type="text" name="stx" value="" required id="stx" class="form-control ml-1 mr-1" placeholder="검색어를 입력해주세요">
+            <button type="submit" value="검색" class="btn btn-primary btn-sm"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">검색</span></button>
+        </form>
+    </div>
+    <!-- } 게시판 검색 끝 -->
+</div>
+
+
+<!-- 페이지 -->
+
+<!-- } 게시판 목록 끝 -->
+</section>
+</div>
+</div>
+
+</div>
+<!-- } 콘텐츠 끝 -->
+
+
+
+
+<!-- 하단 시작 { -->
+<div id="ft" class="bg-gray-100">
+
+  <div class="flex flex-col items-start max-w-screen-xl px-4 py-8 mx-auto md:flex-row md:justify-between md:py-15;">
+    <div id="ft_wr" class="flex flex-col gap-5 relative mb-5 text-sm md:order-2 md:gap-1">
+      <!-- <div id="ft_link">
+      <a href="http://xn--wv4bf604c92l.kr/bbs/content.php?co_id=company">회사소개</a>
+      <a href="http://xn--wv4bf604c92l.kr/bbs/content.php?co_id=privacy" class="block leading-loose">개인정보처리방침</a>
+      <a href="http://xn--wv4bf604c92l.kr/bbs/content.php?co_id=provision" class="block leading-loose">서비스이용약관</a>
+      <a href="http://xn--wv4bf604c92l.kr/bbs/board.php?bo_table=4_1&amp;device=mobile">모바일버전</a>
+    </div> -->
+      <div id="ft_company">
+        <p class="ft_info">
+          신진식품 / 대표 : 신용철<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+          사업자등록번호 : 607-86-20868<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+          주소 : 강원도 동해시 공단7로 72<br>
+          전화번호 : 033-522-5586 / 팩스 : 033-522-5509<br>
+          개인정보관리책임자 : 양진현<br class="md:hidden"><span class="hidden md:inline">&nbsp;/</span>
+          Contact shinjin2021@naver.com for more information. <a href="http://xn--wv4bf604c92l.kr/adm/">ADMIN</a>
+        </p>
+      </div>
+
+      <div id="ft_copy" class="text-gray-400">&copy; by 신진식품 All rights reserved.</div>
+    </div>
+    <hr class="w-full h-px bg-gray-200 border-none md:hidden">
+    <div id="ft_catch" class="aspect-[3/1] h-10 mt-4 bg-no-repeat bg-gray-100 bg-[url(http://xn--wv4bf604c92l.kr/theme/basic/img/main/main_logo.png)] bg-cover bg-blend-multiply
+                            md:order-1 md:h-[54px] md:mt-0">
+    </div>
+  </div>
+</div>
+
+<button type="button" id="top_btn">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span>
+</button>
+<style>
+  #top_btn:hover {
+    border-color: #fff;
+    background: #387dbf;
+    color: #fff;
+  }
+</style>
+<script>
+  $(function() {
+    $("#top_btn").on("click", function() {
+      $("html, body").animate({
+        scrollTop: 0
+      }, '500');
+      return false;
+    });
+  });
+</script>
+
+
+<!-- } 하단 끝 -->
+
+<script>
+  $(function() {
+    // 폰트 리사이즈 쿠키있으면 실행
+    font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+  });
+</script>
+
+
+
+
+</body>
+</html>
+
+<!-- 사용스킨 : theme/goods -->
