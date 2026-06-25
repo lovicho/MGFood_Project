@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Users\\lovic\\Desktop\\더푸른식품프로젝트\\logs\\.04e7142a386274f7cef8d491b5393bf35fcd2991-audit.json",
+    "files": [
+        {
+            "date": 1782396432493,
+            "name": "C:\\Users\\lovic\\Desktop\\더푸른식품프로젝트\\logs\\application-2026-06-25.log",
+            "hash": "e5ccc821261e6815b0c489e10b6d922f6823d7e4e666eb126c01c1a1f143122d"
+        }
+    ],
+    "hashType": "sha256"
+}
