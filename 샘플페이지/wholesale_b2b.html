@@ -19,22 +19,22 @@
     
     <style>
         :root {
-            /* 스타벅스 기반 4-tier Green System */
-            --sb-green-primary: #006241;   /* Starbucks Green (메인 브랜드 강조) */
-            --sb-green-accent: #00754a;    /* Green Accent (주요 CTA 및 버튼) */
-            --sb-green-house: #1e3932;     /* House Green (딥 에스프레소 그린 - 히어로/푸터 배경) */
-            --sb-green-uplift: #2b5148;    /* Uplift Green (서브 레이어 카드 배경) */
-            --sb-green-light: #d4e9e2;     /* Light Green (배경 워시) */
+            /* 스타벅스 기반 oklch 4-tier Green System */
+            --sb-green-primary: oklch(35% 0.12 150);   /* Starbucks Green (메인 브랜드 강조) */
+            --sb-green-accent: oklch(42% 0.14 148);    /* Green Accent (주요 CTA 및 버튼) */
+            --sb-green-house: oklch(22% 0.05 145);     /* House Green (딥 에스프레소 그린 - 히어로/푸터 배경) */
+            --sb-green-uplift: oklch(30% 0.08 145);    /* Uplift Green (서브 레이어 카드 배경) */
+            --sb-green-light: oklch(90% 0.06 150);     /* Light Green (배경 워시) */
 
             /* 골드 (B2B 프리미엄 등급 전용) */
-            --sb-gold: #cba258;            /* Rewards Gold */
-            --sb-gold-light: #dfc49d;
-            --sb-gold-lightest: #faf6ee;
+            --sb-gold: oklch(72% 0.13 85);             /* Rewards Gold */
+            --sb-gold-light: oklch(82% 0.10 82);
+            --sb-gold-lightest: oklch(97% 0.01 80);
 
             /* 캔버스 및 배경 */
-            --sb-bg-cream: #f2f0eb;        /* Neutral Warm (기본 페이지 배경) */
-            --sb-bg-ceramic: #edebe9;      /* Ceramic (보조 영역) */
-            --sb-bg-white: #ffffff;        /* Pure White (카드 내부) */
+            --sb-bg-cream: oklch(95% 0.01 75);         /* Neutral Warm (기본 페이지 배경) */
+            --sb-bg-ceramic: oklch(92% 0.01 70);       /* Ceramic (보조 영역) */
+            --sb-bg-white: oklch(100% 0 0);            /* Pure White (카드 내부) */
 
             /* 텍스트 & 중립 톤 */
             --sb-text-black: rgba(0, 0, 0, 0.87);
@@ -51,7 +51,8 @@
             --sb-shadow-lift: 0 4px 6px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.10);
             --sb-shadow-frap: 0 4px 10px rgba(0, 98, 65, 0.2), 0 12px 20px rgba(0, 0, 0, 0.15);
 
-            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            /* 스프링 역학 트랜지션 */
+            --transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         * {
@@ -61,7 +62,7 @@
         }
 
         body {
-            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            font-family: 'Outfit', 'Noto Sans KR', sans-serif;
             background-color: var(--sb-bg-cream);
             color: var(--sb-text-black);
             line-height: 1.6;
@@ -563,9 +564,9 @@
     <header>
         <a href="#" class="logo">THE PUREUN <span>B2B</span></a>
         <div class="header-links">
-            <a href="#benefits">도매 강점</a>
-            <a href="#simulator">마진 계산기</a>
-            <a href="#simulator" class="header-btn">무료 샘플 신청</a>
+            <a href="javascript:void(0)" onclick="smoothScrollTo('#benefits')">도매 강점</a>
+            <a href="javascript:void(0)" onclick="smoothScrollTo('#simulator')">마진 계산기</a>
+            <a href="javascript:void(0)" onclick="smoothScrollTo('#consultation')" class="header-btn">무료 샘플 신청</a>
         </div>
     </header>
 
@@ -605,19 +606,37 @@
         
         <div class="benefit-grid">
             <div class="benefit-card">
-                <div style="font-size: 2rem;">🏭</div>
+                <div style="margin-bottom: 1rem; color: var(--sb-green-accent);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 21H2V3l7 4 7-4 6 4v14z"></path>
+                        <path d="M6 17h4"></path>
+                        <path d="M6 13h4"></path>
+                    </svg>
+                </div>
                 <h4>제조사 직접 공급 (D2C)</h4>
                 <p>1차/2차 도매상을 거치지 않는 공장 직접 거래(Direct-to-Business)를 통하여 불필요한 유통 거품 마진을 100% 제거했습니다.</p>
             </div>
             
             <div class="benefit-card">
-                <div style="font-size: 2rem;">❄️</div>
+                <div style="margin-bottom: 1rem; color: var(--sb-green-accent);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="2" x2="12" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line>
+                        <line x1="5.1" y1="5.1" x2="18.9" y2="18.9"></line><line x1="5.1" y1="18.9" x2="18.9" y2="5.1"></line>
+                    </svg>
+                </div>
                 <h4>100% 신선 물류 보장</h4>
                 <p>냉동 탑차 유통망을 통해 하절기에도 해동 및 변질 우려 없이 최상의 쫄깃함과 신선도를 유지한 채 업장에 도착합니다.</p>
             </div>
             
             <div class="benefit-card">
-                <div style="font-size: 2rem;">📋</div>
+                <div style="margin-bottom: 1rem; color: var(--sb-green-accent);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                </div>
                 <h4>대량 정기 계약 추가 할인</h4>
                 <p>월간 고정 사용량 계약 체결 시 기본 단가표 대비 최대 12%의 추가 누적 할인율을 적용하여 점주님의 고정 지출을 아껴드립니다.</p>
             </div>
@@ -667,14 +686,14 @@
                     <div class="result-value" id="resultVal">1,230,000 원</div>
                     <div class="result-desc">더푸른식품 공장 직송 전환만으로 절감되는 순수 원가 세이브 금액입니다.</div>
                 </div>
-                <button class="form-btn" style="max-width: 300px; background-color: var(--sb-green-accent);" onclick="document.getElementById('consultation').scrollIntoView({behavior: 'smooth'})">B2B 맞춤 견적서 및 샘플 받기</button>
+                <button class="form-btn" style="max-width: 300px; background-color: var(--sb-green-accent);" onclick="smoothScrollTo('#consultation')">B2B 맞춤 견적서 및 샘플 받기</button>
             </div>
         </div>
     </section>
 
     <!-- 플로팅 프랩 CTA -->
     <div class="frap-cta">
-        <a href="#consultation" aria-label="B2B 도매 단가 및 샘플 신청">
+        <a href="javascript:void(0)" onclick="smoothScrollTo('#consultation')" aria-label="B2B 도매 단가 및 샘플 신청">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
             </svg>
@@ -691,16 +710,33 @@
             <div class="footer-links">
                 <h5>바로가기</h5>
                 <ul>
-                    <li><a href="#benefits">도매 강점</a></li>
-                    <li><a href="#simulator">마진 계산기</a></li>
-                    <li><a href="#consultation">샘플 신청</a></li>
+                    <li><a href="javascript:void(0)" onclick="smoothScrollTo('#benefits')">도매 강점</a></li>
+                    <li><a href="javascript:void(0)" onclick="smoothScrollTo('#simulator')">마진 계산기</a></li>
+                    <li><a href="javascript:void(0)" onclick="smoothScrollTo('#consultation')">샘플 신청</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
                 <h5>B2B 특수물류본부</h5>
-                <p>📞 043-855-8899 (내선 2번)</p>
-                <p>📧 b2b@thepureun.com</p>
-                <p>📍 충청북도 충주시 신니면 대농공단길 더푸른식품 B2B 사업부</p>
+                <p>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; display: inline-block; vertical-align: middle;">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    043-855-8899 (내선 2번)
+                </p>
+                <p>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; display: inline-block; vertical-align: middle;">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    b2b@thepureun.com
+                </p>
+                <p>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; display: inline-block; vertical-align: middle;">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    충청북도 충주시 신니면 대농공단길 더푸른식품 B2B 사업부
+                </p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -711,6 +747,16 @@
 
     <!-- JS 로직 -->
     <script>
+        function smoothScrollTo(targetSelector) {
+            const target = document.querySelector(targetSelector);
+            if (!target) return;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+                top: targetPosition - 30, // 적절한 패딩 오프셋
+                behavior: 'smooth'
+            });
+        }
+
         function calculateMargin() {
             const sales = parseInt(document.getElementById('salesSlider').value);
             const origPrice = parseInt(document.getElementById('priceSlider').value);

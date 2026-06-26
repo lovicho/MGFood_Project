@@ -20,21 +20,21 @@
     <!-- CSS 스타일링 -->
     <style>
         :root {
-            /* 스타벅스 기반 4-tier Green System */
-            --sb-green-primary: #006241;   /* Starbucks Green (메인 헤드라인) */
-            --sb-green-accent: #00754a;    /* Green Accent (주요 CTA 및 버튼 채우기) */
-            --sb-green-house: #1e3932;     /* House Green (딥 에스프레소 그린 - 헤더/푸터) */
-            --sb-green-light: #d4e9e2;     /* Light Green (배경 워시, 폼 성공 상태) */
+            /* 스타벅스 기반 oklch 4-tier Green System */
+            --sb-green-primary: oklch(35% 0.12 150);   /* Starbucks Green (메인 헤드라인) */
+            --sb-green-accent: oklch(42% 0.14 148);    /* Green Accent (주요 CTA 및 버튼 채우기) */
+            --sb-green-house: oklch(22% 0.05 145);     /* House Green (딥 에스프레소 그린 - 헤더/푸터) */
+            --sb-green-light: oklch(90% 0.06 150);     /* Light Green (배경 워시, 폼 성공 상태) */
 
             /* 골드 (프리미엄 뱃지 전용) */
-            --sb-gold: #cba258;            /* Rewards Gold */
-            --sb-gold-light: #dfc49d;
-            --sb-gold-lightest: #faf6ee;
+            --sb-gold: oklch(72% 0.13 85);             /* Rewards Gold */
+            --sb-gold-light: oklch(82% 0.10 82);
+            --sb-gold-lightest: oklch(97% 0.01 80);
 
             /* 캔버스 및 배경 (Warm-neutral surfaces) */
-            --sb-bg-cream: #f2f0eb;        /* Neutral Warm (기본 페이지 배경) */
-            --sb-bg-ceramic: #edebe9;      /* Ceramic (보조 구분 영역) */
-            --sb-bg-white: #ffffff;        /* Pure White (카드 내부) */
+            --sb-bg-cream: oklch(95% 0.01 75);         /* Neutral Warm (기본 페이지 배경) */
+            --sb-bg-ceramic: oklch(92% 0.01 70);       /* Ceramic (보조 구분 영역) */
+            --sb-bg-white: oklch(100% 0 0);            /* Pure White (카드 내부) */
 
             /* 텍스트 & 중립 톤 (안구 피로도 경감 87% Alpha Black) */
             --sb-text-black: rgba(0, 0, 0, 0.87);     /* 기본 본문/제목 */
@@ -51,7 +51,8 @@
             --sb-shadow-lift: 0 4px 6px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.10);
             --sb-shadow-frap: 0 4px 10px rgba(0, 98, 65, 0.2), 0 12px 20px rgba(0, 0, 0, 0.15);
 
-            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            /* 스프링 역학 트랜지션 */
+            --transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         * {
@@ -61,7 +62,7 @@
         }
 
         body {
-            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            font-family: 'Outfit', 'Noto Sans KR', sans-serif;
             background-color: var(--sb-bg-cream);
             color: var(--sb-text-black);
             line-height: 1.6;
@@ -923,10 +924,10 @@
     <header id="header">
         <a href="#" class="logo">THE PUREUN <span>PREMIUM</span></a>
         <nav id="nav">
-            <a href="#features">브랜드 스토리</a>
-            <a href="#factory">HACCP 공정</a>
-            <a href="#products">프리미엄 라인업</a>
-            <a href="#contact" class="cta-btn">도매 단가 상담</a>
+            <a href="javascript:void(0)" onclick="smoothScrollTo('#features')">브랜드 스토리</a>
+            <a href="javascript:void(0)" onclick="smoothScrollTo('#factory')">HACCP 공정</a>
+            <a href="javascript:void(0)" onclick="smoothScrollTo('#products')">프리미엄 라인업</a>
+            <a href="javascript:void(0)" onclick="smoothScrollTo('#contact')" class="cta-btn">도매 단가 상담</a>
         </nav>
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span>
@@ -942,8 +943,8 @@
             <h2>자연의 맛과<br><span>HACCP의 청결을 빚다</span></h2>
             <p>더푸른식품은 전통 순대의 깊은 풍미를 그대로 살리고, 최첨단 자동화 위생 공정으로 현대인의 안심 식탁을 책임지는 프리미엄 육가공 명가입니다.</p>
             <div class="hero-actions">
-                <a href="#products" class="btn-primary">제품 라인업 보기</a>
-                <a href="#factory" class="btn-secondary">제조 과정 투어</a>
+                <a href="javascript:void(0)" onclick="smoothScrollTo('#products')" class="btn-primary">제품 라인업 보기</a>
+                <a href="javascript:void(0)" onclick="smoothScrollTo('#factory')" class="btn-secondary">제조 과정 투어</a>
             </div>
         </div>
     </section>
@@ -959,19 +960,32 @@
         <div class="grid-features">
             <!-- 특장점 1 -->
             <div class="feature-card">
-                <div class="icon-box">🌿</div>
+                <div class="icon-box">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 22c1.25-6.7 5-11.8 11-13.8 0 0-2 4.5-1 7.8M10 2c7.6.4 12.3 5.4 12 13-1.9-1.3-4.8-1-7 1"></path>
+                        <path d="M2 22c6.7-1.25 11.8-5 13.8-11 0 0-4.5 2-7.8 1M2 22l6.5-6.5"></path>
+                    </svg>
+                </div>
                 <h4>100% 국산 엄선 원료</h4>
                 <p>전국 산지에서 신선하게 공수한 양배추, 마늘, 부추와 국산 돈창만을 고집하여 잡내 없이 건강하고 담백한 맛을 냅니다.</p>
             </div>
             <!-- 특장점 2 -->
             <div class="feature-card">
-                <div class="icon-box">🌡️</div>
+                <div class="icon-box">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path>
+                    </svg>
+                </div>
                 <h4>특허받은 저온 진공 공정</h4>
                 <p>고온에서 조리하여 재료 본연의 식감이 파괴되는 것을 막기 위해, 저온 진공 흡착 조리법을 통해 겉은 쫄깃하고 속은 아삭하게 유지합니다.</p>
             </div>
             <!-- 특장점 3 -->
             <div class="feature-card">
-                <div class="icon-box">🛡️</div>
+                <div class="icon-box">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
                 <h4>콜드체인 직송 물류</h4>
                 <p>제조 완료 즉시 -40℃ 터널 프리저를 통해 급속 동결되어 영하 18℃ 이하의 콜드체인 탑차를 통해 전국의 점주님들께 직송됩니다.</p>
             </div>
@@ -984,7 +998,7 @@
             <div class="factory-text">
                 <h3>스마트 위생 팩토리의<br>타협 없는 안심 기준</h3>
                 <p>에어샤워 3중 게이트, 자동 세척 및 금속 검출기 연동을 통해 미세한 이물질 유입도 원천 차단하는 스마트 청결 공장입니다.</p>
-                <a href="#contact" class="btn-primary" style="display: inline-block;">무료 샘플 및 공장 견학 신청</a>
+                <a href="javascript:void(0)" onclick="smoothScrollTo('#contact')" class="btn-primary" style="display: inline-block;">무료 샘플 및 공장 견학 신청</a>
             </div>
             <div class="factory-visual">
                 <img src="images/haccp_automated_factory.jpg" alt="더푸른식품 최첨단 자동화 위생 공장 내부">
@@ -1036,7 +1050,7 @@
                     <p class="desc">국산 선지와 돈육, 신선한 야채가 조화롭게 어우러져 한 입 베어 물면 묵직하고 고소한 맛이 입안 가득 맴도는 정통 순대.</p>
                     <div class="product-price">
                         <div class="price">12,000원 <span>/ 1kg 기준</span></div>
-                        <a href="#contact" class="btn-sm">상담신청</a>
+                        <a href="javascript:void(0)" onclick="smoothScrollTo('#contact')" class="btn-sm">상담신청</a>
                     </div>
                 </div>
             </div>
@@ -1051,7 +1065,7 @@
                     <p class="desc">선지를 일체 배합하지 않아 눈처럼 뽀얗고 고소하며, 씹을 때마다 아삭한 야채즙과 고기 풍미가 퍼지는 담백한 순대.</p>
                     <div class="product-price">
                         <div class="price">13,500원 <span>/ 1kg 기준</span></div>
-                        <a href="#contact" class="btn-sm">상담신청</a>
+                        <a href="javascript:void(0)" onclick="smoothScrollTo('#contact')" class="btn-sm">상담신청</a>
                     </div>
                 </div>
             </div>
@@ -1063,10 +1077,10 @@
                 </div>
                 <div class="product-info">
                     <h4>알싸한 청양순대</h4>
-                    <p class="desc">국산 청양고추를 곱게 갈아 넣어 육즙의 리치함과 매운맛의 개운함이 환상적인 밸런스를 맞추는 프리미엄 안주 순대.</p>
+                    <p class="desc">국산 청양고추를 곱게 갈아 넣어 육즙의 리치함 and 매운맛의 개운함이 환상적인 밸런스를 맞추는 프리미엄 안주 순대.</p>
                     <div class="product-price">
                         <div class="price">13,000원 <span>/ 1kg 기준</span></div>
-                        <a href="#contact" class="btn-sm">상담신청</a>
+                        <a href="javascript:void(0)" onclick="smoothScrollTo('#contact')" class="btn-sm">상담신청</a>
                     </div>
                 </div>
             </div>
@@ -1126,7 +1140,7 @@
 
     <!-- 플로팅 프랩 CTA -->
     <div class="frap-cta">
-        <a href="#contact" aria-label="도매 단가 상담 신청">
+        <a href="javascript:void(0)" onclick="smoothScrollTo('#contact')" aria-label="도매 단가 상담 신청">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
             </svg>
@@ -1143,17 +1157,34 @@
             <div class="footer-links">
                 <h5>바로가기</h5>
                 <ul>
-                    <li><a href="#features">브랜드 스토리</a></li>
-                    <li><a href="#factory">HACCP 공정</a></li>
-                    <li><a href="#products">제품 라인업</a></li>
-                    <li><a href="#contact">도매 문의</a></li>
+                    <li><a href="javascript:void(0)" onclick="smoothScrollTo('#features')">브랜드 스토리</a></li>
+                    <li><a href="javascript:void(0)" onclick="smoothScrollTo('#factory')">HACCP 공정</a></li>
+                    <li><a href="javascript:void(0)" onclick="smoothScrollTo('#products')">제품 라인업</a></li>
+                    <li><a href="javascript:void(0)" onclick="smoothScrollTo('#contact')">도매 문의</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
                 <h5>고객 지원 센터</h5>
-                <p>📞 043-855-8899</p>
-                <p>📧 support@thepureun.com</p>
-                <p>📍 충청북도 충주시 신니면 대농공단길 더푸른식품</p>
+                <p>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; display: inline-block; vertical-align: middle;">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    043-855-8899
+                </p>
+                <p>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; display: inline-block; vertical-align: middle;">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    support@thepureun.com
+                </p>
+                <p>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; display: inline-block; vertical-align: middle;">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    충청북도 충주시 신니면 대농공단길 더푸른식품
+                </p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1178,6 +1209,17 @@
         function toggleMenu() {
             const nav = document.getElementById('nav');
             nav.classList.toggle('active');
+        }
+
+        // 부드러운 스크롤 함수
+        function smoothScrollTo(targetSelector) {
+            const target = document.querySelector(targetSelector);
+            if (!target) return;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+                top: targetPosition - 80, // 고정 헤더 높이 감안 마진
+                behavior: 'smooth'
+            });
         }
 
         // 상담 신청 제출 모킹

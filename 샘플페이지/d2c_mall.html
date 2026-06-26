@@ -19,21 +19,21 @@
     
     <style>
         :root {
-            /* 스타벅스 기반 4-tier Green System */
-            --sb-green-primary: #006241;   /* Starbucks Green (메인 브랜드 신호) */
-            --sb-green-accent: #00754a;    /* Green Accent (주요 CTA 및 호버) */
-            --sb-green-house: #1e3932;     /* House Green (딥 에스프레소 그린 - 헤더/푸터) */
-            --sb-green-light: #d4e9e2;     /* Light Green (배경 워시, 폼 성공 상태) */
+            /* 스타벅스 기반 oklch 4-tier Green System */
+            --sb-green-primary: oklch(35% 0.12 150);   /* Starbucks Green (메인 브랜드 신호) */
+            --sb-green-accent: oklch(42% 0.14 148);    /* Green Accent (주요 CTA 및 호버) */
+            --sb-green-house: oklch(22% 0.05 145);     /* House Green (딥 에스프레소 그린 - 헤더/푸터) */
+            --sb-green-light: oklch(90% 0.06 150);     /* Light Green (배경 워시, 폼 성공 상태) */
 
             /* 골드 (정기구독 멤버십 전용) */
-            --sb-gold: #cba258;            /* Rewards Gold */
-            --sb-gold-light: #dfc49d;
-            --sb-gold-lightest: #faf6ee;
+            --sb-gold: oklch(72% 0.13 85);             /* Rewards Gold */
+            --sb-gold-light: oklch(82% 0.10 82);
+            --sb-gold-lightest: oklch(97% 0.01 80);
 
             /* 캔버스 및 배경 (Warm-neutral surfaces) */
-            --sb-bg-cream: #f2f0eb;        /* Neutral Warm (기본 페이지 배경) */
-            --sb-bg-ceramic: #edebe9;      /* Ceramic (보조 구분 영역) */
-            --sb-bg-white: #ffffff;        /* Pure White (카드 내부) */
+            --sb-bg-cream: oklch(95% 0.01 75);         /* Neutral Warm (기본 페이지 배경) */
+            --sb-bg-ceramic: oklch(92% 0.01 70);       /* Ceramic (보조 구분 영역) */
+            --sb-bg-white: oklch(100% 0 0);            /* Pure White (카드 내부) */
 
             /* 텍스트 & 중립 톤 (안구 피로도 경감 87% Alpha Black) */
             --sb-text-black: rgba(0, 0, 0, 0.87);     /* 기본 본문/제목 */
@@ -50,7 +50,8 @@
             --sb-shadow-lift: 0 4px 6px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.10);
             --sb-shadow-frap: 0 4px 10px rgba(0, 98, 65, 0.2), 0 12px 20px rgba(0, 0, 0, 0.15);
 
-            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            /* 스프링 역학 트랜지션 */
+            --transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         * {
@@ -60,7 +61,7 @@
         }
 
         body {
-            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            font-family: 'Outfit', 'Noto Sans KR', sans-serif;
             background-color: var(--sb-bg-cream);
             color: var(--sb-text-black);
             line-height: 1.6;
@@ -638,8 +639,13 @@
             <li><a href="#packages">밀키트 패키지</a></li>
             <li><a href="#reviews">고객 생생 후기</a></li>
         </ul>
-        <div class="cart-icon" onclick="openPayment('더푸른식품 정기구독')">
-            🛒 <span class="cart-badge" id="cartCount">1</span>
+        <div class="cart-icon" onclick="openPayment('더푸른식품 정기구독')" style="display: inline-flex; align-items: center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="cart-badge" id="cartCount">1</span>
         </div>
     </header>
 
@@ -649,7 +655,7 @@
             <div class="hero-left">
                 <h2>오늘 주문하면 내일 아침,<br><span>식탁에서 맛집 국밥 완성</span></h2>
                 <p>더푸른식품 D2C 밀키트는 HACCP 위생 공장에서 조리 직후 팩에 담아 급속 동결 발송합니다. 캠핑장에서도, 1인 가구 주방에서도 단 5분이면 깊고 진한 명가 순대국을 완성할 수 있습니다.</p>
-                <button class="btn-buy" onclick="document.getElementById('packages').scrollIntoView({behavior: 'smooth'})" style="max-width: 250px;">밀키트 주문하러 가기</button>
+                <button class="btn-buy" onclick="smoothScrollTo('#packages')" style="max-width: 250px;">밀키트 주문하러 가기</button>
             </div>
             
             <div class="hero-right-img">
@@ -748,7 +754,13 @@
                             <span>2026-06-21 | 네이버페이 구매</span>
                         </div>
                     </div>
-                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <div class="rating" style="display: flex; gap: 2px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
                     <p>캠핑 갈 때 패밀리 세트 들고 갔는데, 다들 국물이랑 순대 속이 꽉 차서 인생 국밥이라고 극찬을 하더군요. 포장도 정말 위생적이고 정기 배송으로 바로 바꿨습니다!</p>
                 </div>
                 
@@ -760,7 +772,13 @@
                             <span>2026-06-24 | 카카오페이 구매</span>
                         </div>
                     </div>
-                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <div class="rating" style="display: flex; gap: 2px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
                     <p>냄새에 예민해서 순대국 잘 안 사먹는데 더푸른식품 순대는 진짜 잡내가 1도 없네요. 아삭야채 백순대는 담백하고 야채가 씹혀서 건강한 다이어트식으로 최고입니다.</p>
                 </div>
                 
@@ -772,7 +790,13 @@
                             <span>2026-06-25 | B2B 구매</span>
                         </div>
                     </div>
-                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <div class="rating" style="display: flex; gap: 2px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sb-gold)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
                     <p>부재료가 터지지 않아서 영업용으로 국에 말아 끓여 나가기 딱 좋아요. 기존 도매상에서 물건 떼올 때보다 마진이 훨씬 늘어나서 비용 절감 체감이 장난 아닙니다.</p>
                 </div>
             </div>
@@ -810,7 +834,11 @@
             </div>
             
             <div id="pgSuccess" style="display: none;">
-                <span style="font-size: 3rem;">✅</span>
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: var(--sb-green-light); border-radius: 50%; margin: 0 auto 1.5rem auto;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--sb-green-primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </span>
                 <h4 style="margin: 1rem 0; color: var(--sb-green-primary);">결제 완료!</h4>
                 <p style="font-size: 0.95rem; color: var(--sb-text-black);">주문이 데이터베이스에 멱등(Idempotent)하게 저장되었으며, 알림톡으로 배송 일정이 전송됩니다.</p>
                 <button class="btn-buy" onclick="closePayment()" style="margin-top: 2rem; max-width: 150px;">확인</button>
@@ -821,19 +849,19 @@
     <!-- PWA 모바일 하단 네비게이션 바 -->
     <div class="bottom-nav">
         <a href="#" class="bottom-nav-item active">
-            <span class="icon">🏠</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
             홈
         </a>
-        <a href="#packages" class="bottom-nav-item">
-            <span class="icon">🛍️</span>
+        <a href="javascript:void(0)" onclick="smoothScrollTo('#packages')" class="bottom-nav-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
             패키지
         </a>
-        <a href="#reviews" class="bottom-nav-item">
-            <span class="icon">⭐</span>
+        <a href="javascript:void(0)" onclick="smoothScrollTo('#reviews')" class="bottom-nav-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
             리뷰
         </a>
         <a href="#" class="bottom-nav-item" onclick="openPayment('장바구니 전체')">
-            <span class="icon">👤</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             마이
         </a>
     </div>
@@ -856,6 +884,16 @@
         const pgProcessing = document.getElementById('pgProcessing');
         const pgSuccess = document.getElementById('pgSuccess');
         const pgStatus = document.getElementById('pgStatus');
+
+        function smoothScrollTo(targetSelector) {
+            const target = document.querySelector(targetSelector);
+            if (!target) return;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+                top: targetPosition - 60, // 헤더 높이만큼 마진 부여
+                behavior: 'smooth'
+            });
+        }
 
         function openPayment(itemName) {
             modalItemName.textContent = itemName;
