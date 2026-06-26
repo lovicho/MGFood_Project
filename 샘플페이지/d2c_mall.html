@@ -15,19 +15,42 @@
     <!-- 구글 폰트 로드 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --rose: #f43f5e;
-            --rose-dark: #be123c;
-            --amber: #f59e0b;
-            --bg-light: #fafafa;
-            --honey: #fffbeb;
-            --text-dark: #1f2937;
-            --text-muted: #9ca3af;
-            --border: #f3f4f6;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* 스타벅스 기반 4-tier Green System */
+            --sb-green-primary: #006241;   /* Starbucks Green (메인 브랜드 신호) */
+            --sb-green-accent: #00754a;    /* Green Accent (주요 CTA 및 호버) */
+            --sb-green-house: #1e3932;     /* House Green (딥 에스프레소 그린 - 헤더/푸터) */
+            --sb-green-light: #d4e9e2;     /* Light Green (배경 워시, 폼 성공 상태) */
+
+            /* 골드 (정기구독 멤버십 전용) */
+            --sb-gold: #cba258;            /* Rewards Gold */
+            --sb-gold-light: #dfc49d;
+            --sb-gold-lightest: #faf6ee;
+
+            /* 캔버스 및 배경 (Warm-neutral surfaces) */
+            --sb-bg-cream: #f2f0eb;        /* Neutral Warm (기본 페이지 배경) */
+            --sb-bg-ceramic: #edebe9;      /* Ceramic (보조 구분 영역) */
+            --sb-bg-white: #ffffff;        /* Pure White (카드 내부) */
+
+            /* 텍스트 & 중립 톤 (안구 피로도 경감 87% Alpha Black) */
+            --sb-text-black: rgba(0, 0, 0, 0.87);     /* 기본 본문/제목 */
+            --sb-text-muted: rgba(0, 0, 0, 0.58);     /* 부제목, 메타데이터 */
+            --sb-text-white: rgba(255, 255, 255, 1.0); /* 어두운 배경 위 텍스트 */
+            --sb-text-white-soft: rgba(255, 255, 255, 0.70);
+
+            /* 컴포넌트 둥글기 */
+            --sb-radius-pill: 50px;
+            --sb-radius-card: 12px;
+
+            /* 그림자 효과 (Whisper-soft shadows) */
+            --sb-shadow-ambient: 0px 0px .5px 0px rgba(0,0,0,0.14), 0px 1px 1px 0px rgba(0,0,0,0.24);
+            --sb-shadow-lift: 0 4px 6px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.10);
+            --sb-shadow-frap: 0 4px 10px rgba(0, 98, 65, 0.2), 0 12px 20px rgba(0, 0, 0, 0.15);
+
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -37,14 +60,15 @@
         }
 
         body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background-color: var(--sb-bg-cream);
+            color: var(--sb-text-black);
             line-height: 1.6;
+            letter-spacing: -0.01em; /* 스타벅스식 타이트 트래킹 */
             padding-bottom: 70px; /* 모바일 하단바 여유 공간 */
         }
 
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, h5 {
             font-family: 'Outfit', 'Noto Sans KR', sans-serif;
             font-weight: 700;
         }
@@ -54,10 +78,10 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(255,255,255,0.9);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 5%;
+            border-bottom: 1px solid var(--sb-bg-ceramic);
+            padding: 1.1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -67,12 +91,13 @@
             font-family: 'Outfit', sans-serif;
             font-size: 1.4rem;
             font-weight: 800;
-            color: var(--rose);
+            color: var(--sb-green-primary);
             text-decoration: none;
+            letter-spacing: 0.05em;
         }
 
         .logo span {
-            color: var(--text-dark);
+            color: var(--sb-text-black);
         }
 
         .nav-links {
@@ -83,14 +108,14 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-dark);
+            color: var(--sb-text-black);
             font-weight: 500;
             font-size: 0.95rem;
             transition: var(--transition);
         }
 
         .nav-links a:hover {
-            color: var(--rose);
+            color: var(--sb-green-accent);
         }
 
         .cart-icon {
@@ -103,7 +128,7 @@
             position: absolute;
             top: -5px;
             right: -10px;
-            background: var(--rose);
+            background: var(--sb-green-accent);
             color: white;
             font-size: 0.7rem;
             padding: 2px 6px;
@@ -118,7 +143,7 @@
             left: 0;
             width: 100%;
             background: white;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid var(--sb-bg-ceramic);
             display: flex;
             justify-content: space-around;
             padding: 0.6rem 0;
@@ -130,13 +155,13 @@
             flex-direction: column;
             align-items: center;
             text-decoration: none;
-            color: var(--text-muted);
+            color: var(--sb-text-muted);
             font-size: 0.75rem;
             font-weight: 500;
         }
 
         .bottom-nav-item.active {
-            color: var(--rose);
+            color: var(--sb-green-primary);
         }
 
         .bottom-nav-item span.icon {
@@ -146,8 +171,9 @@
 
         /* 히어로 */
         .hero {
-            padding: 3rem 5%;
-            background: var(--honey);
+            padding: 4rem 5%;
+            background: var(--sb-bg-cream);
+            border-bottom: 1px solid var(--sb-bg-ceramic);
         }
 
         .hero-container {
@@ -162,16 +188,18 @@
         .hero-left h2 {
             font-size: 2.8rem;
             line-height: 1.25;
-            color: var(--text-dark);
+            color: var(--sb-text-black);
             margin-bottom: 1.5rem;
         }
 
         .hero-left h2 span {
-            color: var(--rose);
+            color: var(--sb-green-primary);
+            font-family: 'Lora', 'Noto Sans KR', serif;
+            font-weight: 600;
         }
 
         .hero-left p {
-            color: #4b5563;
+            color: var(--sb-text-muted);
             font-size: 1.05rem;
             margin-bottom: 2.5rem;
         }
@@ -184,8 +212,8 @@
 
         .hero-right-img img {
             width: 85%;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(244,63,94,0.12);
+            border-radius: var(--sb-radius-card);
+            box-shadow: var(--sb-shadow-ambient);
         }
 
         /* 구독 서비스 패키지 */
@@ -202,8 +230,12 @@
 
         .section-title h3 {
             font-size: 2rem;
-            color: var(--text-dark);
+            color: var(--sb-text-black);
             margin-bottom: 0.8rem;
+        }
+
+        .section-title p {
+            color: var(--sb-text-muted);
         }
 
         .package-grid {
@@ -213,42 +245,45 @@
         }
 
         .package-card {
-            background: white;
-            border-radius: 24px;
-            border: 1px solid var(--border);
+            background: var(--sb-bg-white);
+            border-radius: var(--sb-radius-card);
+            border: 1px solid var(--sb-bg-ceramic);
             padding: 2.5rem;
             position: relative;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-shadow: var(--sb-shadow-ambient);
         }
 
         .package-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-            border-color: var(--rose);
+            transform: translateY(-4px);
+            box-shadow: var(--sb-shadow-lift);
+            border-color: var(--sb-green-accent);
         }
 
         .package-badge {
             position: absolute;
             top: -15px;
             left: 30px;
-            background: var(--rose);
+            background: var(--sb-green-accent);
             color: white;
             padding: 0.4rem 1.2rem;
-            border-radius: 20px;
+            border-radius: var(--sb-radius-pill);
             font-size: 0.8rem;
             font-weight: 700;
+            letter-spacing: 0.05em;
         }
 
         .package-header h4 {
             font-size: 1.4rem;
             margin: 1rem 0 0.5rem 0;
+            color: var(--sb-text-black);
         }
 
         .package-header p {
-            color: var(--text-muted);
+            color: var(--sb-text-muted);
             font-size: 0.9rem;
             margin-bottom: 2rem;
         }
@@ -259,19 +294,19 @@
 
         .package-price .orig {
             text-decoration: line-through;
-            color: var(--text-muted);
+            color: var(--sb-text-muted);
             font-size: 0.95rem;
         }
 
         .package-price .now {
             font-size: 2rem;
             font-weight: 800;
-            color: var(--rose);
+            color: var(--sb-green-primary);
         }
 
         .package-price .now span {
             font-size: 1rem;
-            color: var(--text-dark);
+            color: var(--sb-text-black);
             font-weight: 400;
         }
 
@@ -283,35 +318,48 @@
         .features-list li {
             font-size: 0.95rem;
             margin-bottom: 0.8rem;
-            color: #4b5563;
+            color: var(--sb-text-black);
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .features-list li::before {
-            content: '🔥 ';
+            content: '✓';
+            color: var(--sb-green-accent);
+            font-weight: bold;
         }
 
         .btn-buy {
             width: 100%;
-            background: var(--text-dark);
+            background: var(--sb-green-accent);
             color: white;
-            border: none;
-            padding: 1rem;
-            border-radius: 12px;
-            font-size: 1rem;
+            border: 1px solid var(--sb-green-accent);
+            padding: 0.85rem;
+            border-radius: var(--sb-radius-pill);
+            font-size: 0.95rem;
             font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
+            letter-spacing: 0.02em;
         }
 
         .btn-buy:hover {
-            background: var(--rose);
-            box-shadow: 0 8px 20px rgba(244,63,94,0.2);
+            background: var(--sb-green-primary);
+            border-color: var(--sb-green-primary);
+            transform: scale(0.98);
+        }
+
+        .btn-buy:active {
+            transform: scale(0.95);
         }
 
         /* 리뷰 섹션 */
         .reviews {
             padding: 6rem 5%;
-            background: white;
+            background: var(--sb-bg-white);
+            border-top: 1px solid var(--sb-bg-ceramic);
+            border-bottom: 1px solid var(--sb-bg-ceramic);
         }
 
         .review-carousel {
@@ -329,10 +377,11 @@
 
         .review-card {
             min-width: 350px;
-            background: var(--bg-light);
-            border-radius: 16px;
+            background: var(--sb-bg-cream);
+            border-radius: var(--sb-radius-card);
             padding: 2rem;
-            border: 1px solid var(--border);
+            border: 1px solid var(--sb-bg-ceramic);
+            box-shadow: var(--sb-shadow-ambient);
         }
 
         .review-user {
@@ -346,31 +395,32 @@
             width: 45px;
             height: 45px;
             border-radius: 50%;
-            background: #e5e7eb;
+            background: var(--sb-green-light);
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            color: var(--rose);
+            color: var(--sb-green-primary);
         }
 
         .user-info h5 {
             font-size: 0.95rem;
+            color: var(--sb-text-black);
         }
 
         .user-info span {
             font-size: 0.75rem;
-            color: var(--text-muted);
+            color: var(--sb-text-muted);
         }
 
         .rating {
-            color: var(--amber);
+            color: var(--sb-gold);
             margin-bottom: 1rem;
         }
 
         .review-card p {
             font-size: 0.9rem;
-            color: #4b5563;
+            color: var(--sb-text-black);
         }
 
         /* 모달 (PG 모킹 아키텍처) */
@@ -396,8 +446,8 @@
         }
 
         .modal-content {
-            background: white;
-            border-radius: 24px;
+            background: var(--sb-bg-cream);
+            border-radius: var(--sb-radius-card);
             padding: 3rem;
             width: 90%;
             max-width: 450px;
@@ -405,6 +455,7 @@
             position: relative;
             transform: scale(0.9);
             transition: var(--transition);
+            border: 1px solid var(--sb-bg-ceramic);
         }
 
         .modal.active .modal-content {
@@ -419,14 +470,14 @@
             cursor: pointer;
             border: none;
             background: none;
-            color: var(--text-muted);
+            color: var(--sb-text-muted);
         }
 
         .pg-spinner {
             width: 60px;
             height: 60px;
-            border: 5px solid #f3f4f6;
-            border-top: 5px solid var(--rose);
+            border: 5px solid var(--sb-bg-ceramic);
+            border-top: 5px solid var(--sb-green-primary);
             border-radius: 50%;
             margin: 2rem auto;
             animation: spin 1s linear infinite;
@@ -440,24 +491,29 @@
         }
 
         .pg-btn {
-            background: var(--border);
+            background: var(--sb-bg-white);
             padding: 0.8rem;
-            border-radius: 8px;
-            border: none;
+            border-radius: var(--sb-radius-pill);
+            border: 1px solid var(--sb-bg-ceramic);
             cursor: pointer;
             font-weight: bold;
             font-size: 0.9rem;
             transition: var(--transition);
+            color: var(--sb-text-black);
         }
 
-        .pg-btn.naver { background: #03c75a; color: white; }
-        .pg-btn.kakao { background: #fee500; color: #191919; }
-        .pg-btn.toss { background: #0064ff; color: white; }
-        .pg-btn.card { background: var(--text-dark); color: white; }
+        .pg-btn.naver { background: #03c75a; color: white; border-color: #03c75a; }
+        .pg-btn.kakao { background: #fee500; color: #191919; border-color: #fee500; }
+        .pg-btn.toss { background: #0064ff; color: white; border-color: #0064ff; }
+        .pg-btn.card { background: var(--sb-text-black); color: white; border-color: var(--sb-text-black); }
 
         .pg-btn:hover {
-            transform: translateY(-2px);
+            transform: scale(0.98);
             opacity: 0.9;
+        }
+
+        .pg-btn:active {
+            transform: scale(0.95);
         }
 
         @keyframes spin {
@@ -467,10 +523,9 @@
 
         /* 푸터 */
         footer {
-            background: white;
+            background: var(--sb-green-house);
             padding: 4rem 5% 2rem 5%;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
+            color: var(--sb-text-white-soft);
             font-size: 0.85rem;
         }
 
@@ -479,6 +534,60 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
+            border-bottom: 1px solid var(--sb-green-uplift);
+            padding-bottom: 2rem;
+        }
+
+        .footer-top .logo {
+            color: white;
+        }
+
+        .footer-top .logo span {
+            color: var(--sb-green-light);
+        }
+
+        /* 플로팅 프랩 CTA (Floating Frap CTA) */
+        .frap-cta {
+            position: fixed;
+            bottom: 84px; /* 모바일 하단 탭바 높이 위로 조정 */
+            right: 24px;
+            z-index: 999;
+        }
+        .frap-cta a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            background-color: var(--sb-green-accent);
+            color: white;
+            border-radius: 50%;
+            box-shadow: var(--sb-shadow-frap);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .frap-cta a:hover {
+            background-color: var(--sb-green-primary);
+            transform: scale(1.05);
+        }
+        .frap-cta a:active {
+            transform: scale(0.95);
+        }
+        .frap-cta span.badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: var(--sb-gold);
+            color: var(--sb-green-house);
+            font-size: 0.75rem;
+            font-weight: 800;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         /* 반응형 */
@@ -496,6 +605,9 @@
             }
             header {
                 display: none; /* 모바일 헤더 숨김, 하단 탭으로 제어 */
+            }
+            .frap-cta {
+                bottom: 84px;
             }
         }
     </style>
@@ -576,9 +688,9 @@
             </div>
             
             <!-- 패키지 2 -->
-            <div class="package-card" style="border-color: var(--rose);">
+            <div class="package-card" style="border-color: var(--sb-green-accent);">
                 <div class="package-header">
-                    <span class="package-badge" style="background: var(--amber);">추천</span>
+                    <span class="package-badge" style="background: var(--sb-gold); color: var(--sb-green-house);">추천</span>
                     <h4>캠핑·아웃도어 패밀리 세트</h4>
                     <p>야외에서 간편하게 즐기는 푸짐한 모듬 순대 & 순대 전골 패키지</p>
                 </div>
@@ -592,7 +704,7 @@
                         <li>전골 전용 아채 모듬 팩</li>
                         <li>사골 전용 육수 (2L)</li>
                     </ul>
-                    <button class="btn-buy" onclick="openPayment('캠핑 패밀리 세트')" style="background: var(--rose);">정기구독 신청</button>
+                    <button class="btn-buy" onclick="openPayment('캠핑 패밀리 세트')">정기구독 신청</button>
                 </div>
             </div>
             
@@ -667,12 +779,22 @@
         </div>
     </section>
 
+    <!-- 플로팅 프랩 CTA -->
+    <div class="frap-cta">
+        <a href="javascript:void(0)" onclick="openPayment('실시간 상담 및 샘플 신청')" aria-label="실시간 상담 및 샘플 신청">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="badge" id="frapCount">1</span>
+        </a>
+    </div>
+
     <!-- PG 모킹 모달 -->
     <div class="modal" id="paymentModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closePayment()">&times;</button>
             <h4 id="modalItemName">상품 주문 결제</h4>
-            <p style="margin-bottom: 1.5rem;">원하시는 결제 수단을 클릭하면 모킹 결제 승인 프로세스가 즉시 실행됩니다.</p>
+            <p style="margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--sb-text-muted);">원하시는 결제 수단을 클릭하면 모킹 결제 승인 프로세스가 즉시 실행됩니다.</p>
             
             <div class="pg-logos" id="paymentButtons">
                 <button class="pg-btn naver" onclick="processMockPG('NaverPay')">Naver Pay</button>
@@ -684,14 +806,14 @@
             <div id="pgProcessing" style="display: none;">
                 <div class="pg-spinner"></div>
                 <h5 id="pgStatus">결제 승인 진행 중...</h5>
-                <p style="font-size: 0.8rem; color: var(--rose); margin-top: 1rem;">Two-Phase Commit (2PC) 결제 무결성 무결 보장 작동 중</p>
+                <p style="font-size: 0.8rem; color: var(--sb-green-primary); margin-top: 1rem;">Two-Phase Commit (2PC) 결제 무결성 무결 보장 작동 중</p>
             </div>
             
             <div id="pgSuccess" style="display: none;">
                 <span style="font-size: 3rem;">✅</span>
-                <h4 style="margin: 1rem 0; color: var(--rose);">결제 완료!</h4>
-                <p>주문이 데이터베이스에 멱등(Idempotent)하게 저장되었으며, 알림톡으로 배송 일정이 전송됩니다.</p>
-                <button class="btn-buy" onclick="closePayment()" style="margin-top: 2rem;">확인</button>
+                <h4 style="margin: 1rem 0; color: var(--sb-green-primary);">결제 완료!</h4>
+                <p style="font-size: 0.95rem; color: var(--sb-text-black);">주문이 데이터베이스에 멱등(Idempotent)하게 저장되었으며, 알림톡으로 배송 일정이 전송됩니다.</p>
+                <button class="btn-buy" onclick="closePayment()" style="margin-top: 2rem; max-width: 150px;">확인</button>
             </div>
         </div>
     </div>
@@ -723,7 +845,7 @@
             <p>고객센터: 1544-9988 | 충주시 대농공단길 더푸른식품</p>
         </div>
         <p>&copy; 2026 더푸른식품 D2C사업부. (본 웹사이트는 비즈니스 제안용 시안입니다.)</p>
-        <p>TossPayments PG 가맹 연동 | 개인정보 처리방침 | 통신판매업신고 제 2026-충북충주-0123호</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">TossPayments PG 가맹 연동 | 개인정보 처리방침 | 통신판매업신고 제 2026-충북충주-0123호</p>
     </footer>
 
     <!-- JS 로직 -->
@@ -767,6 +889,7 @@
                             
                             // 장바구니 카운트 초기화 및 업데이트 모킹
                             document.getElementById('cartCount').textContent = '0';
+                            document.getElementById('frapCount').textContent = '0';
                         }, 800);
                     }, 1000);
                 }, 800);

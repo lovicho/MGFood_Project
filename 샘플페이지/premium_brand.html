@@ -15,21 +15,43 @@
     <!-- 구글 폰트 로드 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     
     <!-- CSS 스타일링 -->
     <style>
         :root {
-            --primary: #064e3b; /* Forest Green */
-            --primary-light: #0f766e;
-            --secondary: #fdfbf7; /* Warm Ivory */
-            --accent: #b45309; /* Amber Gold */
-            --text-dark: #1f2937;
-            --text-light: #f3f4f6;
-            --gray-sub: #6b7280;
-            --glass-bg: rgba(253, 251, 247, 0.75);
-            --glass-border: rgba(6, 78, 59, 0.08);
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            /* 스타벅스 기반 4-tier Green System */
+            --sb-green-primary: #006241;   /* Starbucks Green (메인 헤드라인) */
+            --sb-green-accent: #00754a;    /* Green Accent (주요 CTA 및 버튼 채우기) */
+            --sb-green-house: #1e3932;     /* House Green (딥 에스프레소 그린 - 헤더/푸터) */
+            --sb-green-light: #d4e9e2;     /* Light Green (배경 워시, 폼 성공 상태) */
+
+            /* 골드 (프리미엄 뱃지 전용) */
+            --sb-gold: #cba258;            /* Rewards Gold */
+            --sb-gold-light: #dfc49d;
+            --sb-gold-lightest: #faf6ee;
+
+            /* 캔버스 및 배경 (Warm-neutral surfaces) */
+            --sb-bg-cream: #f2f0eb;        /* Neutral Warm (기본 페이지 배경) */
+            --sb-bg-ceramic: #edebe9;      /* Ceramic (보조 구분 영역) */
+            --sb-bg-white: #ffffff;        /* Pure White (카드 내부) */
+
+            /* 텍스트 & 중립 톤 (안구 피로도 경감 87% Alpha Black) */
+            --sb-text-black: rgba(0, 0, 0, 0.87);     /* 기본 본문/제목 */
+            --sb-text-muted: rgba(0, 0, 0, 0.58);     /* 부제목, 메타데이터 */
+            --sb-text-white: rgba(255, 255, 255, 1.0); /* 어두운 배경 위 텍스트 */
+            --sb-text-white-soft: rgba(255, 255, 255, 0.70);
+
+            /* 컴포넌트 둥글기 */
+            --sb-radius-pill: 50px;
+            --sb-radius-card: 12px;
+
+            /* 그림자 효과 (Whisper-soft shadows) */
+            --sb-shadow-ambient: 0px 0px .5px 0px rgba(0,0,0,0.14), 0px 1px 1px 0px rgba(0,0,0,0.24);
+            --sb-shadow-lift: 0 4px 6px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.10);
+            --sb-shadow-frap: 0 4px 10px rgba(0, 98, 65, 0.2), 0 12px 20px rgba(0, 0, 0, 0.15);
+
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -39,10 +61,11 @@
         }
 
         body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background-color: var(--secondary);
-            color: var(--text-dark);
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background-color: var(--sb-bg-cream);
+            color: var(--sb-text-black);
             line-height: 1.6;
+            letter-spacing: -0.01em; /* 스타벅스식 타이트 트래킹 */
             overflow-x: hidden;
         }
 
@@ -56,10 +79,10 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: var(--secondary);
+            background: var(--sb-bg-cream);
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--primary);
+            background: var(--sb-green-accent);
             border-radius: 4px;
         }
 
@@ -70,9 +93,9 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(253, 251, 247, 0.85);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--sb-bg-ceramic);
             padding: 1.2rem 4%;
             display: flex;
             justify-content: space-between;
@@ -82,22 +105,24 @@
 
         header.scrolled {
             padding: 0.8rem 4%;
-            box-shadow: 0 10px 30px rgba(6, 78, 59, 0.04);
+            box-shadow: var(--sb-shadow-lift);
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .logo {
             font-family: 'Outfit', sans-serif;
             font-size: 1.6rem;
             font-weight: 800;
-            color: var(--primary);
+            color: var(--sb-green-primary);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 8px;
+            letter-spacing: 0.05em;
         }
 
         .logo span {
-            color: var(--accent);
+            color: var(--sb-text-black);
         }
 
         nav {
@@ -107,7 +132,7 @@
 
         nav a {
             text-decoration: none;
-            color: var(--text-dark);
+            color: var(--sb-text-black);
             font-weight: 500;
             font-size: 1rem;
             transition: var(--transition);
@@ -121,12 +146,12 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--primary);
+            background-color: var(--sb-green-accent);
             transition: var(--transition);
         }
 
         nav a:hover {
-            color: var(--primary);
+            color: var(--sb-green-accent);
         }
 
         nav a:hover::after {
@@ -134,21 +159,27 @@
         }
 
         .cta-btn {
-            background-color: var(--primary);
+            background-color: var(--sb-green-accent);
             color: white;
-            padding: 0.7rem 1.8rem;
-            border-radius: 30px;
+            padding: 0.75rem 1.8rem;
+            border-radius: var(--sb-radius-pill);
             font-weight: 600;
             text-decoration: none;
             transition: var(--transition);
-            border: 1px solid transparent;
+            border: 1px solid var(--sb-green-accent);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .cta-btn:hover {
-            background-color: transparent;
-            color: var(--primary);
-            border-color: var(--primary);
-            box-shadow: 0 4px 20px rgba(6, 78, 59, 0.15);
+            background-color: var(--sb-green-primary);
+            border-color: var(--sb-green-primary);
+            transform: scale(0.98);
+        }
+
+        .cta-btn:active {
+            transform: scale(0.95);
         }
 
         /* 모바일 메뉴 토글 */
@@ -162,7 +193,7 @@
         .menu-toggle span {
             width: 28px;
             height: 3px;
-            background-color: var(--primary);
+            background-color: var(--sb-green-primary);
             border-radius: 2px;
             transition: var(--transition);
         }
@@ -174,7 +205,7 @@
             display: flex;
             align-items: center;
             padding: 0 8%;
-            background: linear-gradient(135deg, rgba(6, 78, 59, 0.95) 0%, rgba(15, 118, 110, 0.8) 100%), 
+            background: linear-gradient(135deg, rgba(30, 57, 50, 0.95) 0%, rgba(43, 81, 72, 0.8) 100%), 
                         url('images/premium_soondae_plating.jpg') center/cover no-repeat;
             color: white;
             padding-top: 100px;
@@ -187,29 +218,37 @@
         }
 
         .hero-badge {
-            background: rgba(180, 83, 9, 0.2);
-            border: 1px solid var(--accent);
-            color: #f59e0b;
+            background: rgba(203, 162, 88, 0.15);
+            border: 1px solid var(--sb-gold);
+            color: var(--sb-gold-light);
             padding: 0.4rem 1.2rem;
-            border-radius: 50px;
+            border-radius: var(--sb-radius-pill);
             font-size: 0.9rem;
             font-weight: 600;
             display: inline-block;
             margin-bottom: 1.5rem;
             animation: fadeInUp 1s ease-out;
+            letter-spacing: 0.05em;
         }
 
         .hero h2 {
             font-size: 3.5rem;
             line-height: 1.2;
             margin-bottom: 1.5rem;
-            font-weight: 900;
+            font-weight: 800;
             animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero h2 span {
+            font-family: 'Lora', serif;
+            color: var(--sb-gold-light);
+            font-weight: 500;
+            font-style: italic;
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: #d1fae5;
+            color: var(--sb-green-light);
             margin-bottom: 2.5rem;
             animation: fadeInUp 1s ease-out 0.4s both;
         }
@@ -221,20 +260,25 @@
         }
 
         .btn-primary {
-            background-color: var(--accent);
+            background-color: var(--sb-green-accent);
             color: white;
             text-decoration: none;
             padding: 1rem 2.2rem;
-            border-radius: 30px;
+            border-radius: var(--sb-radius-pill);
             font-weight: 700;
             font-size: 1.1rem;
             transition: var(--transition);
+            border: 1px solid var(--sb-green-accent);
         }
 
         .btn-primary:hover {
-            background-color: #d97706;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(180, 83, 9, 0.4);
+            background-color: var(--sb-green-primary);
+            border-color: var(--sb-green-primary);
+            transform: scale(0.98);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.95);
         }
 
         .btn-secondary {
@@ -242,7 +286,7 @@
             color: white;
             text-decoration: none;
             padding: 1rem 2.2rem;
-            border-radius: 30px;
+            border-radius: var(--sb-radius-pill);
             font-weight: 600;
             font-size: 1.1rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -252,14 +296,15 @@
 
         .btn-secondary:hover {
             background-color: white;
-            color: var(--primary);
-            transform: translateY(-3px);
+            color: var(--sb-green-house);
+            transform: scale(0.98);
         }
 
         /* 특장점 섹션 */
         .features {
             padding: 8rem 8%;
             position: relative;
+            background-color: var(--sb-bg-cream);
         }
 
         .section-header {
@@ -269,7 +314,7 @@
         }
 
         .section-header span {
-            color: var(--accent);
+            color: var(--sb-green-accent);
             font-weight: 700;
             font-size: 1rem;
             letter-spacing: 2px;
@@ -280,8 +325,14 @@
 
         .section-header h3 {
             font-size: 2.5rem;
-            color: var(--primary);
+            color: var(--sb-green-house);
             margin-bottom: 1.2rem;
+            font-family: 'Lora', 'Noto Sans KR', serif;
+            font-weight: 600;
+        }
+
+        .section-header p {
+            color: var(--sb-text-muted);
         }
 
         .grid-features {
@@ -291,53 +342,55 @@
         }
 
         .feature-card {
-            background: white;
-            border-radius: 20px;
+            background: var(--sb-bg-white);
+            border-radius: var(--sb-radius-card);
             padding: 3rem 2.5rem;
-            box-shadow: 0 10px 40px rgba(6, 78, 59, 0.03);
-            border: 1px solid rgba(6, 78, 59, 0.04);
+            box-shadow: var(--sb-shadow-ambient);
+            border: 1px solid var(--sb-bg-ceramic);
             transition: var(--transition);
         }
 
         .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(6, 78, 59, 0.08);
-            border-color: rgba(6, 78, 59, 0.1);
+            transform: translateY(-4px);
+            box-shadow: var(--sb-shadow-lift);
+            border-color: var(--sb-green-accent);
         }
 
         .icon-box {
             width: 70px;
             height: 70px;
-            background: rgba(6, 78, 59, 0.05);
+            background: var(--sb-bg-cream);
             border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 2rem;
-            color: var(--primary);
+            color: var(--sb-green-primary);
             font-size: 2rem;
             transition: var(--transition);
+            border: 1px solid var(--sb-bg-ceramic);
         }
 
         .feature-card:hover .icon-box {
-            background: var(--primary);
+            background: var(--sb-green-accent);
             color: white;
+            border-color: var(--sb-green-accent);
         }
 
         .feature-card h4 {
             font-size: 1.35rem;
             margin-bottom: 1rem;
-            color: var(--primary);
+            color: var(--sb-green-house);
         }
 
         .feature-card p {
-            color: var(--gray-sub);
+            color: var(--sb-text-muted);
             font-size: 0.95rem;
         }
 
         /* 청결 제조 공정 섹션 */
         .factory-section {
-            background-color: #042f24;
+            background-color: var(--sb-green-house);
             color: white;
             padding: 8rem 8%;
             position: relative;
@@ -357,10 +410,12 @@
             font-size: 2.8rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            font-family: 'Lora', 'Noto Sans KR', serif;
+            font-weight: 500;
         }
 
         .factory-text p {
-            color: #a7f3d0;
+            color: var(--sb-green-light);
             font-size: 1.1rem;
             margin-bottom: 2.5rem;
         }
@@ -372,8 +427,8 @@
 
         .factory-visual img {
             width: 100%;
-            border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            border-radius: var(--sb-radius-card);
+            box-shadow: var(--sb-shadow-frap);
             border: 1px solid rgba(255,255,255,0.1);
         }
 
@@ -382,13 +437,14 @@
             position: absolute;
             bottom: 20px;
             right: 20px;
-            background: var(--accent);
+            background: var(--sb-green-accent);
             color: white;
             padding: 0.6rem 1.5rem;
             font-weight: 700;
-            border-radius: 30px;
+            border-radius: var(--sb-radius-pill);
             font-size: 0.85rem;
-            box-shadow: 0 4px 15px rgba(180,83,9,0.3);
+            box-shadow: 0 4px 15px rgba(0,98,65,0.3);
+            letter-spacing: 0.05em;
         }
 
         /* 타임라인 공정 */
@@ -405,13 +461,13 @@
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
             padding: 2rem;
-            border-radius: 16px;
+            border-radius: var(--sb-radius-card);
         }
 
         .step-number {
             font-size: 3rem;
             font-weight: 800;
-            color: rgba(167, 243, 208, 0.15);
+            color: rgba(212, 233, 226, 0.15);
             position: absolute;
             top: 10px;
             right: 20px;
@@ -426,13 +482,14 @@
 
         .timeline-step p {
             font-size: 0.9rem;
-            color: #a7f3d0;
+            color: var(--sb-green-light);
             line-height: 1.5;
         }
 
         /* 프리미엄 제품 라인업 */
         .products {
             padding: 8rem 8%;
+            background-color: var(--sb-bg-white);
         }
 
         .product-grid {
@@ -442,22 +499,23 @@
         }
 
         .product-card {
-            background: white;
-            border-radius: 24px;
+            background: var(--sb-bg-white);
+            border-radius: var(--sb-radius-card);
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(6, 78, 59, 0.03);
-            border: 1px solid rgba(6, 78, 59, 0.04);
+            box-shadow: var(--sb-shadow-ambient);
+            border: 1px solid var(--sb-bg-ceramic);
             transition: var(--transition);
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(6, 78, 59, 0.08);
+            transform: translateY(-4px);
+            box-shadow: var(--sb-shadow-lift);
+            border-color: var(--sb-green-accent);
         }
 
         .product-img {
             height: 280px;
-            background-color: #f3f4f6;
+            background-color: var(--sb-bg-cream);
             position: relative;
             overflow: hidden;
             display: flex;
@@ -469,12 +527,13 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            background: var(--accent);
+            background: var(--sb-green-accent);
             color: white;
             padding: 0.4rem 1rem;
-            border-radius: 20px;
+            border-radius: var(--sb-radius-pill);
             font-size: 0.8rem;
             font-weight: 700;
+            letter-spacing: 0.05em;
         }
 
         .product-info {
@@ -483,12 +542,12 @@
 
         .product-info h4 {
             font-size: 1.4rem;
-            color: var(--primary);
+            color: var(--sb-green-house);
             margin-bottom: 0.6rem;
         }
 
         .product-info .desc {
-            color: var(--gray-sub);
+            color: var(--sb-text-muted);
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
             height: 48px;
@@ -499,52 +558,59 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid #f3f4f6;
+            border-top: 1px solid var(--sb-bg-ceramic);
             padding-top: 1.5rem;
         }
 
         .price {
             font-size: 1.3rem;
             font-weight: 800;
-            color: var(--text-dark);
+            color: var(--sb-text-black);
         }
 
         .price span {
             font-size: 0.9rem;
-            color: var(--gray-sub);
+            color: var(--sb-text-muted);
             font-weight: 400;
         }
 
         .btn-sm {
-            background-color: var(--primary);
+            background-color: var(--sb-green-accent);
             color: white;
             text-decoration: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 20px;
+            padding: 0.6rem 1.4rem;
+            border-radius: var(--sb-radius-pill);
             font-size: 0.9rem;
             font-weight: 600;
             transition: var(--transition);
+            border: 1px solid var(--sb-green-accent);
         }
 
         .btn-sm:hover {
-            background-color: var(--accent);
+            background-color: var(--sb-green-primary);
+            border-color: var(--sb-green-primary);
+            transform: scale(0.98);
+        }
+
+        .btn-sm:active {
+            transform: scale(0.95);
         }
 
         /* 상담 문의 폼 */
         .contact {
             padding: 8rem 8%;
-            background-color: #f7f5ef;
+            background-color: var(--sb-bg-cream);
             position: relative;
         }
 
         .contact-container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
-            border-radius: 30px;
+            background: var(--sb-bg-white);
+            border-radius: var(--sb-radius-card);
             padding: 4rem;
-            box-shadow: 0 20px 60px rgba(6, 78, 59, 0.04);
-            border: 1px solid rgba(6, 78, 59, 0.03);
+            box-shadow: var(--sb-shadow-ambient);
+            border: 1px solid var(--sb-bg-ceramic);
         }
 
         .form-grid {
@@ -566,25 +632,26 @@
 
         label {
             font-weight: 600;
-            color: var(--primary);
+            color: var(--sb-green-house);
             font-size: 0.95rem;
         }
 
         input, select, textarea {
             padding: 1rem 1.2rem;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
+            border: 1px solid var(--sb-bg-ceramic);
+            border-radius: var(--sb-radius-card);
             font-family: inherit;
             font-size: 1rem;
             transition: var(--transition);
-            background: #fafaf9;
+            background: var(--sb-bg-cream);
+            color: var(--sb-text-black);
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: var(--primary);
+            border-color: var(--sb-green-accent);
             background: white;
-            box-shadow: 0 0 0 4px rgba(6, 78, 59, 0.05);
+            box-shadow: 0 0 0 4px rgba(0, 117, 74, 0.05);
         }
 
         .consent-group {
@@ -601,13 +668,13 @@
         }
 
         .btn-submit {
-            background-color: var(--primary);
+            background-color: var(--sb-green-accent);
             color: white;
             border: none;
             padding: 1.2rem;
             font-size: 1.1rem;
             font-weight: 700;
-            border-radius: 12px;
+            border-radius: var(--sb-radius-pill);
             cursor: pointer;
             transition: var(--transition);
             margin-top: 2rem;
@@ -615,15 +682,18 @@
         }
 
         .btn-submit:hover {
-            background-color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(6, 78, 59, 0.15);
+            background-color: var(--sb-green-primary);
+            transform: scale(0.98);
+        }
+
+        .btn-submit:active {
+            transform: scale(0.95);
         }
 
         /* 푸터 */
         footer {
-            background-color: #042f24;
-            color: #d1fae5;
+            background-color: var(--sb-green-house);
+            color: var(--sb-green-light);
             padding: 5rem 8% 3rem 8%;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
@@ -633,17 +703,20 @@
             grid-template-columns: 2fr 1fr 1.2fr;
             gap: 4rem;
             margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 4rem;
         }
 
         .footer-info h4 {
             color: white;
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
         }
 
         .footer-info p {
             font-size: 0.95rem;
-            color: #a7f3d0;
+            color: var(--sb-green-light);
             max-width: 320px;
             margin-bottom: 2rem;
         }
@@ -663,7 +736,7 @@
         }
 
         .footer-links ul li a {
-            color: #a7f3d0;
+            color: var(--sb-green-light);
             text-decoration: none;
             font-size: 0.95rem;
             transition: var(--transition);
@@ -683,13 +756,41 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 0.85rem;
-            color: #6ee7b7;
+            color: var(--sb-green-light);
+            opacity: 0.8;
+            padding-top: 1rem;
+        }
+
+        /* 플로팅 프랩 CTA (Floating Frap CTA) */
+        .frap-cta {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+        }
+        .frap-cta a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            background-color: var(--sb-green-accent);
+            color: white;
+            border-radius: 50%;
+            box-shadow: var(--sb-shadow-frap);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .frap-cta a:hover {
+            background-color: var(--sb-green-primary);
+            transform: scale(1.05);
+        }
+        .frap-cta a:active {
+            transform: scale(0.95);
         }
 
         /* 애니메이션 키프레임 */
@@ -728,7 +829,7 @@
                 flex-direction: column;
                 padding: 2rem 5%;
                 gap: 1.5rem;
-                border-bottom: 1px solid #e5e7eb;
+                border-bottom: 1px solid var(--sb-bg-ceramic);
                 box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             }
             nav.active {
@@ -780,7 +881,7 @@
     {
       "@context": "https://schema.org",
       "@type": "FoodEstablishment",
-      "name": "더푸른식품 프리미엄 브랜드",
+      "name": "더푸른식품 프리미엄 브랜드관",
       "image": "images/premium_soondae_plating.jpg",
       "description": "최첨단 HACCP 위생 설비에서 엄선된 국산 원료로 건강하고 담백한 프리미엄 순대를 제조하는 대표 브랜드.",
       "address": {
@@ -798,21 +899,18 @@
         "hasMenuItem": [
           {
             "@type": "MenuItem",
-            "name": "더푸른 명품 토종순대",
-            "offers": {
-              "@type": "Offer",
-              "price": "14900",
-              "priceCurrency": "KRW"
-            }
+            "name": "명품 토종순대",
+            "description": "엄선된 선지와 국산 채소를 배합하여 저온 찜기로 깊은 풍미를 완성한 대표 고기순대"
           },
           {
             "@type": "MenuItem",
-            "name": "더푸른 아삭 야채 백순대",
-            "offers": {
-              "@type": "Offer",
-              "price": "15900",
-              "priceCurrency": "KRW"
-            }
+            "name": "아삭야채 백순대",
+            "description": "선지를 넣지 않고, 국산 야채와 고기를 아낌없이 채워 담백하고 영양 가득한 순대"
+          },
+          {
+            "@type": "MenuItem",
+            "name": "알싸한 청양순대",
+            "description": "청양고추를 곱게 다져 넣어 매콤하고 개운한 뒷맛이 특징인 별미 안주용 순대"
           }
         ]
       }
@@ -823,15 +921,14 @@
 
     <!-- 헤더 영역 -->
     <header id="header">
-        <a href="#" class="logo">THE PUREUN <span>FOOD</span></a>
+        <a href="#" class="logo">THE PUREUN <span>PREMIUM</span></a>
         <nav id="nav">
-            <a href="#about">브랜드 스토리</a>
-            <a href="#factory">HACCP 위생 공정</a>
+            <a href="#features">브랜드 스토리</a>
+            <a href="#factory">HACCP 공정</a>
             <a href="#products">프리미엄 라인업</a>
-            <a href="#contact">온라인 문의</a>
+            <a href="#contact" class="cta-btn">도매 단가 상담</a>
         </nav>
-        <a href="#contact" class="cta-btn">도매 단가 상담</a>
-        <div class="menu-toggle" id="menuToggle">
+        <div class="menu-toggle" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
@@ -841,8 +938,8 @@
     <!-- 히어로 섹션 -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">2026 차세대 푸드테크 브랜드</div>
-            <h2>자연의 맛과<br>HACCP의 청결을 빚다</h2>
+            <span class="hero-badge">2026 차세대 푸드테크 브랜드</span>
+            <h2>자연의 맛과<br><span>HACCP의 청결을 빚다</span></h2>
             <p>더푸른식품은 전통 순대의 깊은 풍미를 그대로 살리고, 최첨단 자동화 위생 공정으로 현대인의 안심 식탁을 책임지는 프리미엄 육가공 명가입니다.</p>
             <div class="hero-actions">
                 <a href="#products" class="btn-primary">제품 라인업 보기</a>
@@ -851,213 +948,246 @@
         </div>
     </section>
 
-    <!-- 핵심 강점 섹션 -->
-    <section class="features" id="about">
+    <!-- 특장점 섹션 -->
+    <section class="features" id="features">
         <div class="section-header">
-            <span>Our Philosophy</span>
-            <h3>비교할 수 없는 3대 약속</h3>
-            <p>양산형 기성 제품과는 본질부터 다릅니다. 원료의 선별부터 가공, 완제품 유통까지 격이 다른 위생과 타협 없는 프리미엄 품질을 약속합니다.</p>
+            <span>The Pureun Standard</span>
+            <h3>우리가 지키는 깊고 정직한 기준</h3>
+            <p>더푸른식품은 전통의 손맛과 현대식 푸드테크 솔루션을 결합하여 비교할 수 없는 맛의 무결성을 선사합니다.</p>
         </div>
+        
         <div class="grid-features">
+            <!-- 특장점 1 -->
             <div class="feature-card">
-                <div class="icon-box">🥬</div>
-                <h4>100% 국산 친환경 원료</h4>
-                <p>당일 도축한 엄선 신선 돈장과 산지 직송 신선 야채만을 배합하여, 이취가 전혀 없는 고소하고 깔끔한 맛의 극치를 구현합니다.</p>
+                <div class="icon-box">🌿</div>
+                <h4>100% 국산 엄선 원료</h4>
+                <p>전국 산지에서 신선하게 공수한 양배추, 마늘, 부추와 국산 돈창만을 고집하여 잡내 없이 건강하고 담백한 맛을 냅니다.</p>
             </div>
+            <!-- 특장점 2 -->
+            <div class="feature-card">
+                <div class="icon-box">🌡️</div>
+                <h4>특허받은 저온 진공 공정</h4>
+                <p>고온에서 조리하여 재료 본연의 식감이 파괴되는 것을 막기 위해, 저온 진공 흡착 조리법을 통해 겉은 쫄깃하고 속은 아삭하게 유지합니다.</p>
+            </div>
+            <!-- 특장점 3 -->
             <div class="feature-card">
                 <div class="icon-box">🛡️</div>
-                <h4>HACCP 자동화 위생 가공</h4>
-                <p>수작업 생산의 변수를 제거하고, 원료 투입부터 진공 실링까지 전 공정 스마트 팩토리 자동화 라인에서 철저히 관리됩니다.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon-box">❄️</div>
-                <h4>콜드체인 초신선 시스템</h4>
-                <p>급속 동결 및 저온 제어 물류망을 통해, 공장의 신선함과 쫄깃한 식감을 전국 매장 및 소비자 식탁까지 고스란히 전달합니다.</p>
+                <h4>콜드체인 직송 물류</h4>
+                <p>제조 완료 즉시 -40℃ 터널 프리저를 통해 급속 동결되어 영하 18℃ 이하의 콜드체인 탑차를 통해 전국의 점주님들께 직송됩니다.</p>
             </div>
         </div>
     </section>
 
-    <!-- 자동화 공정 섹션 -->
+    <!-- 청결 제조 공정 섹션 -->
     <section class="factory-section" id="factory">
         <div class="factory-content">
             <div class="factory-text">
-                <h3>소비자가 신뢰하는<br>투명한 HACCP 스마트 공장</h3>
-                <p>더푸른식품은 전국 맛집 브랜드와 파트너십을 맺어 위생과 균일한 품질을 뒷받침합니다. 공장의 오염 요소를 원천 차단하는 에어샤워 터널과 금속 검출 시스템을 완비했습니다.</p>
-                
-                <div class="timeline">
-                    <div class="timeline-step">
-                        <div class="step-number">01</div>
-                        <h5>1차 엄선·세척</h5>
-                        <p>초음파 세척기를 사용하여 신선 돈장의 잔여물을 완벽하게 살균 세척합니다.</p>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="step-number">02</div>
-                        <h5>저온 숙성 소</h5>
-                        <p>12시간 저온 에이징을 거친 소 고유의 풍미와 식감을 배가시킵니다.</p>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="step-number">03</div>
-                        <h5>자동 진공 충진</h5>
-                        <p>균일한 밀도와 터짐 방지를 위해 컴퓨터 제어식 자동 진공 충진기를 사용합니다.</p>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="step-number">04</div>
-                        <h5>고온 열풍 멸균</h5>
-                        <p>안정적인 보존을 위해 무압력 순환 스팀 및 멸균 포장을 최종 완료합니다.</p>
-                    </div>
-                </div>
+                <h3>스마트 위생 팩토리의<br>타협 없는 안심 기준</h3>
+                <p>에어샤워 3중 게이트, 자동 세척 및 금속 검출기 연동을 통해 미세한 이물질 유입도 원천 차단하는 스마트 청결 공장입니다.</p>
+                <a href="#contact" class="btn-primary" style="display: inline-block;">무료 샘플 및 공장 견학 신청</a>
             </div>
             <div class="factory-visual">
-                <img src="images/haccp_automated_factory.jpg" alt="더푸른식품 최첨단 위생 공장 내부 전경">
+                <img src="images/haccp_automated_factory.jpg" alt="더푸른식품 최첨단 자동화 위생 공장 내부">
+            </div>
+        </div>
+        
+        <!-- 단계별 타임라인 -->
+        <div class="timeline">
+            <div class="timeline-step">
+                <span class="step-number">01</span>
+                <h5>1단계: 원료 초음파 세척</h5>
+                <p>공장에 입고되는 모든 신선 채소는 초음파 미세 기포 세척기를 거쳐 잔류 농약과 이물질을 완벽 제거합니다.</p>
+            </div>
+            <div class="timeline-step">
+                <span class="step-number">02</span>
+                <h5>2단계: 균일 배합 충진</h5>
+                <p>레시피 정량 제어 시스템을 통하여 사계절 내내 한결같은 맛과 비율로 채소와 돈육 소를 케이싱에 충진합니다.</p>
+            </div>
+            <div class="timeline-step">
+                <span class="step-number">03</span>
+                <h5>3단계: 저온 스팀 찜조리</h5>
+                <p>특수 설계된 저온 다단 찜기에서 스팀 순환 방식을 이용해 순대가 터지지 않고 부드럽게 익도록 쪄냅니다.</p>
+            </div>
+            <div class="timeline-step">
+                <span class="step-number">04</span>
+                <h5>4단계: AI 금속 검출 & 포장</h5>
+                <p>자동 냉각 및 진공 포장 직후 AI 비전 분석기와 금속 검출기를 동시 통과하여 안전이 검증된 제품만 출고됩니다.</p>
             </div>
         </div>
     </section>
 
-    <!-- 제품 라인업 섹션 -->
+    <!-- 프리미엄 제품 라인업 -->
     <section class="products" id="products">
         <div class="section-header">
-            <span>Premium Lineup</span>
-            <h3>시그니처 프리미엄 라인</h3>
-            <p>엄격한 위생 기준 아래 탄생한 프리미엄 수제 타입의 순대를 소개합니다.</p>
+            <span>Premium Selection</span>
+            <h3>차별화된 풍미의 프리미엄 순대</h3>
+            <p>더푸른식품의 엄격한 기준으로 완성된 세 가지 대표 시그니처 순대 제품을 소개합니다.</p>
         </div>
+        
         <div class="product-grid">
+            <!-- 제품 1 -->
             <div class="product-card">
                 <div class="product-img">
                     <span class="tag">인기</span>
-                    <!-- 가상 이미지 렌더링 스타일 -->
-                    <div style="width:100%; height:100%; background:url('images/premium_soondae_plating.jpg') center/cover no-repeat;"></div>
+                    <img src="images/soondae_meat.png" alt="더푸른식품 명품 토종순대 시안" style="max-height: 200px; object-fit: contain;">
                 </div>
                 <div class="product-info">
-                    <h4>더푸른 명품 토종순대</h4>
-                    <p class="desc">국산 선지와 당면, 신선한 야채가 어우러져 한 층 깊고 중후한 풍미를 선사하는 대표 토종순대.</p>
+                    <h4>명품 토종순대</h4>
+                    <p class="desc">국산 선지와 돈육, 신선한 야채가 조화롭게 어우러져 한 입 베어 물면 묵직하고 고소한 맛이 입안 가득 맴도는 정통 순대.</p>
                     <div class="product-price">
-                        <div class="price">14,900원 <span>/ 1kg</span></div>
-                        <a href="#contact" class="btn-sm">상담 문의</a>
+                        <div class="price">12,000원 <span>/ 1kg 기준</span></div>
+                        <a href="#contact" class="btn-sm">상담신청</a>
                     </div>
                 </div>
             </div>
+            <!-- 제품 2 -->
             <div class="product-card">
                 <div class="product-img">
-                    <span class="tag">담백</span>
-                    <div style="width:100%; height:100%; background:url('images/premium_soondae_plating.jpg') center/cover no-repeat; filter: grayscale(30%) sepia(20%);"></div>
+                    <span class="tag" style="background: var(--sb-gold); color: var(--sb-green-house);">대표</span>
+                    <img src="images/soondae_vegetable.png" alt="더푸른식품 아삭야채 백순대 시안" style="max-height: 200px; object-fit: contain;">
                 </div>
                 <div class="product-info">
-                    <h4>더푸른 아삭 야채 백순대</h4>
-                    <p class="desc">선지를 배제하고 양배추, 대파, 마늘 등 야채를 듬뿍 넣어 아삭한 식감과 깔끔한 담백함이 특징인 순대.</p>
+                    <h4>아삭야채 백순대</h4>
+                    <p class="desc">선지를 일체 배합하지 않아 눈처럼 뽀얗고 고소하며, 씹을 때마다 아삭한 야채즙과 고기 풍미가 퍼지는 담백한 순대.</p>
                     <div class="product-price">
-                        <div class="price">15,900원 <span>/ 1kg</span></div>
-                        <a href="#contact" class="btn-sm">상담 문의</a>
+                        <div class="price">13,500원 <span>/ 1kg 기준</span></div>
+                        <a href="#contact" class="btn-sm">상담신청</a>
                     </div>
                 </div>
             </div>
+            <!-- 제품 3 -->
             <div class="product-card">
                 <div class="product-img">
-                    <span class="tag">매콤</span>
-                    <div style="width:100%; height:100%; background:url('images/premium_soondae_plating.jpg') center/cover no-repeat; filter: hue-rotate(330deg);"></div>
+                    <span class="tag" style="background: #ef4444;">매콤</span>
+                    <img src="images/soondae_spicy.png" alt="더푸른식품 알싸한 청양순대 시안" style="max-height: 200px; object-fit: contain;">
                 </div>
                 <div class="product-info">
-                    <h4>더푸른 칼칼 청양순대</h4>
-                    <p class="desc">국산 청양고추의 알싸한 매콤함을 살려 느끼함 없이 개운한 뒷맛을 느낄 수 있는 개운한 순대.</p>
+                    <h4>알싸한 청양순대</h4>
+                    <p class="desc">국산 청양고추를 곱게 갈아 넣어 육즙의 리치함과 매운맛의 개운함이 환상적인 밸런스를 맞추는 프리미엄 안주 순대.</p>
                     <div class="product-price">
-                        <div class="price">15,900원 <span>/ 1kg</span></div>
-                        <a href="#contact" class="btn-sm">상담 문의</a>
+                        <div class="price">13,000원 <span>/ 1kg 기준</span></div>
+                        <a href="#contact" class="btn-sm">상담신청</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 온라인 문의 섹션 -->
+    <!-- 상담 문의 폼 -->
     <section class="contact" id="contact">
         <div class="contact-container">
             <div class="section-header" style="margin-bottom: 2rem;">
-                <span>Wholesale & Collaboration</span>
-                <h3>전국 도매 납품 및 ODM 제휴 상담</h3>
-                <p>식당 창업자, 프랜차이즈 본사, 식품 유통 벤더사를 위한 맞춤형 단가 조율 및 샘플 신청을 하실 수 있습니다.</p>
+                <span>Partner Inquiry</span>
+                <h3>프리미엄 도매 파트너 신청</h3>
+                <p>간단한 가맹 정보나 점포 위치를 남겨주시면, 더푸른식품 전문 물류 컨설턴트가 최저 공급 단가 및 무료 샘플 배송 일정을 즉시 안내해 드립니다.</p>
             </div>
-            <form onsubmit="event.preventDefault(); alert('문의가 성공적으로 접수되었습니다. 담당자가 신속히 연락드리겠습니다.');">
+            
+            <form onsubmit="handleSubmit(event)">
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="compName">회사명 / 매장명</label>
-                        <input type="text" id="compName" placeholder="예: 더푸른국밥 충주점" required>
+                        <label for="name">성함 / 담당자명</label>
+                        <input type="text" id="name" placeholder="홍길동 대표님" required>
                     </div>
                     <div class="form-group">
-                        <label for="contactName">담당자 이름</label>
-                        <input type="text" id="contactName" placeholder="홍길동" required>
+                        <label for="phone">연락처</label>
+                        <input type="tel" id="phone" placeholder="010-0000-0000" required>
                     </div>
                     <div class="form-group">
-                        <label for="tel">연락처</label>
-                        <input type="tel" id="tel" placeholder="010-0000-0000" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="interest">문의 구분</label>
-                        <select id="interest" required>
-                            <option value="">선택해주세요</option>
-                            <option value="wholesale">대량 식자재 납품 문의</option>
-                            <option value="odm">ODM 주문자 상표 부착 제조</option>
-                            <option value="sample">무료 샘플 테스팅 신청</option>
+                        <label for="bizType">업종 유형</label>
+                        <select id="bizType" required>
+                            <option value="">유형을 선택해주세요</option>
+                            <option value="국밥전문점">국밥전문점 / 식당 점주님</option>
+                            <option value="프랜차이즈">프랜차이즈 본사</option>
+                            <option value="식자재도매">식자재 도매 유통업체</option>
+                            <option value="기타">기타 요식업 스타트업</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label for="address">희망 납품 지역</label>
+                        <input type="text" id="address" placeholder="예: 서울 강남구 / 경기 수원" required>
+                    </div>
                     <div class="form-group full-width">
-                        <label for="message">문의 상세 내용</label>
-                        <textarea id="message" rows="5" placeholder="신청하시는 수량 또는 협업 형태에 대해 간략히 적어주세요." required></textarea>
+                        <label for="memo">상담 요청 메모</label>
+                        <textarea id="memo" rows="4" placeholder="예: 한 달 희망 물량 또는 샘플 요청 종류를 기재해주세요."></textarea>
                     </div>
                 </div>
+                
                 <div class="consent-group">
                     <input type="checkbox" id="consent" required>
-                    <label for="consent" style="font-weight: 400; font-size: 0.9rem; color: var(--gray-sub);">개인정보 수집 및 이용 동의 (도매 상담 및 연락 목적으로만 사용됩니다.)</label>
+                    <label for="consent" style="font-weight: 500; color: var(--sb-text-muted); font-size: 0.85rem; cursor: pointer;">
+                        개인정보 수집 및 상담 전송 동의 (HACCP 납품 계약 이행 외 용도 외 사용 금지)
+                    </label>
                 </div>
-                <button type="submit" class="btn-submit">무료 상담 신청하기</button>
+                
+                <button type="submit" class="btn-submit">무료 샘플 & 상담 제안서 신청하기</button>
             </form>
         </div>
     </section>
 
-    <!-- 푸터 영역 -->
+    <!-- 플로팅 프랩 CTA -->
+    <div class="frap-cta">
+        <a href="#contact" aria-label="도매 단가 상담 신청">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- 푸터 -->
     <footer>
         <div class="footer-grid">
             <div class="footer-info">
-                <h4>THE PUREUN FOOD</h4>
-                <p>더푸른식품은 타협하지 않는 위생 관리와 차별화된 프리미엄 육가공 기술력으로 새로운 K-푸드 신뢰를 선도합니다.</p>
+                <h4>THE PUREUN</h4>
+                <p>전통의 가치를 혁신하는 친환경 자연주의 프리미엄 육가공 파트너, 더푸른식품입니다.</p>
             </div>
             <div class="footer-links">
                 <h5>바로가기</h5>
                 <ul>
-                    <li><a href="#about">브랜드 스토리</a></li>
-                    <li><a href="#factory">HACCP 위생 공정</a></li>
-                    <li><a href="#products">프리미엄 라인업</a></li>
-                    <li><a href="#contact">온라인 문의</a></li>
+                    <li><a href="#features">브랜드 스토리</a></li>
+                    <li><a href="#factory">HACCP 공정</a></li>
+                    <li><a href="#products">제품 라인업</a></li>
+                    <li><a href="#contact">도매 문의</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
-                <h5>본사 및 공장</h5>
-                <p>📍 충청북도 충주시 신니면 대농공단길</p>
-                <p>📞 043-855-8899 (대표 번호)</p>
-                <p>✉️ wholesale@thepureunfood.co.kr</p>
+                <h5>고객 지원 센터</h5>
+                <p>📞 043-855-8899</p>
+                <p>📧 support@thepureun.com</p>
+                <p>📍 충청북도 충주시 신니면 대농공단길 더푸른식품</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 더푸른식품. All Rights Reserved. (본 웹사이트는 비즈니스 제안용 시안입니다.)</p>
-            <p>보안 서버 작동중 (SSL 256-bit Encrypted)</p>
+            <p>&copy; 2026 더푸른식품 주식회사. All rights reserved. (본 웹사이트는 비즈니스 제안용 시안입니다.)</p>
+            <p>HACCP 공장 직송 | Let's Encrypt SSL Secure Server</p>
         </div>
     </footer>
 
-    <!-- 모바일 메뉴 드롭다운 JS -->
+    <!-- JS 로직 -->
     <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const nav = document.getElementById('nav');
-        const header = document.getElementById('header');
-
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-
+        // 헤더 스크롤 효과
         window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
         });
+
+        // 모바일 네비게이션 토글
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+        }
+
+        // 상담 신청 제출 모킹
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            alert(`[도매 상담 신청 완료]\n${name} 대표님, 성공적으로 상담 요청이 접수되었습니다. 기입하신 연락처(${phone})로 24시간 이내에 샘플배송 일정을 안내드리겠습니다.`);
+            event.target.reset();
+        }
     </script>
 </body>
 </html>

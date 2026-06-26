@@ -15,19 +15,43 @@
     <!-- 구글 폰트 로드 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --slate-dark: #0f172a;
-            --slate-light: #1e293b;
-            --mint: #10b981;
-            --mint-hover: #059669;
-            --stone-bg: #f8fafc;
-            --text-dark: #0f172a;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* 스타벅스 기반 4-tier Green System */
+            --sb-green-primary: #006241;   /* Starbucks Green (메인 브랜드 강조) */
+            --sb-green-accent: #00754a;    /* Green Accent (주요 CTA 및 버튼) */
+            --sb-green-house: #1e3932;     /* House Green (딥 에스프레소 그린 - 히어로/푸터 배경) */
+            --sb-green-uplift: #2b5148;    /* Uplift Green (서브 레이어 카드 배경) */
+            --sb-green-light: #d4e9e2;     /* Light Green (배경 워시) */
+
+            /* 골드 (B2B 프리미엄 등급 전용) */
+            --sb-gold: #cba258;            /* Rewards Gold */
+            --sb-gold-light: #dfc49d;
+            --sb-gold-lightest: #faf6ee;
+
+            /* 캔버스 및 배경 */
+            --sb-bg-cream: #f2f0eb;        /* Neutral Warm (기본 페이지 배경) */
+            --sb-bg-ceramic: #edebe9;      /* Ceramic (보조 영역) */
+            --sb-bg-white: #ffffff;        /* Pure White (카드 내부) */
+
+            /* 텍스트 & 중립 톤 */
+            --sb-text-black: rgba(0, 0, 0, 0.87);
+            --sb-text-muted: rgba(0, 0, 0, 0.58);
+            --sb-text-white: rgba(255, 255, 255, 1.0);
+            --sb-text-white-soft: rgba(255, 255, 255, 0.70);
+
+            /* 컴포넌트 둥글기 */
+            --sb-radius-pill: 50px;
+            --sb-radius-card: 12px;
+
+            /* 그림자 효과 */
+            --sb-shadow-ambient: 0px 0px .5px 0px rgba(0,0,0,0.14), 0px 1px 1px 0px rgba(0,0,0,0.24);
+            --sb-shadow-lift: 0 4px 6px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.10);
+            --sb-shadow-frap: 0 4px 10px rgba(0, 98, 65, 0.2), 0 12px 20px rgba(0, 0, 0, 0.15);
+
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -37,10 +61,11 @@
         }
 
         body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background-color: var(--stone-bg);
-            color: var(--text-dark);
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background-color: var(--sb-bg-cream);
+            color: var(--sb-text-black);
             line-height: 1.6;
+            letter-spacing: -0.01em; /* 스타벅스식 타이트 트래킹 */
         }
 
         h1, h2, h3, h4, h5 {
@@ -67,10 +92,11 @@
             font-weight: 800;
             color: white;
             text-decoration: none;
+            letter-spacing: 0.05em;
         }
 
         .logo span {
-            color: var(--mint);
+            color: var(--sb-green-light);
         }
 
         .header-links a {
@@ -83,34 +109,42 @@
         }
 
         .header-links a:hover {
-            color: var(--mint);
+            color: var(--sb-green-light);
         }
 
         .header-btn {
-            background-color: var(--mint);
+            background-color: var(--sb-green-accent);
             color: white;
             text-decoration: none;
-            padding: 0.6rem 1.4rem;
-            border-radius: 8px;
+            padding: 0.6rem 1.6rem;
+            border-radius: var(--sb-radius-pill);
             font-size: 0.9rem;
             font-weight: 600;
             transition: var(--transition);
+            border: 1px solid var(--sb-green-accent);
         }
 
         .header-btn:hover {
-            background-color: var(--mint-hover);
+            background-color: var(--sb-green-primary);
+            border-color: var(--sb-green-primary);
+            transform: scale(0.98);
+        }
+
+        .header-btn:active {
+            transform: scale(0.95);
         }
 
         /* 히어로 */
         .hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.8) 100%), 
+            background: linear-gradient(135deg, rgba(30, 57, 50, 0.95) 0%, rgba(43, 81, 72, 0.8) 100%), 
                         url('images/haccp_automated_factory.jpg') center/cover no-repeat;
             color: white;
             padding: 12rem 8% 8rem 8%;
             min-height: 700px;
             display: flex;
             align-items: center;
+            border-bottom: 1px solid var(--sb-green-uplift);
         }
 
         .hero-grid {
@@ -125,10 +159,17 @@
             font-size: 3rem;
             line-height: 1.2;
             margin-bottom: 1.5rem;
+            font-family: 'Lora', 'Noto Sans KR', serif;
+            font-weight: 500;
+        }
+
+        .hero-left h2 span {
+            color: var(--sb-gold-light);
+            font-style: italic;
         }
 
         .hero-left p {
-            color: #94a3b8;
+            color: var(--sb-green-light);
             font-size: 1.15rem;
             margin-bottom: 2.5rem;
         }
@@ -140,30 +181,33 @@
         }
 
         .hero-badge {
-            background-color: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 0.4rem 1rem;
-            border-radius: 6px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.4rem 1.2rem;
+            border-radius: var(--sb-radius-pill);
             font-size: 0.85rem;
-            color: var(--mint);
+            color: var(--sb-gold-light);
             font-weight: 600;
+            letter-spacing: 0.05em;
         }
 
         .hero-right-form {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--sb-radius-card);
             padding: 2.5rem;
             backdrop-filter: blur(16px);
+            box-shadow: var(--sb-shadow-frap);
         }
 
         .hero-right-form h3 {
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         .hero-right-form p {
-            color: #94a3b8;
+            color: var(--sb-green-light);
             font-size: 0.85rem;
             margin-bottom: 2rem;
         }
@@ -172,40 +216,47 @@
             width: 100%;
             padding: 0.8rem 1rem;
             margin-bottom: 1rem;
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 6px;
-            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--sb-radius-card);
+            background: rgba(255, 255, 255, 0.03);
             color: white;
             font-family: inherit;
+            transition: var(--transition);
         }
 
         .form-input:focus {
             outline: none;
-            border-color: var(--mint);
-            background: rgba(255,255,255,0.05);
+            border-color: var(--sb-green-light);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .form-btn {
             width: 100%;
-            background-color: var(--mint);
+            background-color: var(--sb-green-accent);
             color: white;
             border: none;
             padding: 0.9rem;
             font-size: 1rem;
             font-weight: 700;
-            border-radius: 6px;
+            border-radius: var(--sb-radius-pill);
             cursor: pointer;
             transition: var(--transition);
         }
 
         .form-btn:hover {
-            background-color: var(--mint-hover);
+            background-color: var(--sb-green-primary);
+            transform: scale(0.98);
+        }
+
+        .form-btn:active {
+            transform: scale(0.95);
         }
 
         /* 강점 */
         .benefits {
             padding: 6rem 8%;
-            background: white;
+            background: var(--sb-bg-white);
+            border-bottom: 1px solid var(--sb-bg-ceramic);
         }
 
         .section-title {
@@ -215,12 +266,14 @@
 
         .section-title h3 {
             font-size: 2.2rem;
-            color: var(--slate-dark);
+            color: var(--sb-green-house);
             margin-bottom: 0.8rem;
+            font-family: 'Lora', 'Noto Sans KR', serif;
+            font-weight: 600;
         }
 
         .section-title p {
-            color: var(--text-muted);
+            color: var(--sb-text-muted);
         }
 
         .benefit-grid {
@@ -230,34 +283,35 @@
         }
 
         .benefit-card {
-            border: 1px solid var(--border);
+            border: 1px solid var(--sb-bg-ceramic);
             padding: 2.5rem;
-            border-radius: 12px;
-            background: var(--stone-bg);
+            border-radius: var(--sb-radius-card);
+            background: var(--sb-bg-cream);
             transition: var(--transition);
+            box-shadow: var(--sb-shadow-ambient);
         }
 
         .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.03);
-            border-color: var(--mint);
+            transform: translateY(-4px);
+            box-shadow: var(--sb-shadow-lift);
+            border-color: var(--sb-green-accent);
         }
 
         .benefit-card h4 {
             font-size: 1.25rem;
             margin: 1rem 0;
-            color: var(--slate-dark);
+            color: var(--sb-green-house);
         }
 
         .benefit-card p {
-            color: var(--text-muted);
+            color: var(--sb-text-muted);
             font-size: 0.95rem;
         }
 
         /* 실시간 마진 계산 시뮬레이터 */
         .margin-simulator {
             padding: 6rem 8%;
-            background-color: var(--slate-dark);
+            background-color: var(--sb-green-house);
             color: white;
         }
 
@@ -269,10 +323,11 @@
         }
 
         .sim-control-panel {
-            background-color: var(--slate-light);
-            border-radius: 16px;
+            background-color: var(--sb-green-uplift);
+            border-radius: var(--sb-radius-card);
             padding: 3rem;
             border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: var(--sb-shadow-frap);
         }
 
         .sim-control-panel h4 {
@@ -280,6 +335,8 @@
             margin-bottom: 2rem;
             border-bottom: 1px solid rgba(255,255,255,0.1);
             padding-bottom: 1rem;
+            font-family: 'Lora', 'Noto Sans KR', serif;
+            font-weight: 500;
         }
 
         .slider-group {
@@ -294,162 +351,181 @@
         }
 
         .slider-header span.val {
-            color: var(--mint);
+            color: var(--sb-gold-light);
             font-size: 1.15rem;
+            font-family: 'Outfit', sans-serif;
         }
 
-        input[type="range"] {
+        .range-slider {
             width: 100%;
-            accent-color: var(--mint);
             height: 6px;
             background: rgba(255,255,255,0.1);
-            border-radius: 3px;
             outline: none;
+            border-radius: 3px;
+            -webkit-appearance: none;
+        }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--sb-green-light);
+            cursor: pointer;
+            border: 2px solid white;
+            transition: var(--transition);
+        }
+
+        .range-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
         }
 
         .sim-result-panel {
-            padding: 1rem;
-        }
-
-        .sim-result-panel h4 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-
-        .result-box {
-            background: rgba(16, 185, 129, 0.08);
-            border: 1px solid var(--mint);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .result-label {
-            font-size: 0.95rem;
-            color: #a7f3d0;
-            margin-bottom: 0.5rem;
-        }
-
-        .result-val {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--mint);
-        }
-
-        .result-subtext {
-            color: #94a3b8;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        /* 락인 방지 상생 조항 */
-        .trust-section {
-            padding: 6rem 8%;
-            background: white;
-        }
-
-        .trust-box {
-            max-width: 900px;
-            margin: 0 auto;
-            border: 2px dashed rgba(16, 185, 129, 0.3);
-            background-color: rgba(16, 185, 129, 0.02);
-            border-radius: 20px;
-            padding: 4rem;
-            position: relative;
-        }
-
-        .trust-badge {
-            position: absolute;
-            top: -18px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--mint);
-            color: white;
-            padding: 0.5rem 1.8rem;
-            font-weight: 700;
-            border-radius: 30px;
-            font-size: 0.9rem;
-        }
-
-        .trust-box h4 {
-            font-size: 1.6rem;
             text-align: center;
-            color: var(--slate-dark);
+        }
+
+        .result-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--sb-radius-card);
+            padding: 3.5rem;
             margin-bottom: 2rem;
+            box-shadow: var(--sb-shadow-ambient);
         }
 
-        .trust-items {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .trust-item h5 {
+        .result-title {
             font-size: 1.1rem;
-            color: var(--slate-dark);
-            margin-bottom: 0.6rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            color: var(--sb-green-light);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
         }
 
-        .trust-item h5::before {
-            content: '✓';
-            color: var(--mint);
-            font-weight: bold;
+        .result-value {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--sb-gold);
+            margin-bottom: 1rem;
+            font-family: 'Outfit', sans-serif;
         }
 
-        .trust-item p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
+        .result-desc {
+            font-size: 0.95rem;
+            color: var(--sb-green-light);
+            opacity: 0.9;
         }
 
         /* 푸터 */
         footer {
-            background-color: var(--slate-dark);
-            color: #94a3b8;
-            padding: 4rem 8% 2rem 8%;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            font-size: 0.9rem;
+            background-color: var(--sb-green-house);
+            color: var(--sb-green-light);
+            padding: 5rem 8% 3rem 8%;
+            border-top: 1px solid var(--sb-green-uplift);
         }
 
-        .footer-content {
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.2fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 4rem;
+        }
+
+        .footer-info h4 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-info p {
+            font-size: 0.95rem;
+            color: var(--sb-green-light);
+            max-width: 320px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links h5, .footer-contact h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links ul li a {
+            color: var(--sb-green-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-bottom {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 3rem;
+            font-size: 0.85rem;
+            color: var(--sb-green-light);
+            opacity: 0.8;
+            padding-top: 1rem;
         }
 
-        .footer-logo {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 800;
+        /* 플로팅 프랩 CTA */
+        .frap-cta {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+        }
+        .frap-cta a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            background-color: var(--sb-green-accent);
             color: white;
+            border-radius: 50%;
+            box-shadow: var(--sb-shadow-frap);
+            transition: var(--transition);
             text-decoration: none;
         }
-
-        .footer-logo span {
-            color: var(--mint);
+        .frap-cta a:hover {
+            background-color: var(--sb-green-primary);
+            transform: scale(1.05);
         }
-
-        .copyright-bar {
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8rem;
+        .frap-cta a:active {
+            transform: scale(0.95);
         }
 
         /* 반응형 */
         @media (max-width: 1024px) {
-            .hero-grid {
+            .hero-grid, .sim-grid {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 4rem;
             }
-            .sim-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
+            .benefit-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -457,17 +533,26 @@
             .benefit-grid {
                 grid-template-columns: 1fr;
             }
-            .trust-items {
-                grid-template-columns: 1fr;
+            header {
+                padding: 1.5rem 5%;
             }
-            .trust-box {
-                padding: 2.5rem 1.5rem;
+            .header-links {
+                display: none;
+            }
+            .hero {
+                padding-top: 8rem;
             }
             .hero-left h2 {
                 font-size: 2.2rem;
             }
-            .sim-control-panel {
-                padding: 1.5rem;
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
             }
         }
     </style>
@@ -480,200 +565,184 @@
         <div class="header-links">
             <a href="#benefits">도매 강점</a>
             <a href="#simulator">마진 계산기</a>
-            <a href="#trust">락인 방지 약정</a>
+            <a href="#simulator" class="header-btn">무료 샘플 신청</a>
         </div>
-        <a href="#sample" class="header-btn">무료 샘플 신청</a>
     </header>
 
     <!-- 히어로 -->
     <section class="hero">
-        <div class="hero-grid">
-            <div class="hero-left">
-                <div class="hero-badges">
-                    <span class="hero-badge">HACCP 스마트 팩토리 직송</span>
-                    <span class="hero-badge">유통 수수료 0%</span>
+        <div class="hero-container">
+            <div class="hero-grid">
+                <div class="hero-left">
+                    <div class="hero-badges">
+                        <span class="hero-badge">유통 수수료 0%</span>
+                        <span class="hero-badge">HACCP 스마트 팩토리 직송</span>
+                    </div>
+                    <h2>중간 도매 마진 제거,<br><span>식당의 마진을 바꾸다</span></h2>
+                    <p>더푸른식품은 직접 제조 공장(ODM)과의 투명한 상생 거래를 통해, 전국 가맹점 및 일반 식당 점주님들께 대기업 규격의 균일한 위생 순대를 최저 원가로 신속 배송합니다.</p>
                 </div>
-                <h2>중간 도매 마진 제거,<br>식당의 마진을 바꾸다</h2>
-                <p>더푸른식품은 직접 제조 공장(ODM)과의 투명한 상생 거래를 통해, 전국 가맹점 및 일반 식당 점주님들께 대기업 규격의 균일한 위생 순대를 최저 원가로 신속 배송합니다.</p>
-            </div>
-            
-            <div class="hero-right-form" id="sample">
-                <h3>무료 테스트 샘플 신청</h3>
-                <p>식당 영업 확인 후, 100% 무료 테스팅 순대(1kg 상당)를 직송해 드립니다.</p>
-                <form onsubmit="event.preventDefault(); alert('B2B 샘플 신청이 완료되었습니다. 담당자가 사업자 정보를 확인한 뒤 발송해 드리겠습니다.');">
-                    <input type="text" class="form-input" placeholder="상호명 / 대표자명" required>
-                    <input type="tel" class="form-input" placeholder="연락처 (담당자)" required>
-                    <input type="text" class="form-input" placeholder="배송지 주소" required>
-                    <input type="text" class="form-input" placeholder="사업자등록번호 (또는 업종)" required>
-                    <button type="submit" class="form-btn">무료 샘플 신청하기</button>
-                </form>
+                
+                <div class="hero-right-form" id="consultation">
+                    <h3>실시간 도매 단가 문의</h3>
+                    <p>상담 신청 완료 즉시 무료 샘플 3종 발송 혜택을 드립니다.</p>
+                    <form onsubmit="handleB2BSubmit(event)">
+                        <input type="text" id="storeName" placeholder="상호명 (예: 충주순대국)" class="form-input" required>
+                        <input type="text" id="ceoName" placeholder="대표자명" class="form-input" required>
+                        <input type="tel" id="ceoPhone" placeholder="연락처 (010-0000-0000)" class="form-input" required>
+                        <button type="submit" class="form-btn">샘플 및 B2B 단가표 신청</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 강점 -->
+    <!-- 도매 강점 -->
     <section class="benefits" id="benefits">
         <div class="section-title">
-            <h3>식당 점주가 더푸른을 선택하는 3가지 이유</h3>
-            <p>기존 양산형 에이전시의 중개 거래와 복잡한 유통망을 걷어내어 최선의 경쟁력을 드립니다.</p>
+            <h3>비교할 수 없는 도매 공급 강점</h3>
+            <p>유통 단계를 최소화하여 오직 품질과 가격으로만 승부합니다.</p>
         </div>
         
         <div class="benefit-grid">
             <div class="benefit-card">
-                <span style="font-size: 2.5rem;">📦</span>
-                <h4>연중 무휴 당일 발송</h4>
-                <p>오후 2시 이전 주문 시 당일 포장 및 급속 콜드체인 발송으로 내일 오전 식당 주방까지 최상의 탄력을 지닌 순대가 안전하게 도착합니다.</p>
+                <div style="font-size: 2rem;">🏭</div>
+                <h4>제조사 직접 공급 (D2C)</h4>
+                <p>1차/2차 도매상을 거치지 않는 공장 직접 거래(Direct-to-Business)를 통하여 불필요한 유통 거품 마진을 100% 제거했습니다.</p>
             </div>
             
             <div class="benefit-card">
-                <span style="font-size: 2.5rem;">🏭</span>
-                <h4>공장 도매 직송단가</h4>
-                <p>일반 유통 벤더의 중개 수수료를 100% 삭감하여, 동일 규격 대비 최소 15%~20% 저렴한 순수한 제조업 단가를 실현했습니다.</p>
+                <div style="font-size: 2rem;">❄️</div>
+                <h4>100% 신선 물류 보장</h4>
+                <p>냉동 탑차 유통망을 통해 하절기에도 해동 및 변질 우려 없이 최상의 쫄깃함과 신선도를 유지한 채 업장에 도착합니다.</p>
             </div>
             
             <div class="benefit-card">
-                <span style="font-size: 2.5rem;">⚙️</span>
-                <h4>균일화된 수율 보장</h4>
-                <p>진공 충진 압력을 컴퓨터 제어로 제어하여 끓였을 때 옆구리가 터지지 않는 최고의 형상 유지력과 수율(Yield)을 보장합니다.</p>
+                <div style="font-size: 2rem;">📋</div>
+                <h4>대량 정기 계약 추가 할인</h4>
+                <p>월간 고정 사용량 계약 체결 시 기본 단가표 대비 최대 12%의 추가 누적 할인율을 적용하여 점주님의 고정 지출을 아껴드립니다.</p>
             </div>
         </div>
     </section>
 
-    <!-- 실시간 마진 시뮬레이터 -->
+    <!-- 실시간 마진 계산 시뮬레이터 -->
     <section class="margin-simulator" id="simulator">
+        <div class="section-title">
+            <h3 style="color: white;">실시간 마진 예측 시뮬레이터</h3>
+            <p style="color: var(--sb-green-light);">슬라이더를 조절하여 중간 도매상 생략 시 증가하는 실질 매장 마진을 확인해보세요.</p>
+        </div>
+        
         <div class="sim-grid">
+            <!-- 조절 패널 -->
             <div class="sim-control-panel">
-                <h4>실시간 마진율 시뮬레이터</h4>
+                <h4>시뮬레이션 인자 설정</h4>
                 
                 <div class="slider-group">
                     <div class="slider-header">
-                        <span>하루 국밥 판매량</span>
+                        <span>일 평균 순대국 판매량</span>
                         <span class="val" id="salesVal">80 그릇</span>
                     </div>
-                    <input type="range" id="salesRange" min="20" max="300" value="80">
+                    <input type="range" min="10" max="300" value="80" class="range-slider" id="salesSlider" oninput="calculateMargin()">
                 </div>
                 
                 <div class="slider-group">
                     <div class="slider-header">
-                        <span>기존 벤더 순대 매입가 (1kg 기준)</span>
-                        <span class="val" id="oldPriceVal">9,500 원</span>
+                        <span>기존 도매 사입 단가 (1kg 기준)</span>
+                        <span class="val" id="priceVal">9,500 원</span>
                     </div>
-                    <input type="range" id="oldPriceRange" min="7000" max="13000" step="500" value="9500">
+                    <input type="range" min="6000" max="15000" step="500" value="9500" class="range-slider" id="priceSlider" oninput="calculateMargin()">
                 </div>
                 
                 <div class="slider-group">
                     <div class="slider-header">
-                        <span>더푸른식품 도매 단가 (1kg 기준)</span>
-                        <span class="val" id="newPriceVal">7,200 원</span>
+                        <span>더푸른식품 직송 공급가 (1kg)</span>
+                        <span class="val" style="color: var(--sb-green-light); font-family: 'Outfit', sans-serif;">7,200 원 (고정)</span>
                     </div>
-                    <input type="range" id="newPriceRange" min="6000" max="9000" step="100" value="7200">
                 </div>
             </div>
             
+            <!-- 결과 패널 -->
             <div class="sim-result-panel">
-                <h4>더푸른식품 직송 전환 시<br>기대할 수 있는 추가 순이익</h4>
-                
-                <div class="result-box">
-                    <div class="result-label">연간 예상 절감 원가 (순이익 증가)</div>
-                    <div class="result-val" id="annualSavings">약 2,688,000 원</div>
+                <div class="result-card">
+                    <div class="result-title">월간 추가 예상 순수익 (원가 절감액)</div>
+                    <div class="result-value" id="resultVal">1,230,000 원</div>
+                    <div class="result-desc">더푸른식품 공장 직송 전환만으로 절감되는 순수 원가 세이브 금액입니다.</div>
                 </div>
-                
-                <p class="result-subtext">
-                    * 그릇당 평균 순대 소요량 100g 기준으로 환산한 실측 통계치입니다.<br>
-                    * 유통 단계를 1단계만 간소화해도 원가 비중이 크게 개선되어 식당의 연간 운영 고정 지출을 대폭 절감할 수 있습니다.
-                </p>
+                <button class="form-btn" style="max-width: 300px; background-color: var(--sb-green-accent);" onclick="document.getElementById('consultation').scrollIntoView({behavior: 'smooth'})">B2B 맞춤 견적서 및 샘플 받기</button>
             </div>
         </div>
     </section>
 
-    <!-- 락인 방지 상생 조항 -->
-    <section class="trust-section" id="trust">
-        <div class="trust-box">
-            <div class="trust-badge">100% 투명 상생 약정</div>
-            <h4>양산형 제작사 락인(Lock-in) 방지 조항</h4>
-            
-            <div class="trust-items">
-                <div class="trust-item">
-                    <h5>도메인 및 데이터 100% 소유</h5>
-                    <p>호스팅, 홈페이지 소스코드 및 도메인의 법적 소유 명의는 완전하게 귀사에 즉시 귀속되며 중도 해지 위약금이나 락인이 절대 없습니다.</p>
-                </div>
-                
-                <div class="trust-item">
-                    <h5>원클릭 DB 백업 제공</h5>
-                    <p>2년 계약 등의 노예 약정이 없으므로, 고객님이 원하실 때는 언제나 축적된 회원 정보 및 상담 데이터를 무상으로 즉시 다운로드해 드립니다.</p>
-                </div>
-                
-                <div class="trust-item">
-                    <h5>독점 공급 약정 체결</h5>
-                    <p>해당 동(洞) 단위 지역 내 국밥집 1개점에 한해서만 독점 도매 공급 계약을 지원하여 상권 중첩으로 인한 점주 충돌을 사전 예방합니다.</p>
-                </div>
-                
-                <div class="trust-item">
-                    <h5>HACCP 투명 공정 오픈</h5>
-                    <p>점주 및 소비자 신뢰 획득을 위해 요청 시 공장의 원료 시험 성적서 및 공정 로그를 실시간 PDF로 상시 오픈합니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- 플로팅 프랩 CTA -->
+    <div class="frap-cta">
+        <a href="#consultation" aria-label="B2B 도매 단가 및 샘플 신청">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </a>
+    </div>
 
     <!-- 푸터 -->
     <footer>
-        <div class="footer-content">
-            <a href="#" class="footer-logo">THE PUREUN <span>B2B</span></a>
-            <p>대표전화: 043-855-8899 | 이메일: b2b@thepureunfood.co.kr</p>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h4>THE PUREUN B2B</h4>
+                <p>중간 마진이 없는 혁신적인 공장 직송 도매 인프라. 전국 프랜차이즈 및 국밥 전문점 점주님들의 든든한 동반자가 되겠습니다.</p>
+            </div>
+            <div class="footer-links">
+                <h5>바로가기</h5>
+                <ul>
+                    <li><a href="#benefits">도매 강점</a></li>
+                    <li><a href="#simulator">마진 계산기</a></li>
+                    <li><a href="#consultation">샘플 신청</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>B2B 특수물류본부</h5>
+                <p>📞 043-855-8899 (내선 2번)</p>
+                <p>📧 b2b@thepureun.com</p>
+                <p>📍 충청북도 충주시 신니면 대농공단길 더푸른식품 B2B 사업부</p>
+            </div>
         </div>
-        
-        <div class="copyright-bar">
-            <p>&copy; 2026 더푸른식품 B2B 도매 사업부. (본 웹사이트는 비즈니스 제안용 시안입니다.)</p>
-            <p>개인정보 처리방침 | 이용약관 | 사업자 보증 보험 가입 완료</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 더푸른식품 B2B. All rights reserved. (본 웹사이트는 비즈니스 제안용 B2B 시안입니다.)</p>
+            <p>공장 직판 유통 | Let's Encrypt SSL Secure Server</p>
         </div>
     </footer>
 
-    <!-- 실시간 계산 JS 모듈 -->
+    <!-- JS 로직 -->
     <script>
-        const salesRange = document.getElementById('salesRange');
-        const oldPriceRange = document.getElementById('oldPriceRange');
-        const newPriceRange = document.getElementById('newPriceRange');
-
-        const salesVal = document.getElementById('salesVal');
-        const oldPriceVal = document.getElementById('oldPriceVal');
-        const newPriceVal = document.getElementById('newPriceVal');
-        const annualSavings = document.getElementById('annualSavings');
-
-        function formatNumber(num) {
-            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-
-        function calculate() {
-            const sales = parseInt(salesRange.value);
-            const oldPrice = parseInt(oldPriceRange.value);
-            const newPrice = parseInt(newPriceRange.value);
-
-            // 텍스트 업데이트
-            salesVal.textContent = `${sales} 그릇`;
-            oldPriceVal.textContent = `${formatNumber(oldPrice)} 원`;
-            newPriceVal.textContent = `${formatNumber(newPrice)} 원`;
-
-            // 절감 계산: 하루 절감 kg 수 = 하루 그릇 * 0.1kg (그릇당 100g)
-            const dailyKg = sales * 0.1;
-            const diffPerKg = oldPrice - newPrice;
-            const dailySavings = dailyKg * diffPerKg;
-            const annualSavingsVal = Math.round(dailySavings * 365);
-
-            if (annualSavingsVal <= 0) {
-                annualSavings.textContent = "단가를 조정해주세요";
-                annualSavings.style.color = "#ef4444";
+        function calculateMargin() {
+            const sales = parseInt(document.getElementById('salesSlider').value);
+            const origPrice = parseInt(document.getElementById('priceSlider').value);
+            const pureunPrice = 7200; // 고정 공급 단가
+            
+            // 그릇당 평균 순대 소요량 약 150g (0.15kg) 가정
+            const dailyKg = sales * 0.15;
+            const priceDiffPerKg = origPrice - pureunPrice;
+            
+            // 월간(30일) 절감액 계산
+            const monthlySaving = Math.round(dailyKg * priceDiffPerKg * 30);
+            
+            // UI 업데이트
+            document.getElementById('salesVal').textContent = `${sales} 그릇`;
+            document.getElementById('priceVal').textContent = `${origPrice.toLocaleString()} 원`;
+            
+            if (priceDiffPerKg <= 0) {
+                document.getElementById('resultVal').textContent = `0 원`;
             } else {
-                annualSavings.textContent = `약 ${formatNumber(annualSavingsVal)} 원`;
-                annualSavings.style.color = "#10b981";
+                document.getElementById('resultVal').textContent = `${monthlySaving.toLocaleString()} 원`;
             }
         }
 
-        salesRange.addEventListener('input', calculate);
-        oldPriceRange.addEventListener('input', calculate);
-        newPriceRange.addEventListener('input', calculate);
+        // 초기 계산 실행
+        calculateMargin();
 
-        calculate();
+        function handleB2BSubmit(event) {
+            event.preventDefault();
+            const store = document.getElementById('storeName').value;
+            alert(`[도매 샘플 신청 완료]\n${store} 대표님, 성공적으로 도매 제안서 및 샘플 3종 배송 신청이 완료되었습니다. 담당자가 기재하신 번호로 유선 연락드리겠습니다.`);
+            event.target.reset();
+        }
     </script>
 </body>
 </html>

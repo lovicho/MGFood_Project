@@ -1,32 +1,33 @@
 {
   "schema_version": "1.0",
-  "session_id": "agtcode-zto-soondae-sample-landing-pages",
-  "task": "홈페이지 디자인 회사(단지) 분석 기반 더푸른식품 제안용 프리미엄 랜딩페이지 시안 3종 제작",
-  "started_at": "2026-06-26T18:56:00+09:00",
+  "session_id": "agtcode-zto-soondae-sample-improve-starbucks-design",
+  "task": "getdesign.md에서 획득한 스타벅스 디자인 시스템을 기반으로 샘플페이지 3종을 점검 및 개선",
+  "started_at": "2026-06-26T19:36:00+09:00",
   "mode": "silent",
   "profile": "max",
   "engine": "multi-agent",
-  "active_skills": ["verification", "quality", "ultradesign"],
+  "active_skills": [
+    "verification",
+    "quality",
+    "ultradesign"
+  ],
   "decisions": [
     {
       "dp": "DP-0",
       "value": "existing-project",
       "source": "auto",
-      "timestamp": "2026-06-26T18:56:00+09:00"
+      "timestamp": "2026-06-26T19:36:00+09:00"
     },
     {
       "dp": "DP-1",
       "value": "max",
       "source": "user",
-      "timestamp": "2026-06-26T18:56:00+09:00"
+      "timestamp": "2026-06-26T19:36:00+09:00"
     }
   ],
   "outcome": {
     "success": true,
     "phases_completed": [0, 1, 2, 3, 4, 5, 6, 7, 8],
-    "actual_cost_usd": 0.05,
-    "actual_tokens": 68000,
-    "convergence_rate": 1.0,
     "verdict": "VERIFIED",
     "ultradesign_executed": true,
     "ultradesign_output": "샘플페이지/"
